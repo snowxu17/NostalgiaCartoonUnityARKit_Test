@@ -1,14 +1,48 @@
 fileFormatVersion: 2
-guid: e6da21d2861cee14fb2236148ef8baaa
+guid: d97684ca842b34c4085c2b6273f0e7c8
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pSphere1
+    100004: pSphere2
+    100006: pSphere3
+    100008: pSphere4
+    100010: pSphere5
+    100012: pSphere6
+    100014: pSphere7
     400000: //RootNode
-    2100000: aiStandardSurface1
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: Candy_sm2
+    400002: pSphere1
+    400004: pSphere2
+    400006: pSphere3
+    400008: pSphere4
+    400010: pSphere5
+    400012: pSphere6
+    400014: pSphere7
+    2100000: lambert2
+    2100002: lambert1
+    2300000: pSphere1
+    2300002: pSphere2
+    2300004: pSphere3
+    2300006: pSphere4
+    2300008: pSphere5
+    2300010: pSphere6
+    2300012: pSphere7
+    3300000: pSphere1
+    3300002: pSphere2
+    3300004: pSphere3
+    3300006: pSphere4
+    3300008: pSphere5
+    3300010: pSphere6
+    3300012: pSphere7
+    4300000: pSphere1
+    4300002: pSphere2
+    4300004: pSphere3
+    4300006: pSphere4
+    4300008: pSphere5
+    4300010: pSphere6
+    4300012: pSphere7
+    9500000: //RootNode
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -84,7 +118,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 

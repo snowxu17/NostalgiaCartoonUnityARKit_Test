@@ -1,15 +1,20 @@
 fileFormatVersion: 2
-guid: e6da21d2861cee14fb2236148ef8baaa
+guid: 5c1a77eb244b8664ab55d33493dfeed0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: aiStandardSurface1
+    2100000: phong1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Candy_sm2
-  externalObjects: {}
+    4300000: ShortTable
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: phong1
+    second: {fileID: 2100000, guid: 66fbc43c67b564bb4a4c2c2dcd6c1970, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

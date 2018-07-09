@@ -1,15 +1,20 @@
 fileFormatVersion: 2
-guid: e6da21d2861cee14fb2236148ef8baaa
+guid: 8d83d0f5560919d4595188cb9b436c56
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: aiStandardSurface1
+    2100000: lambert2
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Candy_sm2
-  externalObjects: {}
+    4300000: pSphere1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert2
+    second: {fileID: 2100000, guid: 8d83d0f5560919d4595188cb9b436c56, type: 3}
   materials:
     importMaterials: 1
     materialName: 0
@@ -41,7 +46,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 3
+    meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
