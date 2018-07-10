@@ -1,7 +1,8 @@
 fileFormatVersion: 2
 guid: d6ff9fb7e0f71b44e8a7655d1787f97f
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    2186277476908879412: ImportLogs
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
