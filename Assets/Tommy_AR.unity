@@ -1009,72 +1009,40 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalPosition.x
       value: 9.766
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalPosition.y
       value: 4.7369995
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalPosition.z
       value: 0.86899984
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 18.650639
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 18.650642
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 18.650642
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalRotation.x
       value: 0.019656654
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalRotation.y
       value: -0.80738246
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalRotation.z
       value: 0.0049294187
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
       propertyPath: m_LocalRotation.w
       value: 0.5896804
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -107.73701
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -1.4860001
-      objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 1.7850001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2300000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 9ac1eb36fec73a54ca8dc3a089a6b241, type: 2}
-    - target: {fileID: 100000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
-      propertyPath: m_Name
-      value: Candy (2)
+    - target: {fileID: 4715875919452780, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: e6da21d2861cee14fb2236148ef8baaa, type: 3}
+  m_ParentPrefab: {fileID: 100100000, guid: 17fa98143343d76499e3f0e7fc87509c, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &827134701
 GameObject:
@@ -2561,7 +2529,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71b06583e0157a34ca7a165958755751, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spherePrefab: {fileID: 100000, guid: 8d83d0f5560919d4595188cb9b436c56, type: 3}
+  spherePrefab: {fileID: 1703735602946594, guid: 17fa98143343d76499e3f0e7fc87509c,
+    type: 2}
   force: 5
 --- !u!1 &2112084956
 GameObject:
