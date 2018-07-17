@@ -30,13 +30,28 @@ namespace UnityEngine.XR.iOS
         public void Start()
         {
             isDetecting = true;
+            Debug.Log("Dectecting!");
         }
 
         public void detectionOff()
         {
-            isDetecting = false;
+            if (isDetecting == true)
+            {
+                isDetecting = false;
+                Debug.Log("Detection off!");
+            }
         }
 
+        public void detectionOn()
+        {
+            if (isDetecting == false)
+            {
+                isDetecting = true;
+                Debug.Log("Detection on!");
+            }
+        }
+
+        //Can also be used for bool positioned objetcs
         private bool IsPointerOverUIObject()
         {
             PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
@@ -64,12 +79,13 @@ namespace UnityEngine.XR.iOS
 					//and the rotation from the transform of the plane collider
 					m_HitTransform.rotation = hit.transform.rotation;
 				}
+
 			}
 			#else
-			if (Input.touchCount > 0 && m_HitTransform != null)
+            if (Input.touchCount > 0 && m_HitTransform != null && isDetecting == true && !IsPointerOverUIObject())
 			{
 				var touch = Input.GetTouch(0);
-				if ((touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved) && isDetecting == true && !IsPointerOverUIObject)
+                if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
 				{
 					var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
 					ARPoint point = new ARPoint {
