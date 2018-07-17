@@ -47,4 +47,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RugratsAR_Lean.unity
     guid: 099d796d89aa640eeb0145d221754903
+  - enabled: 0
+    path: Assets/LeanTouch/Examples/Transform3DRelative.unity
+    guid: f4503f8040e549f489cd402bce299069
+  - enabled: 0
+    path: Assets/LeanTouch/Examples/Select3DTransformRelative.unity
+    guid: 893cfa2096fd189469bcbcba3e3f7cb6
+  - enabled: 0
+    path: Assets/LeanTouch/Examples/SelectUITransformRelative.unity
+    guid: 3ad877dc8421d0c4db0ff95948002f5b
   m_configObjects: {}
