@@ -13,6 +13,8 @@ namespace UnityEngine.XR.iOS
 
         private bool isDetecting;
 
+        Button placeObjectButton;
+
         bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
         {
             List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
@@ -32,6 +34,11 @@ namespace UnityEngine.XR.iOS
         {
             isDetecting = true;
             Debug.Log("Dectecting!");
+
+            placeObjectButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
+
+            placeObjectButton.onClick.AddListener(placeObject);
+
         }
 
         public void detectionOff()
@@ -50,6 +57,30 @@ namespace UnityEngine.XR.iOS
                 isDetecting = true;
                 Debug.Log("Detection on!");
             }
+        }
+
+        private void placeObject()
+        {
+
+            Debug.Log(placeObjectButton.name + " is pressed!");
+
+            //GameObject[] parentObjects = GameObject.FindGameObjectsWithTag("ParentObject");
+
+            //foreach (GameObject parentObject in parentObjects)
+            //{
+            //    GameObject childObject = parentObject.transform.GetChild(1).gameObject;
+            //    (childObject.GetComponent("Lean Rotation") as MonoBehaviour).enabled = false;
+
+            //}
+            //GetComponent("Lean Rotation") as MonoBehaviour).enabled = false;
+
+
+            GameObject childObject = this.gameObject.transform.GetChild(1).gameObject;
+            Debug.Log("Accessing child named " + childObject.name);
+
+            childObject.GetComponent<LeanRotate>().enabled = false;
+            Debug.Log("Child object " + childObject.name + " becomes static!");
+
         }
 
         private bool IsPointerOverUIObject()

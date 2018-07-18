@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveObjectBack : MonoBehaviour {
+public class placeObject : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
