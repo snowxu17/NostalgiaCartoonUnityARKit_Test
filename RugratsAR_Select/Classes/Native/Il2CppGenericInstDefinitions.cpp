@@ -408,6 +408,9 @@ extern const Il2CppType Rigidbody_t3916780224_0_0_0;
 extern const Il2CppType BoxSlider_t2380464200_0_0_0;
 extern const Il2CppType UnityARUserAnchorComponent_t969893952_0_0_0;
 extern const Il2CppType serializableFromEditorMessage_t2731251371_0_0_0;
+extern const Il2CppType LeanRotate_t34594455_0_0_0;
+extern const Il2CppType LeanTranslate_t455865715_0_0_0;
+extern const Il2CppType LeanScale_t3637880192_0_0_0;
 extern const Il2CppType DontDestroyOnLoad_t1456007215_0_0_0;
 extern const Il2CppType ARKitPlaneMeshRender_t1298532386_0_0_0;
 extern const Il2CppType MeshFilter_t3523625662_0_0_0;
@@ -1511,6 +1514,12 @@ static const RuntimeType* GenInst_UnityARUserAnchorComponent_t969893952_0_0_0_Ty
 extern const Il2CppGenericInst GenInst_UnityARUserAnchorComponent_t969893952_0_0_0 = { 1, GenInst_UnityARUserAnchorComponent_t969893952_0_0_0_Types };
 static const RuntimeType* GenInst_serializableFromEditorMessage_t2731251371_0_0_0_Types[] = { (&serializableFromEditorMessage_t2731251371_0_0_0) };
 extern const Il2CppGenericInst GenInst_serializableFromEditorMessage_t2731251371_0_0_0 = { 1, GenInst_serializableFromEditorMessage_t2731251371_0_0_0_Types };
+static const RuntimeType* GenInst_LeanRotate_t34594455_0_0_0_Types[] = { (&LeanRotate_t34594455_0_0_0) };
+extern const Il2CppGenericInst GenInst_LeanRotate_t34594455_0_0_0 = { 1, GenInst_LeanRotate_t34594455_0_0_0_Types };
+static const RuntimeType* GenInst_LeanTranslate_t455865715_0_0_0_Types[] = { (&LeanTranslate_t455865715_0_0_0) };
+extern const Il2CppGenericInst GenInst_LeanTranslate_t455865715_0_0_0 = { 1, GenInst_LeanTranslate_t455865715_0_0_0_Types };
+static const RuntimeType* GenInst_LeanScale_t3637880192_0_0_0_Types[] = { (&LeanScale_t3637880192_0_0_0) };
+extern const Il2CppGenericInst GenInst_LeanScale_t3637880192_0_0_0 = { 1, GenInst_LeanScale_t3637880192_0_0_0_Types };
 static const RuntimeType* GenInst_DontDestroyOnLoad_t1456007215_0_0_0_Types[] = { (&DontDestroyOnLoad_t1456007215_0_0_0) };
 extern const Il2CppGenericInst GenInst_DontDestroyOnLoad_t1456007215_0_0_0 = { 1, GenInst_DontDestroyOnLoad_t1456007215_0_0_0_Types };
 static const RuntimeType* GenInst_ARKitPlaneMeshRender_t1298532386_0_0_0_Types[] = { (&ARKitPlaneMeshRender_t1298532386_0_0_0) };
@@ -1925,7 +1934,7 @@ static const RuntimeType* GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_L
 extern const Il2CppGenericInst GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_LinkedListDictionary_2_t983847087_gp_1_0_0_0 = { 2, GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_LinkedListDictionary_2_t983847087_gp_1_0_0_0_Types };
 static const RuntimeType* GenInst_LLEntry_t3405167986_gp_1_0_0_0_Types[] = { (&LLEntry_t3405167986_gp_1_0_0_0) };
 extern const Il2CppGenericInst GenInst_LLEntry_t3405167986_gp_1_0_0_0 = { 1, GenInst_LLEntry_t3405167986_gp_1_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[672] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[675] = 
 {
 	&GenInst_RuntimeObject_0_0_0,
 	&GenInst_Int32_t2950945753_0_0_0,
@@ -2392,6 +2401,9 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[672] =
 	&GenInst_BoxSlider_t2380464200_0_0_0,
 	&GenInst_UnityARUserAnchorComponent_t969893952_0_0_0,
 	&GenInst_serializableFromEditorMessage_t2731251371_0_0_0,
+	&GenInst_LeanRotate_t34594455_0_0_0,
+	&GenInst_LeanTranslate_t455865715_0_0_0,
+	&GenInst_LeanScale_t3637880192_0_0_0,
 	&GenInst_DontDestroyOnLoad_t1456007215_0_0_0,
 	&GenInst_ARKitPlaneMeshRender_t1298532386_0_0_0,
 	&GenInst_MeshFilter_t3523625662_0_0_0,

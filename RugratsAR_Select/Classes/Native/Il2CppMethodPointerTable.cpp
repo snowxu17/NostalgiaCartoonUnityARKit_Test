@@ -8237,6 +8237,7 @@ extern "C" void GameObject_SendMessage_m3720186693 ();
 extern "C" void GameObject_Internal_AddComponentWithType_m3797731663 ();
 extern "C" void GameObject_AddComponent_m136524825 ();
 extern "C" void GameObject_Internal_CreateGameObject_m2533291801 ();
+extern "C" void GameObject_Find_m2032535176 ();
 extern "C" void Gradient__ctor_m173848750 ();
 extern "C" void Gradient_Init_m3104802093 ();
 extern "C" void Gradient_Cleanup_m3422458828 ();
@@ -9739,6 +9740,8 @@ extern "C" void RaycastHit_get_distance_m3727327466_AdjustorThunk ();
 extern "C" void RaycastHit_get_collider_m1464180279_AdjustorThunk ();
 extern "C" void Rigidbody_set_velocity_m2899403247 ();
 extern "C" void Rigidbody_INTERNAL_set_velocity_m931742966 ();
+extern "C" void Rigidbody_set_useGravity_m1752110328 ();
+extern "C" void Rigidbody_set_isKinematic_m1802205683 ();
 extern "C" void Canvas__ctor_m2509635467 ();
 extern "C" void Canvas_get_renderMode_m841659411 ();
 extern "C" void Canvas_get_isRootCanvas_m1263191473 ();
@@ -12107,9 +12110,6 @@ extern "C" void ModeSwitcher_Start_m3934514799 ();
 extern "C" void ModeSwitcher_Update_m874303597 ();
 extern "C" void ModeSwitcher_EnableBallCreation_m2937399940 ();
 extern "C" void ModeSwitcher_OnGUI_m1227622856 ();
-extern "C" void moveObjectBack__ctor_m2087850131 ();
-extern "C" void moveObjectBack_Start_m2150255943 ();
-extern "C" void moveObjectBack_Update_m1668273271 ();
 extern "C" void onClickForScaling__ctor_m3153587479 ();
 extern "C" void onClickForScaling_OnMouseDown_m525403177 ();
 extern "C" void ParticlePainter__ctor_m2009407357 ();
@@ -12119,6 +12119,9 @@ extern "C" void ParticlePainter_OnGUI_m3581548274 ();
 extern "C" void ParticlePainter_RestartPainting_m3835531227 ();
 extern "C" void ParticlePainter_Update_m376532077 ();
 extern "C" void ParticlePainter_U3CStartU3Em__0_m579794949 ();
+extern "C" void placeObject__ctor_m4147388795 ();
+extern "C" void placeObject_Start_m4051034845 ();
+extern "C" void placeObject_Update_m3348608260 ();
 extern "C" void PointCloudParticleExample__ctor_m1843719691 ();
 extern "C" void PointCloudParticleExample_Start_m3537825475 ();
 extern "C" void PointCloudParticleExample_ARFrameUpdated_m3285074852 ();
@@ -12316,6 +12319,16 @@ extern "C" void ConnectToEditor_SendToEditor_m1888923138 ();
 extern "C" void ConnectToEditor_SendToEditor_m2358646039 ();
 extern "C" void ConnectToEditor_DisconnectFromEditor_m2638664703 ();
 extern "C" void EditorHitTest__ctor_m2080560474 ();
+extern "C" void HitTestTransform__ctor_m2511977446 ();
+extern "C" void HitTestTransform_HitTestWithResultType_m1182897950 ();
+extern "C" void HitTestTransform_Start_m4222503672 ();
+extern "C" void HitTestTransform_DetectionOff_m1376543826 ();
+extern "C" void HitTestTransform_DetectionOn_m485273599 ();
+extern "C" void HitTestTransform_PlaceObject_m234392672 ();
+extern "C" void HitTestTransform_ActivateObject_m2435431703 ();
+extern "C" void HitTestTransform_IsPointerOverUIObject_m3848985224 ();
+extern "C" void HitTestTransform_ARMoving_m3851236365 ();
+extern "C" void HitTestTransform_Update_m2937403687 ();
 extern "C" void MarshalDirectionalLightEstimate_get_SphericalHarmonicCoefficients_m156075873_AdjustorThunk ();
 extern "C" void MarshalDirectionalLightEstimate_MarshalCoefficients_m3384462505_AdjustorThunk ();
 extern "C" void MarshalDirectionalLightEstimate_RotateForUnity_m1468552020_AdjustorThunk ();
@@ -12347,14 +12360,6 @@ extern "C" void UnityARHitTestExample_animator__ctor_m2028459008 ();
 extern "C" void UnityARHitTestExample_animator_HitTestWithResultType_m3903148277 ();
 extern "C" void UnityARHitTestExample_animator_Start_m2355127974 ();
 extern "C" void UnityARHitTestExample_animator_Update_m964215647 ();
-extern "C" void UnityARHitTestExample_Bool__ctor_m1853672711 ();
-extern "C" void UnityARHitTestExample_Bool_HitTestWithResultType_m1298138807 ();
-extern "C" void UnityARHitTestExample_Bool_Start_m3237494519 ();
-extern "C" void UnityARHitTestExample_Bool_detectionOff_m359326609 ();
-extern "C" void UnityARHitTestExample_Bool_detectionOn_m1854373365 ();
-extern "C" void UnityARHitTestExample_Bool_IsPointerOverUIObject_m2829757613 ();
-extern "C" void UnityARHitTestExample_Bool_ARMoving_m3165602564 ();
-extern "C" void UnityARHitTestExample_Bool_Update_m3446201587 ();
 extern "C" void UnityARKitControl__ctor_m1406012851 ();
 extern "C" void UnityARKitControl_Start_m2727759343 ();
 extern "C" void UnityARKitControl_Update_m2726228173 ();
@@ -12698,7 +12703,7 @@ extern "C" void VideoFormatsExample_Start_m1615238214 ();
 extern "C" void VideoFormatsExample_OnDestroy_m541603283 ();
 extern "C" void VideoFormatsExample_PopulateVideoFormatButtons_m595526008 ();
 extern "C" void VideoFormatsExample_ExampletButtonPressed_m2588664126 ();
-extern const Il2CppMethodPointer g_MethodPointers[12679] = 
+extern const Il2CppMethodPointer g_MethodPointers[12684] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -20918,6 +20923,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	GameObject_Internal_AddComponentWithType_m3797731663,
 	GameObject_AddComponent_m136524825,
 	GameObject_Internal_CreateGameObject_m2533291801,
+	GameObject_Find_m2032535176,
 	Gradient__ctor_m173848750,
 	Gradient_Init_m3104802093,
 	Gradient_Cleanup_m3422458828,
@@ -22420,6 +22426,8 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	RaycastHit_get_collider_m1464180279_AdjustorThunk,
 	Rigidbody_set_velocity_m2899403247,
 	Rigidbody_INTERNAL_set_velocity_m931742966,
+	Rigidbody_set_useGravity_m1752110328,
+	Rigidbody_set_isKinematic_m1802205683,
 	Canvas__ctor_m2509635467,
 	Canvas_get_renderMode_m841659411,
 	Canvas_get_isRootCanvas_m1263191473,
@@ -24788,9 +24796,6 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	ModeSwitcher_Update_m874303597,
 	ModeSwitcher_EnableBallCreation_m2937399940,
 	ModeSwitcher_OnGUI_m1227622856,
-	moveObjectBack__ctor_m2087850131,
-	moveObjectBack_Start_m2150255943,
-	moveObjectBack_Update_m1668273271,
 	onClickForScaling__ctor_m3153587479,
 	onClickForScaling_OnMouseDown_m525403177,
 	ParticlePainter__ctor_m2009407357,
@@ -24800,6 +24805,9 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	ParticlePainter_RestartPainting_m3835531227,
 	ParticlePainter_Update_m376532077,
 	ParticlePainter_U3CStartU3Em__0_m579794949,
+	placeObject__ctor_m4147388795,
+	placeObject_Start_m4051034845,
+	placeObject_Update_m3348608260,
 	PointCloudParticleExample__ctor_m1843719691,
 	PointCloudParticleExample_Start_m3537825475,
 	PointCloudParticleExample_ARFrameUpdated_m3285074852,
@@ -24997,6 +25005,16 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	ConnectToEditor_SendToEditor_m2358646039,
 	ConnectToEditor_DisconnectFromEditor_m2638664703,
 	EditorHitTest__ctor_m2080560474,
+	HitTestTransform__ctor_m2511977446,
+	HitTestTransform_HitTestWithResultType_m1182897950,
+	HitTestTransform_Start_m4222503672,
+	HitTestTransform_DetectionOff_m1376543826,
+	HitTestTransform_DetectionOn_m485273599,
+	HitTestTransform_PlaceObject_m234392672,
+	HitTestTransform_ActivateObject_m2435431703,
+	HitTestTransform_IsPointerOverUIObject_m3848985224,
+	HitTestTransform_ARMoving_m3851236365,
+	HitTestTransform_Update_m2937403687,
 	MarshalDirectionalLightEstimate_get_SphericalHarmonicCoefficients_m156075873_AdjustorThunk,
 	MarshalDirectionalLightEstimate_MarshalCoefficients_m3384462505_AdjustorThunk,
 	MarshalDirectionalLightEstimate_RotateForUnity_m1468552020_AdjustorThunk,
@@ -25028,14 +25046,6 @@ extern const Il2CppMethodPointer g_MethodPointers[12679] =
 	UnityARHitTestExample_animator_HitTestWithResultType_m3903148277,
 	UnityARHitTestExample_animator_Start_m2355127974,
 	UnityARHitTestExample_animator_Update_m964215647,
-	UnityARHitTestExample_Bool__ctor_m1853672711,
-	UnityARHitTestExample_Bool_HitTestWithResultType_m1298138807,
-	UnityARHitTestExample_Bool_Start_m3237494519,
-	UnityARHitTestExample_Bool_detectionOff_m359326609,
-	UnityARHitTestExample_Bool_detectionOn_m1854373365,
-	UnityARHitTestExample_Bool_IsPointerOverUIObject_m2829757613,
-	UnityARHitTestExample_Bool_ARMoving_m3165602564,
-	UnityARHitTestExample_Bool_Update_m3446201587,
 	UnityARKitControl__ctor_m1406012851,
 	UnityARKitControl_Start_m2727759343,
 	UnityARKitControl_Update_m2726228173,

@@ -2,18 +2,21 @@ using System;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Lean.Touch;
 
 namespace UnityEngine.XR.iOS
 {
-	public class UnityARHitTestExample_Bool : MonoBehaviour
+    public class UnityARHitTestExample_bool : MonoBehaviour
 	{
 		public Transform m_HitTransform;
 		public float maxRayDistance = 30.0f;
 		public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
-        private bool isDetecting;
+        bool isDetecting;
 
         Button placeObjectButton;
+        GameObject childObject;
+
 
         bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
         {
@@ -23,7 +26,8 @@ namespace UnityEngine.XR.iOS
                     Debug.Log ("Got hit!");
                     m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
                     m_HitTransform.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);
-                    Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
+                    Debug.Log (string.Format ("x:{0:0.######} y:{1:0.######} z:{2:0.######}", 
+                                              m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
                     return true;
                 }
             }
@@ -33,53 +37,79 @@ namespace UnityEngine.XR.iOS
         public void Start()
         {
             isDetecting = true;
-            Debug.Log("Dectecting!");
+            Debug.Log("Start dectecting AR plane!");
+
+            childObject = gameObject.transform.GetChild(1).gameObject;
+            Debug.Log("Accessing child named " + childObject.name);
 
             placeObjectButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
+            placeObjectButton.onClick.AddListener(PlaceObject);
 
-            placeObjectButton.onClick.AddListener(placeObject);
+            // Spawn objects at randomized position before AR moving
+            //childObject.transform.position = new Vector3(Random.Range(0.0F, 1.0F), 0.0F, Random.Range(0.0F, 1.0F));
 
         }
 
-        public void detectionOff()
+        public void DetectionOff()
         {
             if (isDetecting == true)
             {
                 isDetecting = false;
-                Debug.Log("Detection off!");
+                Debug.Log("Plane detection off!");
             }
         }
 
-        public void detectionOn()
+        public void DetectionOn()
         {
             if (isDetecting == false)
             {
                 isDetecting = true;
-                Debug.Log("Detection on!");
+                Debug.Log("Plane detection on!");
             }
         }
 
-        private void placeObject()
+        private void PlaceObject()
         {
+            if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
+            {
+                Debug.Log(placeObjectButton.name + " is pressed!");
 
-            Debug.Log(placeObjectButton.name + " is pressed!");
+                // Sink it on the AR plane
+                //childObject.transform.position -= Vector3.up * 0.05F;
+                childObject.GetComponent<Rigidbody>().useGravity = true;
+                childObject.GetComponent<Rigidbody>().isKinematic = false;
+                Debug.Log("Child object " + childObject.name + " gravity on!");
 
-            //GameObject[] parentObjects = GameObject.FindGameObjectsWithTag("ParentObject");
+                // Disable object tranformation
+                childObject.GetComponent<LeanRotate>().enabled = false;
+                childObject.GetComponent<LeanTranslate>().enabled = false;
+                childObject.GetComponent<LeanScale>().enabled = false;
 
-            //foreach (GameObject parentObject in parentObjects)
-            //{
-            //    GameObject childObject = parentObject.transform.GetChild(1).gameObject;
-            //    (childObject.GetComponent("Lean Rotation") as MonoBehaviour).enabled = false;
+                // Deselect object
+                childObject.GetComponent<LeanSelectable>().Deselect();
+                Debug.Log("Child object " + childObject.name + " is de-selected and de-activated from transformation!");
 
-            //}
-            //GetComponent("Lean Rotation") as MonoBehaviour).enabled = false;
+                // Plane detection off
+                DetectionOff();
+            }
+        }
 
+        public void ActivateObject()
+        {
+            // Lift it from the AR plane; disable rigidbody
+            childObject.GetComponent<Rigidbody>().useGravity = false;
+            childObject.GetComponent<Rigidbody>().isKinematic = true;
+            childObject.transform.position += Vector3.up * 0.05F;
+            Debug.Log("Child object " + childObject.name + " gravity off!");
 
-            GameObject childObject = this.gameObject.transform.GetChild(1).gameObject;
-            Debug.Log("Accessing child named " + childObject.name);
+            // Enable object transform
+            childObject.GetComponent<LeanRotate>()      .enabled = true;
+            childObject.GetComponent<LeanTranslate>()   .enabled = true;
+            childObject.GetComponent<LeanScale>()       .enabled = true;
+            Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
-            childObject.GetComponent<LeanRotate>().enabled = false;
-            Debug.Log("Child object " + childObject.name + " becomes static!");
+            // Plane detection on
+            DetectionOn();
 
         }
 
@@ -107,7 +137,8 @@ namespace UnityEngine.XR.iOS
                 {
                     //we're going to get the position from the contact point
                     m_HitTransform.position = hit.point;
-                    Debug.Log(string.Format("x:{0:0.######} y:{1:0.######} z:{2:0.######}", m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
+                    Debug.Log(string.Format("x:{0:0.######} y:{1:0.######} z:{2:0.######}", 
+                                            m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
 
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
@@ -150,13 +181,12 @@ namespace UnityEngine.XR.iOS
         }
 
         // Update is called once per frame
-        void Update () {
-
+        void Update () 
+        {
             ARMoving();
-
 		}
 
-	
+
 	}
 }
 

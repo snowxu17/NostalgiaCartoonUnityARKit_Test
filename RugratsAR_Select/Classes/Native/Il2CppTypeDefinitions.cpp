@@ -10305,6 +10305,7 @@ extern const RuntimeType Image_t2670269651_0_0_6 = { (void*)1943, 6, IL2CPP_TYPE
 extern const RuntimeType Button_t4055032469_0_0_0 = { (void*)1920, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType Button_t4055032469_1_0_0 = { (void*)1920, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 extern const RuntimeType Button_t4055032469_0_0_3 = { (void*)1920, 3, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType Button_t4055032469_0_0_1 = { (void*)1920, 1, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 
 extern const RuntimeType RawImage_t3182918964_0_0_0 = { (void*)1971, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType RawImage_t3182918964_1_0_0 = { (void*)1971, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
@@ -10500,6 +10501,15 @@ extern const RuntimeType UnityARUserAnchorComponent_t969893952_1_0_0 = { (void*)
 
 extern const RuntimeType serializableFromEditorMessage_t2731251371_0_0_0 = { (void*)2150, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType serializableFromEditorMessage_t2731251371_1_0_0 = { (void*)2150, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType LeanRotate_t34594455_0_0_0 = { (void*)2103, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType LeanRotate_t34594455_1_0_0 = { (void*)2103, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType LeanTranslate_t455865715_0_0_0 = { (void*)2119, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType LeanTranslate_t455865715_1_0_0 = { (void*)2119, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType LeanScale_t3637880192_0_0_0 = { (void*)2104, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType LeanScale_t3637880192_1_0_0 = { (void*)2104, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType DontDestroyOnLoad_t1456007215_0_0_0 = { (void*)2195, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType DontDestroyOnLoad_t1456007215_1_0_0 = { (void*)2195, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
@@ -18252,12 +18262,6 @@ extern const RuntimeType LeanPath_t2076103442_1_0_0 = { (void*)2101, 0, IL2CPP_T
 extern const RuntimeType LeanPlane_t2341190733_0_0_0 = { (void*)2102, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType LeanPlane_t2341190733_1_0_0 = { (void*)2102, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType LeanRotate_t34594455_0_0_0 = { (void*)2103, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType LeanRotate_t34594455_1_0_0 = { (void*)2103, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
-extern const RuntimeType LeanScale_t3637880192_0_0_0 = { (void*)2104, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType LeanScale_t3637880192_1_0_0 = { (void*)2104, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
 extern const RuntimeType ConversionType_t35213790_0_0_6 = { (void*)2106, 6, IL2CPP_TYPE_VALUETYPE, 0, 0, 0 };
 extern const RuntimeType ConversionType_t35213790_0_0_0 = { (void*)2106, 0, IL2CPP_TYPE_VALUETYPE, 0, 0, 0 };
 extern const RuntimeType ConversionType_t35213790_1_0_0 = { (void*)2106, 0, IL2CPP_TYPE_VALUETYPE, 0, 1, 0 };
@@ -18300,9 +18304,6 @@ extern const RuntimeType LeanSpawnAt_t1036522246_1_0_0 = { (void*)2117, 0, IL2CP
 extern const RuntimeType LeanTouchEvents_t1822248729_0_0_0 = { (void*)2118, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType LeanTouchEvents_t1822248729_1_0_0 = { (void*)2118, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType LeanTranslate_t455865715_0_0_0 = { (void*)2119, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType LeanTranslate_t455865715_1_0_0 = { (void*)2119, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
 extern const RuntimeType LeanGesture_t1335127695_0_0_0 = { (void*)2121, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType LeanGesture_t1335127695_1_0_0 = { (void*)2121, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
@@ -18319,24 +18320,24 @@ extern const RuntimeType U3COnResponseU3Ec__Iterator0_t117089535_1_0_0 = { (void
 extern const RuntimeType getTouch_t1034899541_0_0_0 = { (void*)2127, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType getTouch_t1034899541_1_0_0 = { (void*)2127, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
-extern const RuntimeType moveObjectBack_t1305446598_0_0_0 = { (void*)2128, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType moveObjectBack_t1305446598_1_0_0 = { (void*)2128, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
-extern const RuntimeType onClickForScaling_t1221607291_0_0_0 = { (void*)2129, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType onClickForScaling_t1221607291_1_0_0 = { (void*)2129, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
-extern const RuntimeType restartScene_t2538048808_0_0_0 = { (void*)2130, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType restartScene_t2538048808_1_0_0 = { (void*)2130, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
-extern const RuntimeType SpawnBallOnTouch_t1120693194_0_0_0 = { (void*)2131, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType SpawnBallOnTouch_t1120693194_1_0_0 = { (void*)2131, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
-
-extern const RuntimeType UnityARHitTestExample_Bool_t1820233684_0_0_0 = { (void*)2132, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
-extern const RuntimeType UnityARHitTestExample_Bool_t1820233684_1_0_0 = { (void*)2132, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+extern const RuntimeType HitTestTransform_t2708046901_0_0_0 = { (void*)2128, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType HitTestTransform_t2708046901_1_0_0 = { (void*)2128, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType ARPoint_t499615819_0_0_0 = { (void*)2239, 0, IL2CPP_TYPE_VALUETYPE, 0, 0, 0 };
 extern const RuntimeType ARPoint_t499615819_1_0_0 = { (void*)2239, 0, IL2CPP_TYPE_VALUETYPE, 0, 1, 0 };
 extern const RuntimeType ARPoint_t499615819_0_0_6 = { (void*)2239, 6, IL2CPP_TYPE_VALUETYPE, 0, 0, 0 };
+
+extern const RuntimeType onClickForScaling_t1221607291_0_0_0 = { (void*)2129, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType onClickForScaling_t1221607291_1_0_0 = { (void*)2129, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType placeObject_t3085228469_0_0_0 = { (void*)2130, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType placeObject_t3085228469_1_0_0 = { (void*)2130, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType restartScene_t2538048808_0_0_0 = { (void*)2131, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType restartScene_t2538048808_1_0_0 = { (void*)2131, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
+
+extern const RuntimeType SpawnBallOnTouch_t1120693194_0_0_0 = { (void*)2132, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
+extern const RuntimeType SpawnBallOnTouch_t1120693194_1_0_0 = { (void*)2132, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
 
 extern const RuntimeType ConnectionMessageIds_t1387126779_0_0_0 = { (void*)2133, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
 extern const RuntimeType ConnectionMessageIds_t1387126779_1_0_0 = { (void*)2133, 0, IL2CPP_TYPE_CLASS, 0, 1, 0 };
@@ -18942,7 +18943,7 @@ extern const RuntimeType TimeSpanU5BU5D_t4291357516_0_0_0 = { (void*)&TimeSpan_t
 extern const RuntimeType TypeTagU5BU5D_t1563918664_0_0_0 = { (void*)&TypeTag_t3541821701_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
 
 extern const RuntimeType ITrackingHandlerU5BU5D_t3758023570_0_0_0 = { (void*)&ITrackingHandler_t1244553475_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
-extern const RuntimeType* const  g_Il2CppTypeTable[9858] = 
+extern const RuntimeType* const  g_Il2CppTypeTable[9859] = 
 {
 	&IEnumerator_1_t3512676632_0_0_0,
 	&RuntimeObject_0_0_0,
@@ -21913,6 +21914,9 @@ extern const RuntimeType* const  g_Il2CppTypeTable[9858] =
 	&BoxSlider_t2380464200_0_0_0,
 	&UnityARUserAnchorComponent_t969893952_0_0_0,
 	&serializableFromEditorMessage_t2731251371_0_0_0,
+	&LeanRotate_t34594455_0_0_0,
+	&LeanTranslate_t455865715_0_0_0,
+	&LeanScale_t3637880192_0_0_0,
 	&DontDestroyOnLoad_t1456007215_0_0_0,
 	&ARKitPlaneMeshRender_t1298532386_0_0_0,
 	&MeshFilter_t3523625662_0_0_0,
@@ -28162,9 +28166,7 @@ extern const RuntimeType* const  g_Il2CppTypeTable[9858] =
 	&LeanPlane_t2341190733_0_0_0,
 	&LeanPlane_t2341190733_1_0_0,
 	&Single_t1397266774_0_0_4112,
-	&LeanRotate_t34594455_0_0_0,
 	&LeanRotate_t34594455_1_0_0,
-	&LeanScale_t3637880192_0_0_0,
 	&LeanScale_t3637880192_1_0_0,
 	&LeanScreenDepth_t1010637882_0_0_0,
 	&LeanScreenDepth_t1010637882_1_0_0,
@@ -28210,7 +28212,6 @@ extern const RuntimeType* const  g_Il2CppTypeTable[9858] =
 	&LeanSpawnAt_t1036522246_1_0_0,
 	&LeanTouchEvents_t1822248729_0_0_0,
 	&LeanTouchEvents_t1822248729_1_0_0,
-	&LeanTranslate_t455865715_0_0_0,
 	&LeanTranslate_t455865715_1_0_0,
 	&LeanFinger_t3506292858_1_0_0,
 	&Camera_t4157153871_0_0_4112,
@@ -28244,18 +28245,19 @@ extern const RuntimeType* const  g_Il2CppTypeTable[9858] =
 	&getData_t2746694025_0_0_3,
 	&getTouch_t1034899541_0_0_0,
 	&getTouch_t1034899541_1_0_0,
-	&moveObjectBack_t1305446598_0_0_0,
-	&moveObjectBack_t1305446598_1_0_0,
+	&HitTestTransform_t2708046901_0_0_0,
+	&HitTestTransform_t2708046901_1_0_0,
+	&ARPoint_t499615819_0_0_0,
+	&Button_t4055032469_0_0_1,
 	&onClickForScaling_t1221607291_0_0_0,
 	&onClickForScaling_t1221607291_1_0_0,
+	&placeObject_t3085228469_0_0_0,
+	&placeObject_t3085228469_1_0_0,
 	&restartScene_t2538048808_0_0_0,
 	&restartScene_t2538048808_1_0_0,
 	&SpawnBallOnTouch_t1120693194_0_0_0,
 	&SpawnBallOnTouch_t1120693194_1_0_0,
 	&Rigidbody_t3916780224_0_0_1,
-	&UnityARHitTestExample_Bool_t1820233684_0_0_0,
-	&UnityARHitTestExample_Bool_t1820233684_1_0_0,
-	&ARPoint_t499615819_0_0_0,
 	&ConnectionMessageIds_t1387126779_0_0_0,
 	&ConnectionMessageIds_t1387126779_1_0_0,
 	&SubMessageIds_t1008824323_0_0_0,

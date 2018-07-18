@@ -100,6 +100,8 @@ struct IAsyncResult_t767004451;
 struct AsyncCallback_t3962456242;
 // UnityEngine.Transform
 struct Transform_t3600365921;
+// UnityEngine.UI.Button
+struct Button_t4055032469;
 // System.Collections.Generic.List`1<Lean.Touch.LeanTouch>
 struct List_1_t128967781;
 // System.Collections.Generic.List`1<Lean.Touch.LeanFinger>
@@ -118,8 +120,6 @@ struct EventSystem_t1003666588;
 struct LeanSelectable_t2178850769;
 // UnityEngine.Camera
 struct Camera_t4157153871;
-// UnityEngine.Rigidbody
-struct Rigidbody_t3916780224;
 // System.Collections.Generic.List`1<Lean.Touch.LeanSelectable>
 struct List_1_t3650925511;
 // Lean.Touch.LeanFinger
@@ -134,6 +134,8 @@ struct List_1_t2940978232;
 struct List_1_t899420910;
 // UnityEngine.UI.Text
 struct Text_t1901882714;
+// UnityEngine.Rigidbody
+struct Rigidbody_t3916780224;
 // ColorPicker
 struct ColorPicker_t228004619;
 // UnityEngine.GameObject[]
@@ -4328,26 +4330,88 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // MONOBEHAVIOUR_T3962482529_H
-#ifndef MOVEOBJECTBACK_T1305446598_H
-#define MOVEOBJECTBACK_T1305446598_H
+#ifndef HITTESTTRANSFORM_T2708046901_H
+#define HITTESTTRANSFORM_T2708046901_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// moveObjectBack
-struct  moveObjectBack_t1305446598  : public MonoBehaviour_t3962482529
+// UnityEngine.XR.iOS.HitTestTransform
+struct  HitTestTransform_t2708046901  : public MonoBehaviour_t3962482529
 {
 public:
+	// UnityEngine.Transform UnityEngine.XR.iOS.HitTestTransform::m_HitTransform
+	Transform_t3600365921 * ___m_HitTransform_2;
+	// System.Single UnityEngine.XR.iOS.HitTestTransform::maxRayDistance
+	float ___maxRayDistance_3;
+	// UnityEngine.LayerMask UnityEngine.XR.iOS.HitTestTransform::collisionLayer
+	LayerMask_t3493934918  ___collisionLayer_4;
+	// System.Boolean UnityEngine.XR.iOS.HitTestTransform::isDetecting
+	bool ___isDetecting_5;
+	// UnityEngine.UI.Button UnityEngine.XR.iOS.HitTestTransform::placeObjectButton
+	Button_t4055032469 * ___placeObjectButton_6;
+	// UnityEngine.GameObject UnityEngine.XR.iOS.HitTestTransform::childObject
+	GameObject_t1113636619 * ___childObject_7;
 
 public:
+	inline static int32_t get_offset_of_m_HitTransform_2() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___m_HitTransform_2)); }
+	inline Transform_t3600365921 * get_m_HitTransform_2() const { return ___m_HitTransform_2; }
+	inline Transform_t3600365921 ** get_address_of_m_HitTransform_2() { return &___m_HitTransform_2; }
+	inline void set_m_HitTransform_2(Transform_t3600365921 * value)
+	{
+		___m_HitTransform_2 = value;
+		Il2CppCodeGenWriteBarrier((&___m_HitTransform_2), value);
+	}
+
+	inline static int32_t get_offset_of_maxRayDistance_3() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___maxRayDistance_3)); }
+	inline float get_maxRayDistance_3() const { return ___maxRayDistance_3; }
+	inline float* get_address_of_maxRayDistance_3() { return &___maxRayDistance_3; }
+	inline void set_maxRayDistance_3(float value)
+	{
+		___maxRayDistance_3 = value;
+	}
+
+	inline static int32_t get_offset_of_collisionLayer_4() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___collisionLayer_4)); }
+	inline LayerMask_t3493934918  get_collisionLayer_4() const { return ___collisionLayer_4; }
+	inline LayerMask_t3493934918 * get_address_of_collisionLayer_4() { return &___collisionLayer_4; }
+	inline void set_collisionLayer_4(LayerMask_t3493934918  value)
+	{
+		___collisionLayer_4 = value;
+	}
+
+	inline static int32_t get_offset_of_isDetecting_5() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___isDetecting_5)); }
+	inline bool get_isDetecting_5() const { return ___isDetecting_5; }
+	inline bool* get_address_of_isDetecting_5() { return &___isDetecting_5; }
+	inline void set_isDetecting_5(bool value)
+	{
+		___isDetecting_5 = value;
+	}
+
+	inline static int32_t get_offset_of_placeObjectButton_6() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___placeObjectButton_6)); }
+	inline Button_t4055032469 * get_placeObjectButton_6() const { return ___placeObjectButton_6; }
+	inline Button_t4055032469 ** get_address_of_placeObjectButton_6() { return &___placeObjectButton_6; }
+	inline void set_placeObjectButton_6(Button_t4055032469 * value)
+	{
+		___placeObjectButton_6 = value;
+		Il2CppCodeGenWriteBarrier((&___placeObjectButton_6), value);
+	}
+
+	inline static int32_t get_offset_of_childObject_7() { return static_cast<int32_t>(offsetof(HitTestTransform_t2708046901, ___childObject_7)); }
+	inline GameObject_t1113636619 * get_childObject_7() const { return ___childObject_7; }
+	inline GameObject_t1113636619 ** get_address_of_childObject_7() { return &___childObject_7; }
+	inline void set_childObject_7(GameObject_t1113636619 * value)
+	{
+		___childObject_7 = value;
+		Il2CppCodeGenWriteBarrier((&___childObject_7), value);
+	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // MOVEOBJECTBACK_T1305446598_H
+#endif // HITTESTTRANSFORM_T2708046901_H
 #ifndef GETTOUCH_T1034899541_H
 #define GETTOUCH_T1034899541_H
 #ifdef __clang__
@@ -4410,36 +4474,26 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // GETTOUCH_T1034899541_H
-#ifndef RESTARTSCENE_T2538048808_H
-#define RESTARTSCENE_T2538048808_H
+#ifndef PLACEOBJECT_T3085228469_H
+#define PLACEOBJECT_T3085228469_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// restartScene
-struct  restartScene_t2538048808  : public MonoBehaviour_t3962482529
+// placeObject
+struct  placeObject_t3085228469  : public MonoBehaviour_t3962482529
 {
 public:
-	// System.String restartScene::sceneName
-	String_t* ___sceneName_2;
 
 public:
-	inline static int32_t get_offset_of_sceneName_2() { return static_cast<int32_t>(offsetof(restartScene_t2538048808, ___sceneName_2)); }
-	inline String_t* get_sceneName_2() const { return ___sceneName_2; }
-	inline String_t** get_address_of_sceneName_2() { return &___sceneName_2; }
-	inline void set_sceneName_2(String_t* value)
-	{
-		___sceneName_2 = value;
-		Il2CppCodeGenWriteBarrier((&___sceneName_2), value);
-	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // RESTARTSCENE_T2538048808_H
+#endif // PLACEOBJECT_T3085228469_H
 #ifndef ONCLICKFORSCALING_T1221607291_H
 #define ONCLICKFORSCALING_T1221607291_H
 #ifdef __clang__
@@ -4896,57 +4950,36 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // LEANTRANSLATE_T455865715_H
-#ifndef SPAWNBALLONTOUCH_T1120693194_H
-#define SPAWNBALLONTOUCH_T1120693194_H
+#ifndef RESTARTSCENE_T2538048808_H
+#define RESTARTSCENE_T2538048808_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// SpawnBallOnTouch
-struct  SpawnBallOnTouch_t1120693194  : public MonoBehaviour_t3962482529
+// restartScene
+struct  restartScene_t2538048808  : public MonoBehaviour_t3962482529
 {
 public:
-	// UnityEngine.GameObject SpawnBallOnTouch::spherePrefab
-	GameObject_t1113636619 * ___spherePrefab_2;
-	// System.Single SpawnBallOnTouch::force
-	float ___force_3;
-	// UnityEngine.Rigidbody SpawnBallOnTouch::rb
-	Rigidbody_t3916780224 * ___rb_4;
+	// System.String restartScene::sceneName
+	String_t* ___sceneName_2;
 
 public:
-	inline static int32_t get_offset_of_spherePrefab_2() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___spherePrefab_2)); }
-	inline GameObject_t1113636619 * get_spherePrefab_2() const { return ___spherePrefab_2; }
-	inline GameObject_t1113636619 ** get_address_of_spherePrefab_2() { return &___spherePrefab_2; }
-	inline void set_spherePrefab_2(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_sceneName_2() { return static_cast<int32_t>(offsetof(restartScene_t2538048808, ___sceneName_2)); }
+	inline String_t* get_sceneName_2() const { return ___sceneName_2; }
+	inline String_t** get_address_of_sceneName_2() { return &___sceneName_2; }
+	inline void set_sceneName_2(String_t* value)
 	{
-		___spherePrefab_2 = value;
-		Il2CppCodeGenWriteBarrier((&___spherePrefab_2), value);
-	}
-
-	inline static int32_t get_offset_of_force_3() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___force_3)); }
-	inline float get_force_3() const { return ___force_3; }
-	inline float* get_address_of_force_3() { return &___force_3; }
-	inline void set_force_3(float value)
-	{
-		___force_3 = value;
-	}
-
-	inline static int32_t get_offset_of_rb_4() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___rb_4)); }
-	inline Rigidbody_t3916780224 * get_rb_4() const { return ___rb_4; }
-	inline Rigidbody_t3916780224 ** get_address_of_rb_4() { return &___rb_4; }
-	inline void set_rb_4(Rigidbody_t3916780224 * value)
-	{
-		___rb_4 = value;
-		Il2CppCodeGenWriteBarrier((&___rb_4), value);
+		___sceneName_2 = value;
+		Il2CppCodeGenWriteBarrier((&___sceneName_2), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // SPAWNBALLONTOUCH_T1120693194_H
+#endif // RESTARTSCENE_T2538048808_H
 #ifndef LEANSPAWNAT_T1036522246_H
 #define LEANSPAWNAT_T1036522246_H
 #ifdef __clang__
@@ -5742,66 +5775,57 @@ public:
 #pragma clang diagnostic pop
 #endif
 #endif // GETDATA_T2746694025_H
-#ifndef UNITYARHITTESTEXAMPLE_BOOL_T1820233684_H
-#define UNITYARHITTESTEXAMPLE_BOOL_T1820233684_H
+#ifndef SPAWNBALLONTOUCH_T1120693194_H
+#define SPAWNBALLONTOUCH_T1120693194_H
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
 #pragma clang diagnostic ignored "-Wunused-variable"
 #endif
 
-// UnityEngine.XR.iOS.UnityARHitTestExample_Bool
-struct  UnityARHitTestExample_Bool_t1820233684  : public MonoBehaviour_t3962482529
+// SpawnBallOnTouch
+struct  SpawnBallOnTouch_t1120693194  : public MonoBehaviour_t3962482529
 {
 public:
-	// UnityEngine.Transform UnityEngine.XR.iOS.UnityARHitTestExample_Bool::m_HitTransform
-	Transform_t3600365921 * ___m_HitTransform_2;
-	// System.Single UnityEngine.XR.iOS.UnityARHitTestExample_Bool::maxRayDistance
-	float ___maxRayDistance_3;
-	// UnityEngine.LayerMask UnityEngine.XR.iOS.UnityARHitTestExample_Bool::collisionLayer
-	LayerMask_t3493934918  ___collisionLayer_4;
-	// System.Boolean UnityEngine.XR.iOS.UnityARHitTestExample_Bool::isDetecting
-	bool ___isDetecting_5;
+	// UnityEngine.GameObject SpawnBallOnTouch::spherePrefab
+	GameObject_t1113636619 * ___spherePrefab_2;
+	// System.Single SpawnBallOnTouch::force
+	float ___force_3;
+	// UnityEngine.Rigidbody SpawnBallOnTouch::rb
+	Rigidbody_t3916780224 * ___rb_4;
 
 public:
-	inline static int32_t get_offset_of_m_HitTransform_2() { return static_cast<int32_t>(offsetof(UnityARHitTestExample_Bool_t1820233684, ___m_HitTransform_2)); }
-	inline Transform_t3600365921 * get_m_HitTransform_2() const { return ___m_HitTransform_2; }
-	inline Transform_t3600365921 ** get_address_of_m_HitTransform_2() { return &___m_HitTransform_2; }
-	inline void set_m_HitTransform_2(Transform_t3600365921 * value)
+	inline static int32_t get_offset_of_spherePrefab_2() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___spherePrefab_2)); }
+	inline GameObject_t1113636619 * get_spherePrefab_2() const { return ___spherePrefab_2; }
+	inline GameObject_t1113636619 ** get_address_of_spherePrefab_2() { return &___spherePrefab_2; }
+	inline void set_spherePrefab_2(GameObject_t1113636619 * value)
 	{
-		___m_HitTransform_2 = value;
-		Il2CppCodeGenWriteBarrier((&___m_HitTransform_2), value);
+		___spherePrefab_2 = value;
+		Il2CppCodeGenWriteBarrier((&___spherePrefab_2), value);
 	}
 
-	inline static int32_t get_offset_of_maxRayDistance_3() { return static_cast<int32_t>(offsetof(UnityARHitTestExample_Bool_t1820233684, ___maxRayDistance_3)); }
-	inline float get_maxRayDistance_3() const { return ___maxRayDistance_3; }
-	inline float* get_address_of_maxRayDistance_3() { return &___maxRayDistance_3; }
-	inline void set_maxRayDistance_3(float value)
+	inline static int32_t get_offset_of_force_3() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___force_3)); }
+	inline float get_force_3() const { return ___force_3; }
+	inline float* get_address_of_force_3() { return &___force_3; }
+	inline void set_force_3(float value)
 	{
-		___maxRayDistance_3 = value;
+		___force_3 = value;
 	}
 
-	inline static int32_t get_offset_of_collisionLayer_4() { return static_cast<int32_t>(offsetof(UnityARHitTestExample_Bool_t1820233684, ___collisionLayer_4)); }
-	inline LayerMask_t3493934918  get_collisionLayer_4() const { return ___collisionLayer_4; }
-	inline LayerMask_t3493934918 * get_address_of_collisionLayer_4() { return &___collisionLayer_4; }
-	inline void set_collisionLayer_4(LayerMask_t3493934918  value)
+	inline static int32_t get_offset_of_rb_4() { return static_cast<int32_t>(offsetof(SpawnBallOnTouch_t1120693194, ___rb_4)); }
+	inline Rigidbody_t3916780224 * get_rb_4() const { return ___rb_4; }
+	inline Rigidbody_t3916780224 ** get_address_of_rb_4() { return &___rb_4; }
+	inline void set_rb_4(Rigidbody_t3916780224 * value)
 	{
-		___collisionLayer_4 = value;
-	}
-
-	inline static int32_t get_offset_of_isDetecting_5() { return static_cast<int32_t>(offsetof(UnityARHitTestExample_Bool_t1820233684, ___isDetecting_5)); }
-	inline bool get_isDetecting_5() const { return ___isDetecting_5; }
-	inline bool* get_address_of_isDetecting_5() { return &___isDetecting_5; }
-	inline void set_isDetecting_5(bool value)
-	{
-		___isDetecting_5 = value;
+		___rb_4 = value;
+		Il2CppCodeGenWriteBarrier((&___rb_4), value);
 	}
 };
 
 #ifdef __clang__
 #pragma clang diagnostic pop
 #endif
-#endif // UNITYARHITTESTEXAMPLE_BOOL_T1820233684_H
+#endif // SPAWNBALLONTOUCH_T1120693194_H
 #ifndef BLENDSHAPEPRINTER_T4276887874_H
 #define BLENDSHAPEPRINTER_T4276887874_H
 #ifdef __clang__
@@ -8692,27 +8716,29 @@ extern const int32_t g_FieldOffsetTable2127[4] =
 	getTouch_t1034899541::get_offset_of_clone_4(),
 	getTouch_t1034899541::get_offset_of_particle_5(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2128 = { sizeof (moveObjectBack_t1305446598), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2128 = { sizeof (HitTestTransform_t2708046901), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2128[6] = 
+{
+	HitTestTransform_t2708046901::get_offset_of_m_HitTransform_2(),
+	HitTestTransform_t2708046901::get_offset_of_maxRayDistance_3(),
+	HitTestTransform_t2708046901::get_offset_of_collisionLayer_4(),
+	HitTestTransform_t2708046901::get_offset_of_isDetecting_5(),
+	HitTestTransform_t2708046901::get_offset_of_placeObjectButton_6(),
+	HitTestTransform_t2708046901::get_offset_of_childObject_7(),
+};
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2129 = { sizeof (onClickForScaling_t1221607291), -1, 0, 0 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2130 = { sizeof (restartScene_t2538048808), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2130[1] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2130 = { sizeof (placeObject_t3085228469), -1, 0, 0 };
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2131 = { sizeof (restartScene_t2538048808), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2131[1] = 
 {
 	restartScene_t2538048808::get_offset_of_sceneName_2(),
 };
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2131 = { sizeof (SpawnBallOnTouch_t1120693194), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2131[3] = 
+extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2132 = { sizeof (SpawnBallOnTouch_t1120693194), -1, 0, 0 };
+extern const int32_t g_FieldOffsetTable2132[3] = 
 {
 	SpawnBallOnTouch_t1120693194::get_offset_of_spherePrefab_2(),
 	SpawnBallOnTouch_t1120693194::get_offset_of_force_3(),
 	SpawnBallOnTouch_t1120693194::get_offset_of_rb_4(),
-};
-extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2132 = { sizeof (UnityARHitTestExample_Bool_t1820233684), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2132[4] = 
-{
-	UnityARHitTestExample_Bool_t1820233684::get_offset_of_m_HitTransform_2(),
-	UnityARHitTestExample_Bool_t1820233684::get_offset_of_maxRayDistance_3(),
-	UnityARHitTestExample_Bool_t1820233684::get_offset_of_collisionLayer_4(),
-	UnityARHitTestExample_Bool_t1820233684::get_offset_of_isDetecting_5(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2133 = { sizeof (ConnectionMessageIds_t1387126779), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2134 = { sizeof (SubMessageIds_t1008824323), -1, 0, 0 };
