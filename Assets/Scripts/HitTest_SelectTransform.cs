@@ -182,7 +182,7 @@ namespace UnityEngine.XR.iOS
 #endif
         }
 
-        // Update is called once per frame
+
         void Update()
         {
             ARMoving();
