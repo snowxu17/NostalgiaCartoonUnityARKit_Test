@@ -47,9 +47,6 @@ namespace UnityEngine.XR.iOS
             placeObjectButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
             placeObjectButton.onClick.AddListener(PlaceObject);
 
-            // Spawn objects at randomized position before AR moving
-            //childObject.transform.position = new Vector3(Random.Range(0.0F, 1.0F), 0.0F, Random.Range(0.0F, 1.0F));
-
         }
 
         public void DetectionOff()
@@ -77,7 +74,6 @@ namespace UnityEngine.XR.iOS
                 Debug.Log(placeObjectButton.name + " is pressed!");
 
                 // Sink it on the AR plane
-                //childObject.transform.position -= Vector3.up * 0.05F;
                 childObject.GetComponent<Rigidbody>().useGravity = true;
                 childObject.GetComponent<Rigidbody>().isKinematic = false;
                 Debug.Log("Child object " + childObject.name + " gravity on!");
@@ -124,6 +120,18 @@ namespace UnityEngine.XR.iOS
             return results.Count > 0;
         }
 
+
+        public void ARSpawnObjects()
+        {
+            // Get the position of the first generated plane and place the obejct in middle of it
+            GameObject plane = GameObject.Find("GeneratePlanes").GetComponent<UnityARGeneratePlane>().planePrefab;
+
+            Vector3 planeSize = plane.GetComponent<Collider>().bounds.size;
+            //Vector3 instPosition = plane.transform.position - planeSize / 2;
+            m_HitTransform.position = plane.transform.position - planeSize / 2;
+
+            //Porbably can use ARAnchor too?
+        }
 
         public void ARMoving()
         {
@@ -185,6 +193,10 @@ namespace UnityEngine.XR.iOS
 
         void Update()
         {
+
+            /// When first ar plane generated, spawn obejct
+            /// if (  .... = ! null)
+
             ARMoving();
         }
 
