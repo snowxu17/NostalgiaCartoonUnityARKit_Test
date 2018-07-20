@@ -39,7 +39,7 @@ namespace UnityEngine.XR.iOS
             return false;
         }
 
-        public void Start()
+        protected virtual void Start()
         {
             childObject = gameObject.transform.GetChild(1).gameObject;
             child_rigidbody = childObject.GetComponent<Rigidbody>();
