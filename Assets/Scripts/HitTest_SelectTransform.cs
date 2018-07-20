@@ -14,8 +14,11 @@ namespace UnityEngine.XR.iOS
 
         bool isDetecting;
 
+        Button scanButton;
         Button placeObjectButton;
-        GameObject childObject;      
+
+        GameObject childObject;
+        Rigidbody child_rigidbody;
 
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
@@ -38,14 +41,25 @@ namespace UnityEngine.XR.iOS
 
         public void Start()
         {
-            isDetecting = true;
-            Debug.Log("Start dectecting AR plane!");
-
             childObject = gameObject.transform.GetChild(1).gameObject;
+            child_rigidbody = childObject.GetComponent<Rigidbody>();
             Debug.Log("Accessing child named " + childObject.name);
 
+            scanButton = GameObject.Find("Button_setWorldOrigin").GetComponent<Button>();
+            scanButton.onClick.AddListener(SetWorldOrigin);
+
             placeObjectButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
-            placeObjectButton.onClick.AddListener(PlaceSingleObject);
+            placeObjectButton.onClick.AddListener(PlaceWhenHitButton);
+
+        }
+
+        public void SetWorldOrigin()
+        {
+            UnityARSessionNativeInterface.GetARSessionNativeInterface().SetWorldOrigin(Camera.main.transform);
+            scanButton.gameObject.SetActive(false);
+
+            Debug.Log("Camera position = " + Camera.main.transform.position);
+            Debug.Log("Camera rotation = " + Camera.main.transform.rotation);
 
         }
 
@@ -55,7 +69,7 @@ namespace UnityEngine.XR.iOS
             {
                 isDetecting = false;
                 Debug.Log("Plane detection off!");
-            }
+            }                      
         }
 
         public void DetectionOn()
@@ -67,37 +81,53 @@ namespace UnityEngine.XR.iOS
             }
         }
 
-        private void PlaceSingleObject()
+        public void PlaceWhenHitButton()
         {
+            Debug.Log(placeObjectButton.name + " is pressed!");
+
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
             {
-                Debug.Log(placeObjectButton.name + " is pressed!");
-
-                // Sink it on the AR plane
-                childObject.GetComponent<Rigidbody>().useGravity = true;
-                childObject.GetComponent<Rigidbody>().isKinematic = false;
-                Debug.Log("Child object " + childObject.name + " gravity on!");
-
-                // Disable object tranformation
-                childObject.GetComponent<LeanRotate>().enabled = false;
-                childObject.GetComponent<LeanTranslate>().enabled = false;
-                childObject.GetComponent<LeanScale>().enabled = false;
-
                 // Deselect object
                 childObject.GetComponent<LeanSelectable>().Deselect();
-                Debug.Log("Child object " + childObject.name + " is de-selected and de-activated from transformation!");
-
-                // Plane detection off
-                DetectionOff();
             }
+            // Plane detection off
+            DetectionOff(); 
+        }
+
+        private void PlaceWhenDeselected()
+        {
+            if (childObject.GetComponent<LeanSelectable>().IsSelected == false)                
+            {
+                Debug.Log("Child object " + childObject.name + " is de-selected!");
+                DropSingleObject();
+            }
+            // Plane detection off
+            DetectionOff();        
+        }
+
+        private void DropSingleObject()
+        {
+            // Drop object to AR plane and enable gravity
+            childObject.GetComponent<Rigidbody>().useGravity = true;
+            childObject.GetComponent<Rigidbody>().isKinematic = false;
+            Debug.Log("Child object " + childObject.name + " gravity on!");
+
+            // Disable object tranformation
+            childObject.GetComponent<LeanRotate>().enabled = false;
+            childObject.GetComponent<LeanTranslate>().enabled = false;
+            childObject.GetComponent<LeanScale>().enabled = false;
+            Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
+
+            // Plane detection off
+            DetectionOff();   
         }
 
         public void TransformSingleObject()
         {
-            // Lift it from the AR plane; disable rigidbody
-            childObject.GetComponent<Rigidbody>().useGravity = false;
-            childObject.GetComponent<Rigidbody>().isKinematic = true;
+            // Lift object from the AR plane and make it flaot
             childObject.transform.position += Vector3.up * 0.05F;
+            child_rigidbody.useGravity = false;
+            child_rigidbody.isKinematic = true;
             Debug.Log("Child object " + childObject.name + " gravity off!");
 
             // Enable object transform
@@ -107,7 +137,7 @@ namespace UnityEngine.XR.iOS
             Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
             // Plane detection on
-            //DetectionOn();
+            DetectionOff();
         }
 
         private bool IsPointerOverUIObject()
@@ -120,13 +150,13 @@ namespace UnityEngine.XR.iOS
         }
 
 
-        public void ARPlaceObjectOnPlane()
+        public void ARPlaceObjectsOnPlane()
         {
-#if UNITY_EDITOR   //we will only use this script on the editor side, though there is nothing that would prevent it from working on device
-            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject() && m_HitTransform != null)
+            #if UNITY_EDITOR   //we will only use this script on the editor side, though there is nothing that would prevent it from working on device
+            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
             {
-                //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                Ray ray = Camera.main.ViewportPointToRay(new Vector3 (Camera.main.pixelWidth, Camera.main.pixelHeight, 0));
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+                //Ray ray = Camera.main.ViewportPointToRay(new Vector3 (Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
 
                 RaycastHit hit;
 
@@ -145,14 +175,16 @@ namespace UnityEngine.XR.iOS
 
             }
 
-            /*
-#else
+
+            #else
             if (Input.touchCount > 0 && m_HitTransform != null && isDetecting == true && !IsPointerOverUIObject())
             {
                 var touch = Input.GetTouch(0);
                 if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
                 {
                     var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
+                    //var screenPosition = Camera.main.ScreenToViewportPoint(new Vector3 (Camera.main.pixelWidth/2, Camera.main.pixelHeight/2, 0));
+
                     ARPoint point = new ARPoint {
                         x = screenPosition.x,
                         y = screenPosition.y
@@ -178,17 +210,29 @@ namespace UnityEngine.XR.iOS
                     }
                 }
             }
-            */
-#endif
-            
+
+        #endif
         }
 
 
         void Update()
         {
-            ARPlaceObjectOnPlane();
-        }
+            // Start plane detection only after setting world origin
+            if (scanButton.isActiveAndEnabled == false)
+            {
+                isDetecting = true;
+                Debug.Log("Start dectecting AR plane!");
 
+                // Raycast to place objects parent on AR plane
+                ARPlaceObjectsOnPlane();
+            }
+
+            PlaceWhenDeselected();
+
+            // Chaneg objects parents later with double tap
+           // int tapInterval = GameObject.Find("LeanFingerTap").GetComponent<LeanFingerTap>().RequiredTapInterval = 2;
+
+        }
 
     }
 }

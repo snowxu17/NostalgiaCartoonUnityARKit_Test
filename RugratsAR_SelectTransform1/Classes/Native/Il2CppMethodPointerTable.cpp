@@ -12322,12 +12322,15 @@ extern "C" void EditorHitTest__ctor_m2080560474 ();
 extern "C" void HitTest_SelectTransform__ctor_m4011811315 ();
 extern "C" void HitTest_SelectTransform_HitTestWithResultType_m3668757953 ();
 extern "C" void HitTest_SelectTransform_Start_m3821032141 ();
+extern "C" void HitTest_SelectTransform_SetWorldOrigin_m1646897179 ();
 extern "C" void HitTest_SelectTransform_DetectionOff_m2684466231 ();
 extern "C" void HitTest_SelectTransform_DetectionOn_m3359051616 ();
-extern "C" void HitTest_SelectTransform_PlaceObject_m1126075117 ();
-extern "C" void HitTest_SelectTransform_ActivateObject_m2723979429 ();
+extern "C" void HitTest_SelectTransform_PlaceWhenHitButton_m973556599 ();
+extern "C" void HitTest_SelectTransform_PlaceWhenDeselected_m3693112320 ();
+extern "C" void HitTest_SelectTransform_DropSingleObject_m2102518322 ();
+extern "C" void HitTest_SelectTransform_TransformSingleObject_m2964481681 ();
 extern "C" void HitTest_SelectTransform_IsPointerOverUIObject_m2743664396 ();
-extern "C" void HitTest_SelectTransform_ARMoving_m1121993468 ();
+extern "C" void HitTest_SelectTransform_ARPlaceObjectsOnPlane_m466868226 ();
 extern "C" void HitTest_SelectTransform_Update_m4100939781 ();
 extern "C" void MarshalDirectionalLightEstimate_get_SphericalHarmonicCoefficients_m156075873_AdjustorThunk ();
 extern "C" void MarshalDirectionalLightEstimate_MarshalCoefficients_m3384462505_AdjustorThunk ();
@@ -12713,7 +12716,7 @@ extern "C" void VideoFormatsExample_Start_m1615238214 ();
 extern "C" void VideoFormatsExample_OnDestroy_m541603283 ();
 extern "C" void VideoFormatsExample_PopulateVideoFormatButtons_m595526008 ();
 extern "C" void VideoFormatsExample_ExampletButtonPressed_m2588664126 ();
-extern const Il2CppMethodPointer g_MethodPointers[12694] = 
+extern const Il2CppMethodPointer g_MethodPointers[12697] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -25018,12 +25021,15 @@ extern const Il2CppMethodPointer g_MethodPointers[12694] =
 	HitTest_SelectTransform__ctor_m4011811315,
 	HitTest_SelectTransform_HitTestWithResultType_m3668757953,
 	HitTest_SelectTransform_Start_m3821032141,
+	HitTest_SelectTransform_SetWorldOrigin_m1646897179,
 	HitTest_SelectTransform_DetectionOff_m2684466231,
 	HitTest_SelectTransform_DetectionOn_m3359051616,
-	HitTest_SelectTransform_PlaceObject_m1126075117,
-	HitTest_SelectTransform_ActivateObject_m2723979429,
+	HitTest_SelectTransform_PlaceWhenHitButton_m973556599,
+	HitTest_SelectTransform_PlaceWhenDeselected_m3693112320,
+	HitTest_SelectTransform_DropSingleObject_m2102518322,
+	HitTest_SelectTransform_TransformSingleObject_m2964481681,
 	HitTest_SelectTransform_IsPointerOverUIObject_m2743664396,
-	HitTest_SelectTransform_ARMoving_m1121993468,
+	HitTest_SelectTransform_ARPlaceObjectsOnPlane_m466868226,
 	HitTest_SelectTransform_Update_m4100939781,
 	MarshalDirectionalLightEstimate_get_SphericalHarmonicCoefficients_m156075873_AdjustorThunk,
 	MarshalDirectionalLightEstimate_MarshalCoefficients_m3384462505_AdjustorThunk,

@@ -102,6 +102,8 @@ struct AsyncCallback_t3962456242;
 struct Transform_t3600365921;
 // UnityEngine.UI.Button
 struct Button_t4055032469;
+// UnityEngine.Rigidbody
+struct Rigidbody_t3916780224;
 // UnityEngine.SkinnedMeshRenderer
 struct SkinnedMeshRenderer_t245602842;
 // System.Collections.Generic.List`1<Lean.Touch.LeanTouch>
@@ -158,8 +160,6 @@ struct MeshFilter_t3523625662;
 struct UnityARSessionNativeInterface_t3929719369;
 // UnityEngine.Mesh
 struct Mesh_t3648964284;
-// UnityEngine.Rigidbody
-struct Rigidbody_t3916780224;
 // UnityEngine.UI.Slider
 struct Slider_t3903728902;
 // ARReferenceImage
@@ -4430,10 +4430,14 @@ public:
 	LayerMask_t3493934918  ___collisionLayer_4;
 	// System.Boolean UnityEngine.XR.iOS.HitTest_SelectTransform::isDetecting
 	bool ___isDetecting_5;
+	// UnityEngine.UI.Button UnityEngine.XR.iOS.HitTest_SelectTransform::scanButton
+	Button_t4055032469 * ___scanButton_6;
 	// UnityEngine.UI.Button UnityEngine.XR.iOS.HitTest_SelectTransform::placeObjectButton
-	Button_t4055032469 * ___placeObjectButton_6;
+	Button_t4055032469 * ___placeObjectButton_7;
 	// UnityEngine.GameObject UnityEngine.XR.iOS.HitTest_SelectTransform::childObject
-	GameObject_t1113636619 * ___childObject_7;
+	GameObject_t1113636619 * ___childObject_8;
+	// UnityEngine.Rigidbody UnityEngine.XR.iOS.HitTest_SelectTransform::child_rigidbody
+	Rigidbody_t3916780224 * ___child_rigidbody_9;
 
 public:
 	inline static int32_t get_offset_of_m_HitTransform_2() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___m_HitTransform_2)); }
@@ -4469,22 +4473,40 @@ public:
 		___isDetecting_5 = value;
 	}
 
-	inline static int32_t get_offset_of_placeObjectButton_6() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___placeObjectButton_6)); }
-	inline Button_t4055032469 * get_placeObjectButton_6() const { return ___placeObjectButton_6; }
-	inline Button_t4055032469 ** get_address_of_placeObjectButton_6() { return &___placeObjectButton_6; }
-	inline void set_placeObjectButton_6(Button_t4055032469 * value)
+	inline static int32_t get_offset_of_scanButton_6() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___scanButton_6)); }
+	inline Button_t4055032469 * get_scanButton_6() const { return ___scanButton_6; }
+	inline Button_t4055032469 ** get_address_of_scanButton_6() { return &___scanButton_6; }
+	inline void set_scanButton_6(Button_t4055032469 * value)
 	{
-		___placeObjectButton_6 = value;
-		Il2CppCodeGenWriteBarrier((&___placeObjectButton_6), value);
+		___scanButton_6 = value;
+		Il2CppCodeGenWriteBarrier((&___scanButton_6), value);
 	}
 
-	inline static int32_t get_offset_of_childObject_7() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___childObject_7)); }
-	inline GameObject_t1113636619 * get_childObject_7() const { return ___childObject_7; }
-	inline GameObject_t1113636619 ** get_address_of_childObject_7() { return &___childObject_7; }
-	inline void set_childObject_7(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_placeObjectButton_7() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___placeObjectButton_7)); }
+	inline Button_t4055032469 * get_placeObjectButton_7() const { return ___placeObjectButton_7; }
+	inline Button_t4055032469 ** get_address_of_placeObjectButton_7() { return &___placeObjectButton_7; }
+	inline void set_placeObjectButton_7(Button_t4055032469 * value)
 	{
-		___childObject_7 = value;
-		Il2CppCodeGenWriteBarrier((&___childObject_7), value);
+		___placeObjectButton_7 = value;
+		Il2CppCodeGenWriteBarrier((&___placeObjectButton_7), value);
+	}
+
+	inline static int32_t get_offset_of_childObject_8() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___childObject_8)); }
+	inline GameObject_t1113636619 * get_childObject_8() const { return ___childObject_8; }
+	inline GameObject_t1113636619 ** get_address_of_childObject_8() { return &___childObject_8; }
+	inline void set_childObject_8(GameObject_t1113636619 * value)
+	{
+		___childObject_8 = value;
+		Il2CppCodeGenWriteBarrier((&___childObject_8), value);
+	}
+
+	inline static int32_t get_offset_of_child_rigidbody_9() { return static_cast<int32_t>(offsetof(HitTest_SelectTransform_t1127552319, ___child_rigidbody_9)); }
+	inline Rigidbody_t3916780224 * get_child_rigidbody_9() const { return ___child_rigidbody_9; }
+	inline Rigidbody_t3916780224 ** get_address_of_child_rigidbody_9() { return &___child_rigidbody_9; }
+	inline void set_child_rigidbody_9(Rigidbody_t3916780224 * value)
+	{
+		___child_rigidbody_9 = value;
+		Il2CppCodeGenWriteBarrier((&___child_rigidbody_9), value);
 	}
 };
 
@@ -8767,14 +8789,16 @@ extern const int32_t g_FieldOffsetTable2127[4] =
 	getTouch_t1034899541::get_offset_of_particle_5(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2128 = { sizeof (HitTest_SelectTransform_t1127552319), -1, 0, 0 };
-extern const int32_t g_FieldOffsetTable2128[6] = 
+extern const int32_t g_FieldOffsetTable2128[8] = 
 {
 	HitTest_SelectTransform_t1127552319::get_offset_of_m_HitTransform_2(),
 	HitTest_SelectTransform_t1127552319::get_offset_of_maxRayDistance_3(),
 	HitTest_SelectTransform_t1127552319::get_offset_of_collisionLayer_4(),
 	HitTest_SelectTransform_t1127552319::get_offset_of_isDetecting_5(),
-	HitTest_SelectTransform_t1127552319::get_offset_of_placeObjectButton_6(),
-	HitTest_SelectTransform_t1127552319::get_offset_of_childObject_7(),
+	HitTest_SelectTransform_t1127552319::get_offset_of_scanButton_6(),
+	HitTest_SelectTransform_t1127552319::get_offset_of_placeObjectButton_7(),
+	HitTest_SelectTransform_t1127552319::get_offset_of_childObject_8(),
+	HitTest_SelectTransform_t1127552319::get_offset_of_child_rigidbody_9(),
 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2129 = { sizeof (onClickForScaling_t1221607291), -1, 0, 0 };
 extern const Il2CppTypeDefinitionSizes g_typeDefinitionSize2130 = { sizeof (placeObject_t3085228469), -1, 0, 0 };

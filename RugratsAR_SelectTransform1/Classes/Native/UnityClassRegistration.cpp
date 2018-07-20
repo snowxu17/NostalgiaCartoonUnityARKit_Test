@@ -151,7 +151,7 @@ class BoxCollider; template <> void RegisterClass<BoxCollider>(const char*);
 class CapsuleCollider; 
 class CharacterController; 
 class MeshCollider; template <> void RegisterClass<MeshCollider>(const char*);
-class SphereCollider; template <> void RegisterClass<SphereCollider>(const char*);
+class SphereCollider; 
 class TerrainCollider; 
 class WheelCollider; 
 namespace Unity { class Joint; } 
@@ -201,7 +201,7 @@ class AudioMixerGroup;
 class AudioMixerGroupController; 
 class AudioMixerSnapshot; 
 class AudioMixerSnapshotController; 
-class Avatar; 
+class Avatar; template <> void RegisterClass<Avatar>(const char*);
 class AvatarMask; 
 class BillboardAsset; 
 class ComputeShader; 
@@ -443,7 +443,7 @@ RegisterBuiltinTypes();
 	RegisterClass<FlareLayer>("Core");
 	//77. PhysicMaterial
 	RegisterClass<PhysicMaterial>("Physics");
-	//78. SphereCollider
-	RegisterClass<SphereCollider>("Physics");
+	//78. Avatar
+	RegisterClass<Avatar>("Animation");
 
 }

@@ -5,13 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Rugrats_TransformSelect.unity
     guid: eac6c3b6e2c724cbc8fe09be2bc0fc62
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit1.5/UnityARSetWorldOrigin/UnityARSetWorldOrigin.unity
     guid: 3a34cd3250ee14e1c802e3b4aed373c8
-  - enabled: 1
+  - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/ARKit1.5/UnityARKitRelocalize/UnityARKitRelocalize.unity
     guid: d44ef812aa5c94b71884c70a9518c644
   m_configObjects: {}
