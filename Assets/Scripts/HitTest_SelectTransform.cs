@@ -13,13 +13,13 @@ namespace UnityEngine.XR.iOS
         public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
         bool isDetecting;
+        bool parentPlaced = false;
 
-        Button scanButton;
-        Button placeObjectButton;
+        public Button scanButton;
+        public Button placeObjectButton;
 
         GameObject childObject;
-        Rigidbody child_rigidbody;
-
+        Rigidbody child_rigidbody;    
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
         {
@@ -39,18 +39,24 @@ namespace UnityEngine.XR.iOS
             return false;
         }
 
-        protected virtual void Start()
+        public void Start()
         {
             childObject = gameObject.transform.GetChild(1).gameObject;
             child_rigidbody = childObject.GetComponent<Rigidbody>();
             Debug.Log("Accessing child named " + childObject.name);
 
             scanButton = GameObject.Find("Button_setWorldOrigin").GetComponent<Button>();
-            scanButton.onClick.AddListener(SetWorldOrigin);
+            scanButton.onClick.AddListener(resetScene);
 
             placeObjectButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
             placeObjectButton.onClick.AddListener(PlaceWhenHitButton);
 
+        }
+
+        public void resetScene()
+        {
+            ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.HorizontalAndVertical);
+            UnityARSessionNativeInterface.GetARSessionNativeInterface().RunWithConfigAndOptions(sessionConfig, UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking);
         }
 
         public void SetWorldOrigin()
@@ -164,13 +170,23 @@ namespace UnityEngine.XR.iOS
                 //effectively similar to calling HitTest with ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent
                 if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
                 {
-                    //we're going to get the position from the contact point
-                    m_HitTransform.position = hit.point;
-                    Debug.Log(string.Format("x:{0:0.######} y:{1:0.######} z:{2:0.######}",
-                                            m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
+                    
+                    parentPlaced = true;
 
-                    //and the rotation from the transform of the plane collider
-                    m_HitTransform.rotation = hit.transform.rotation;
+                    if (parentPlaced == true)
+                    {
+                        //we're going to get the position from the contact point
+                        m_HitTransform.position = hit.point;
+                        Debug.Log(string.Format("Position x:{0:0.######} y:{1:0.######} z:{2:0.######}",
+                                                m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
+
+                        //and the rotation from the transform of the plane collider
+                        m_HitTransform.rotation = hit.transform.rotation;
+                        Debug.Log(string.Format("Rotation x:{0:0.######} y:{1:0.######} z:{2:0.######}",
+                                                m_HitTransform.rotation.x, m_HitTransform.rotation.y, m_HitTransform.rotation.z));
+
+                        parentPlaced = false;
+                    }
                 }
 
             }
@@ -213,16 +229,23 @@ namespace UnityEngine.XR.iOS
 
         #endif
         }
-
+        
 
         void Update()
         {
             // Start plane detection only after setting world origin
+            if (scanButton.isActiveAndEnabled == true)
+            {
+                placeObjectButton.gameObject.SetActive(false);
+            }
+
+            // Start detecting planes
             if (scanButton.isActiveAndEnabled == false)
             {
                 isDetecting = true;
                 Debug.Log("Start dectecting AR plane!");
-
+                // Show placeobejct botton
+                placeObjectButton.gameObject.SetActive(true);
                 // Raycast to place objects parent on AR plane
                 ARPlaceObjectsOnPlane();
             }

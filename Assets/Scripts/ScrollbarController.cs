@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using Lean.Touch;
+using UnityEngine.XR.iOS;
 
 public class ScrollbarController : MonoBehaviour
 {
     public Button showScrollbar;
     public Button hideScrollbar;
     public Scrollbar scrollbar;
+    public GameObject hitTestObj;
 
     [Tooltip("Ignore fingers with StartedOverGui?")]
     public bool IgnoreStartedOverGui = false;
@@ -42,12 +44,12 @@ public class ScrollbarController : MonoBehaviour
 
     protected virtual void Start()
     {
-        scrollbar.gameObject.SetActive(false);
-        showScrollbar.onClick.AddListener(ShowTimeUI);
-        hideScrollbar.onClick.AddListener(HideTimeUI);
+        //scrollbar.gameObject.SetActive(false);
+        //showScrollbar.onClick.AddListener(ShowTimeUI);
+        //hideScrollbar.onClick.AddListener(HideTimeUI);
 
-        Relative = true;
-        size = scrollbar.GetComponent<Scrollbar>().size = 0.04f;
+        Relative = false;
+        size = scrollbar.GetComponent<Scrollbar>().size = 0.05f;
 
         if (RequiredSelectable == null)
         {
@@ -59,34 +61,61 @@ public class ScrollbarController : MonoBehaviour
     {
         showScrollbar.gameObject.SetActive(false);
         scrollbar.gameObject.SetActive(true);
+
+        // Hide restart and place obeject UI
+        //hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(false);
     }
 
     protected virtual void HideTimeUI()
     {
         showScrollbar.gameObject.SetActive(true);
         scrollbar.gameObject.SetActive(false);
+
+        // Show restart and place obeject UI
+        //hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(true);
+
     }
 
     protected virtual void update()
     {
+        /*
+        if (hitTestObj.GetComponent<HitTest_SelectTransform>().scanButton.isActiveAndEnabled == true)
+        {
+            HideTimeUI();
+        }
+        else
+        {
+            ShowTimeUI();
+        }
+        */
+
         var fingers = LeanSelectable.GetFingersOrClear(IgnoreStartedOverGui, IgnoreIsOverGui, RequiredFingerCount, RequiredSelectable);
         var pinchScale = LeanGesture.GetPinchScale(fingers, WheelSensitivity);
 
         // Turn off trasnform for obeject when pinch for time bar??
 
-        size = size * pinchScale;
-
-        /*if (pinchScale > 0.0f)
+        if (Relative == true)
         {
+            //size = 1.0f;
+            scrollbar.GetComponent<Scrollbar>().size = 1.0f;
+        }
+
+        if (pinchScale > 0.0f)
+        {
+            pinchScale = Mathf.Clamp(pinchScale, 0, 1);
+            //size = size * pinchScale;
+            //size = pinchScale;        
+
             // Perform the translation if this is a relative scale
+            /*
             if (Relative == true)
             {
                 var pinchScreenCenter = LeanGesture.GetScreenCenter(fingers);                        
             }
-
+            */
             // Perform the scaling
-            Scale(transform.localScale * pinchScale);
+            //Scale(transform.localScale * pinchScale);
         }
-        */
+        
     }
 }
