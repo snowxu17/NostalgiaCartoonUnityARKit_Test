@@ -44,9 +44,9 @@ public class ScrollbarController : MonoBehaviour
 
     protected virtual void Start()
     {
-        //scrollbar.gameObject.SetActive(false);
-        //showScrollbar.onClick.AddListener(ShowTimeUI);
-        //hideScrollbar.onClick.AddListener(HideTimeUI);
+        scrollbar.gameObject.SetActive(false);
+        showScrollbar.onClick.AddListener(ShowTimeUI);
+        hideScrollbar.onClick.AddListener(HideTimeUI);
 
         Relative = false;
         size = scrollbar.GetComponent<Scrollbar>().size = 0.05f;
@@ -63,7 +63,7 @@ public class ScrollbarController : MonoBehaviour
         scrollbar.gameObject.SetActive(true);
 
         // Hide restart and place obeject UI
-        //hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(false);
+        hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(false);
     }
 
     protected virtual void HideTimeUI()
@@ -72,13 +72,13 @@ public class ScrollbarController : MonoBehaviour
         scrollbar.gameObject.SetActive(false);
 
         // Show restart and place obeject UI
-        //hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(true);
+        hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(true);
 
     }
 
     protected virtual void update()
     {
-        /*
+        
         if (hitTestObj.GetComponent<HitTest_SelectTransform>().scanButton.isActiveAndEnabled == true)
         {
             HideTimeUI();
@@ -87,7 +87,7 @@ public class ScrollbarController : MonoBehaviour
         {
             ShowTimeUI();
         }
-        */
+
 
         var fingers = LeanSelectable.GetFingersOrClear(IgnoreStartedOverGui, IgnoreIsOverGui, RequiredFingerCount, RequiredSelectable);
         var pinchScale = LeanGesture.GetPinchScale(fingers, WheelSensitivity);
