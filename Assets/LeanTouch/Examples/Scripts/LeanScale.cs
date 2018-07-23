@@ -78,6 +78,7 @@ namespace Lean.Touch
 
 				// Perform the scaling
 				Scale(transform.localScale * pinchScale);
+                Debug.Log("Pinch scale:" + pinchScale);
 			}
 		}
 

@@ -40,16 +40,17 @@ public class ScrollbarController : MonoBehaviour
     [Tooltip("The maximum scale value on all axes")]
     public Vector3 ScaleMax;
 
-    float size;
+    public float map;
 
     protected virtual void Start()
     {
+        Relative = false;
         scrollbar.gameObject.SetActive(false);
+
         showScrollbar.onClick.AddListener(ShowTimeUI);
         hideScrollbar.onClick.AddListener(HideTimeUI);
 
-        Relative = false;
-        size = scrollbar.GetComponent<Scrollbar>().size = 0.05f;
+        scrollbar.GetComponent<Scrollbar>().size = 0.05f;
 
         if (RequiredSelectable == null)
         {
@@ -60,62 +61,34 @@ public class ScrollbarController : MonoBehaviour
     protected virtual void ShowTimeUI()
     {
         showScrollbar.gameObject.SetActive(false);
-        scrollbar.gameObject.SetActive(true);
-
-        // Hide restart and place obeject UI
-        hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(false);
+        scrollbar.gameObject.SetActive(true);       
     }
 
     protected virtual void HideTimeUI()
     {
         showScrollbar.gameObject.SetActive(true);
         scrollbar.gameObject.SetActive(false);
-
-        // Show restart and place obeject UI
-        hitTestObj.GetComponent<HitTest_SelectTransform>().placeObjectButton.gameObject.SetActive(true);
-
     }
 
-    protected virtual void update()
+    public void Update()
     {
-        
-        if (hitTestObj.GetComponent<HitTest_SelectTransform>().scanButton.isActiveAndEnabled == true)
-        {
-            HideTimeUI();
-        }
-        else
-        {
-            ShowTimeUI();
-        }
-
-
         var fingers = LeanSelectable.GetFingersOrClear(IgnoreStartedOverGui, IgnoreIsOverGui, RequiredFingerCount, RequiredSelectable);
         var pinchScale = LeanGesture.GetPinchScale(fingers, WheelSensitivity);
 
-        // Turn off trasnform for obeject when pinch for time bar??
-
         if (Relative == true)
         {
-            //size = 1.0f;
-            scrollbar.GetComponent<Scrollbar>().size = 1.0f;
+
         }
 
-        if (pinchScale > 0.0f)
-        {
-            pinchScale = Mathf.Clamp(pinchScale, 0, 1);
-            //size = size * pinchScale;
-            //size = pinchScale;        
+        //if (pinchScale > 0.0f)
+        //{           
 
-            // Perform the translation if this is a relative scale
-            /*
-            if (Relative == true)
-            {
-                var pinchScreenCenter = LeanGesture.GetScreenCenter(fingers);                        
-            }
-            */
-            // Perform the scaling
-            //Scale(transform.localScale * pinchScale);
-        }
+            Mathf.Lerp(0.0f, 1.0f, (pinchScale - 0.9f) / (1.0f - 0.9f));
+
+            Debug.Log("Pinch Scale : " + pinchScale);
+
+            scrollbar.GetComponent<Scrollbar>().size = pinchScale;                   
+        //}
         
     }
 }
