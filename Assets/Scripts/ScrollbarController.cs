@@ -75,18 +75,11 @@ public class ScrollbarController : MonoBehaviour
         var fingers = LeanSelectable.GetFingersOrClear(IgnoreStartedOverGui, IgnoreIsOverGui, RequiredFingerCount, RequiredSelectable);
         var pinchScale = LeanGesture.GetPinchScale(fingers, WheelSensitivity);
 
-        if (Relative == true)
-        {
-
-        }
-
         //if (pinchScale > 0.0f)
         //{           
 
             Mathf.Lerp(0.0f, 1.0f, (pinchScale - 0.9f) / (1.0f - 0.9f));
-
-            Debug.Log("Pinch Scale : " + pinchScale);
-
+            Debug.Log("Pinch Scaleeeee : " + pinchScale);
             scrollbar.GetComponent<Scrollbar>().size = pinchScale;                   
         //}
         
