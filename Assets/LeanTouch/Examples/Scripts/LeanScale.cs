@@ -49,6 +49,9 @@ namespace Lean.Touch
 			{
 				RequiredSelectable = GetComponent<LeanSelectable>();
 			}
+
+            //ScaleMin = new Vector3 (0.1f, 0.1f, 0.1f);
+            ScaleMax = new Vector3 (10f, 10f, 10f);
 		}
 
 		protected virtual void Update()

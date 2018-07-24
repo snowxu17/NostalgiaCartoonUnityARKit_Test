@@ -6,9 +6,7 @@ using UnityEngine.XR.iOS;
 
 public class UIManager : MonoBehaviour {
 
-    GameObject parentObject;
-    GameObject childObject;
-
+    //public  GameObject parentObject;
     public Button scanButton;
     public Button placeObjectButton;
     public Button restartButton;
@@ -17,15 +15,6 @@ public class UIManager : MonoBehaviour {
 
     void Start ()
     {
-        /*parentObject = GameObject.Find("HitCubeParent");
-
-        for ( int i = 0; i < gameObject.transform.childCount; i++)
-        {
-            childObject = gameObject.transform.GetChild(i).GetChild(1).gameObject;
-            Debug.Log("Accessing child obejct :" + childObject.name);
-        }
-        */
-
         scanButton.onClick.AddListener(SetWorldOrigin);      
     }
 
@@ -37,30 +26,24 @@ public class UIManager : MonoBehaviour {
 
     void Update () {
         
-        // Hide UI bottons when reset world orgin
+        // Hide UI bottons when reset world orgin button is on
         if (scanButton.isActiveAndEnabled == true)
         {
             placeObjectButton.gameObject.SetActive(false);
             restartButton.gameObject.SetActive(false);
             showScrollbar.gameObject.SetActive(false);
-
-            //childObject.GetComponent<LeanSelectable>().enabled = false;
         }
      
+        // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
-        {
-            //childObject.GetComponent<LeanSelectable>().enabled = true;
-            
-            // Show UI bottons
+        {                        
             placeObjectButton.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
 
-            if (scrollBar.isActiveAndEnabled == false)
+            if(scrollBar.isActiveAndEnabled == false)
             {
-                //showScrollbar.gameObject.SetActive(true);
+                showScrollbar.gameObject.SetActive(true);
             }
-
         }
-
-}
+    }
 }

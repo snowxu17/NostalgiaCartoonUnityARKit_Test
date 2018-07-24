@@ -42,14 +42,15 @@ namespace UnityEngine.XR.iOS
         {
             childObject = gameObject.transform.GetChild(0).gameObject;
             child_rigidbody = childObject.GetComponent<Rigidbody>();
+            Debug.Log("Accessing child: " + childObject.name);
+
             scanButton = GameObject.Find("Button_setWorldOrigin").GetComponent<Button>();
         }
 
         public void PlaceWhenHitButton()
         {
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
-            {
-                // Deselect object
+            {                
                 childObject.GetComponent<LeanSelectable>().Deselect();
 
                 isDetecting = false;
@@ -57,7 +58,7 @@ namespace UnityEngine.XR.iOS
             }
         }
 
-        private void PlaceWhenDeselected()
+        public void PlaceWhenDeselected()
         {
             if (childObject.GetComponent<LeanSelectable>().IsSelected == false)
             {
@@ -65,18 +66,18 @@ namespace UnityEngine.XR.iOS
             }
         }
 
-        private void DropSingleObject()
+        public void DropSingleObject()
         {
             // Drop object to AR plane and enable gravity
             childObject.GetComponent<Rigidbody>().useGravity = true;
             childObject.GetComponent<Rigidbody>().isKinematic = false;
-            //Debug.Log("Child object " + childObject.name + " gravity on!");
+            Debug.Log("Child object " + childObject.name + " gravity on!");
 
             // Disable object tranformation
             childObject.GetComponent<LeanRotate>().enabled = false;
             childObject.GetComponent<LeanTranslate>().enabled = false;
             childObject.GetComponent<LeanScale>().enabled = false;
-            //Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
+            Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
  
             isDetecting = false;
             childPlaced = true;
@@ -88,13 +89,13 @@ namespace UnityEngine.XR.iOS
             childObject.transform.position += Vector3.up * 0.05F;
             child_rigidbody.useGravity = false;
             child_rigidbody.isKinematic = true;
-            //Debug.Log("Child object " + childObject.name + " gravity off!");
+            Debug.Log("Child object " + childObject.name + " gravity off!");
 
             // Enable object transform
             //childObject.GetComponent<LeanRotate>().enabled = true;
             childObject.GetComponent<LeanTranslate>().enabled = true;
             childObject.GetComponent<LeanScale>().enabled = true;
-            //Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
+            Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
             isDetecting = false;
             childPlaced = true;
@@ -113,7 +114,7 @@ namespace UnityEngine.XR.iOS
 
         public void ARPlaceObjectsOnPlane()
         {
-            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
+            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonUp(0) && isDetecting == true && !IsPointerOverUIObject())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //Ray ray = Camera.main.ViewportPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -125,8 +126,9 @@ namespace UnityEngine.XR.iOS
                 if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
                 {
                     parentPlaced = true;
+                    childPlaced = true;
 
-                    if (parentPlaced == true)
+                    if (parentPlaced == true && childPlaced == true)
                     {
                         //we're going to get the position from the contact point
                         m_HitTransform.position = hit.point;
@@ -137,6 +139,7 @@ namespace UnityEngine.XR.iOS
                         m_HitTransform.rotation = hit.transform.rotation;
 
                         parentPlaced = false;
+                        childPlaced = false;
                         isDetecting = false;
                     }
                 }
@@ -146,11 +149,15 @@ namespace UnityEngine.XR.iOS
 
         void Update()
         {
+            if (scanButton.isActiveAndEnabled == true)
+            {
+                childObject.GetComponent<LeanSelectable>().enabled = false;
+            }
 
             // and when not in the state of transform or select
             if (scanButton.isActiveAndEnabled == false)
             {
-                //childObject.GetComponent<LeanSelectable>().enabled = true;
+                childObject.GetComponent<LeanSelectable>().enabled = true;
 
                 if (childObject.GetComponent<LeanSelectable>().IsSelected == false && childPlaced == false)
                 {
@@ -163,7 +170,5 @@ namespace UnityEngine.XR.iOS
                 PlaceWhenDeselected();
             }
         }
-            // Chaneg objects parents later with double tap
-            // int tapInterval = GameObject.Find("LeanFingerTap").GetComponent<LeanFingerTap>().RequiredTapInterval = 2;
     }
 }
