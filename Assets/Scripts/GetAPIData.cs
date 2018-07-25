@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System.IO;
 using SimpleJSON;
 
-public class GetData : MonoBehaviour {
+public class GetAPIData : MonoBehaviour {
 
     private string POSTS_ENDPOINT = "https://api.crowdtangle.com/posts";
     private string API_TOKEN = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
@@ -16,7 +16,7 @@ public class GetData : MonoBehaviour {
     public string sortBy = "total_interactions";
     public int count = 10;
 
-
+    public int score;
 
     public Text responseText;
 
@@ -56,7 +56,7 @@ public class GetData : MonoBehaviour {
         {
             string message = post["message"].Value;
             string account = post["account"]["name"].Value;
-            int score = post["score"].AsInt;
+            score = post["score"].AsInt;
             Debug.Log("Account name: " + account + "; Caption: " + message + "; Score: " + score);
             //Debug.Log(message);
             //Debug.Log("score);

@@ -694,6 +694,7 @@ MonoBehaviour:
   ScaleClamp: 0
   ScaleMin: {x: 0, y: 0, z: 0}
   ScaleMax: {x: 10, y: 10, z: 10}
+  pinch: 0
 --- !u!114 &561823433
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1196,6 +1197,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 1310939383}
     m_Modifications:
+    - target: {fileID: 114819254051621792, guid: 412e5a48e286a1f4eacad8da7edf2ccf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224866009823910810, guid: 412e5a48e286a1f4eacad8da7edf2ccf,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -1295,7 +1301,7 @@ Prefab:
         type: 2}
       propertyPath: hitTestObj
       value: 
-      objectReference: {fileID: 2095145724}
+      objectReference: {fileID: 1286139107}
     - target: {fileID: 224799334136319508, guid: 412e5a48e286a1f4eacad8da7edf2ccf,
         type: 2}
       propertyPath: m_AnchorMax.x
@@ -1345,6 +1351,16 @@ Prefab:
         type: 2}
       propertyPath: Relative
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819254051621792, guid: 412e5a48e286a1f4eacad8da7edf2ccf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819254051621792, guid: 412e5a48e286a1f4eacad8da7edf2ccf,
+        type: 2}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 412e5a48e286a1f4eacad8da7edf2ccf, type: 2}
@@ -1429,6 +1445,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  scrollbar: {fileID: 128313668}
 --- !u!1 &1241325548
 GameObject:
   m_ObjectHideFlags: 0
@@ -2332,6 +2349,7 @@ MonoBehaviour:
   ScaleClamp: 1
   ScaleMin: {x: 0, y: 0, z: 0}
   ScaleMax: {x: 10, y: 10, z: 10}
+  pinch: 0
 --- !u!114 &1874685950
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2573,6 +2591,7 @@ MonoBehaviour:
   listOfPositions: []
   scr: 0
   thresh: 0
+  api: {fileID: 0}
 --- !u!4 &2049482015
 Transform:
   m_ObjectHideFlags: 0
@@ -2678,6 +2697,7 @@ MonoBehaviour:
   collisionLayer:
     serializedVersion: 2
     m_Bits: 1024
+  scrollbar: {fileID: 128313668}
 --- !u!1 &2133521672
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,4 +2760,5 @@ MonoBehaviour:
   endDate: 2018-07-01
   sortBy: total_interactions
   count: 10
+  score: 0
   responseText: {fileID: 0}

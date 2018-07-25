@@ -41,9 +41,12 @@ public class ManagerScript : MonoBehaviour {
 
     public int scr;
     public int thresh;
-        /// <summary>
-        /// ///
-        /// </summary>
+
+    public GetAPIData api;
+
+    /// <summary>
+    /// ///
+    /// </summary>
 
 
     private void Awake()

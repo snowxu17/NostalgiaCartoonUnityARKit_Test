@@ -122,8 +122,8 @@ namespace Lean.Touch
 
 			if (camera != null)
 			{
-				var axis = transform.InverseTransformDirection(camera.transform.forward);
-
+				//var axis = transform.InverseTransformDirection(camera.transform.forward);
+                var axis = transform.InverseTransformDirection(camera.transform.up);
 				transform.rotation *= Quaternion.AngleAxis(twistDegrees, axis);
 			}
 		}

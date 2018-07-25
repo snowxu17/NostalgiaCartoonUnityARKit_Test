@@ -15,10 +15,13 @@ namespace UnityEngine.XR.iOS
         GameObject childObject;
         Rigidbody child_rigidbody;
         Button scanButton;
+        public Scrollbar scrollbar;
 
         bool isDetecting = false;
         bool parentPlaced = false;
         bool childPlaced = false;
+
+        bool timeChange = false;
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
         {
@@ -45,6 +48,7 @@ namespace UnityEngine.XR.iOS
             Debug.Log("Accessing child: " + childObject.name);
 
             scanButton = GameObject.Find("Button_setWorldOrigin").GetComponent<Button>();
+            //scrollbar = GameObject.Find("Scrollbar_time").GetComponent<Scrollbar>();
         }
 
         public void PlaceWhenHitButton()
@@ -92,7 +96,7 @@ namespace UnityEngine.XR.iOS
             Debug.Log("Child object " + childObject.name + " gravity off!");
 
             // Enable object transform
-            //childObject.GetComponent<LeanRotate>().enabled = true;
+            childObject.GetComponent<LeanRotate>().enabled = true;
             childObject.GetComponent<LeanTranslate>().enabled = true;
             childObject.GetComponent<LeanScale>().enabled = true;
             Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
@@ -100,6 +104,29 @@ namespace UnityEngine.XR.iOS
             isDetecting = false;
             childPlaced = true;
 
+        }
+
+        private void DeselectOnTimeChange()
+        {
+            if (timeChange == true)
+            {
+                childObject.GetComponent<LeanSelectable>().enabled = false;
+            }
+
+            if (timeChange == false)
+            {
+                childObject.GetComponent<LeanSelectable>().enabled = true;
+            }
+
+            if (scrollbar.isActiveAndEnabled == true)
+            {
+                timeChange = true;
+            }
+
+            if (scrollbar.isActiveAndEnabled == false)
+            {
+                timeChange = false;
+            }
         }
 
         private bool IsPointerOverUIObject()
@@ -169,6 +196,8 @@ namespace UnityEngine.XR.iOS
 
                 PlaceWhenDeselected();
             }
+
+            DeselectOnTimeChange();
         }
     }
 }

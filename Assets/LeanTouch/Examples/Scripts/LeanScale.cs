@@ -36,6 +36,8 @@ namespace Lean.Touch
 		[Tooltip("The maximum scale value on all axes")]
 		public Vector3 ScaleMax;
 
+        public float pinch;
+
 #if UNITY_EDITOR
 		protected virtual void Reset()
 		{
@@ -61,6 +63,8 @@ namespace Lean.Touch
 
 			// Calculate pinch scale, and make sure it's valid
 			var pinchScale = LeanGesture.GetPinchScale(fingers, WheelSensitivity);
+
+            pinch = pinchScale;
 
 			if (pinchScale > 0.0f)
 			{
