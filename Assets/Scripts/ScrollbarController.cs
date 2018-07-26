@@ -79,7 +79,7 @@ public class ScrollbarController : MonoBehaviour
                 timeChange = true;
 
                 scrollbar.GetComponent<Scrollbar>().size += deltaMagnitudeDiff * zoomSpeed;
-                scrollbar.GetComponent<Scrollbar>().size = Mathf.Max(scrollbar.GetComponent<Scrollbar>().size, 0.1f);
+                scrollbar.GetComponent<Scrollbar>().size = Mathf.Max(scrollbar.GetComponent<Scrollbar>().size, 1.0f);
             }
 
             else

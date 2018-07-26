@@ -141,7 +141,7 @@ namespace UnityEngine.XR.iOS
 
         public void ARPlaceObjectsOnPlane()
         {
-            if (Input.GetMouseButtonDown(0) && Input.GetMouseButtonUp(0) && isDetecting == true && !IsPointerOverUIObject())
+            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //Ray ray = Camera.main.ViewportPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -180,19 +180,22 @@ namespace UnityEngine.XR.iOS
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
             }
-
-            // and when not in the state of transform or select
+           
             if (scanButton.isActiveAndEnabled == false)
             {
+                isDetecting = true;
+                Debug.Log("Is detecting!");
+
                 childObject.GetComponent<LeanSelectable>().enabled = true;
 
                 if (childObject.GetComponent<LeanSelectable>().IsSelected == false && childPlaced == false)
                 {
-                    isDetecting = true;
-                    Debug.Log("Is detecting!");
+                    //isDetecting = true;
+                    //Debug.Log("Is detecting!");
 
                     ARPlaceObjectsOnPlane();
                 }
+                
 
                 PlaceWhenDeselected();
             }
