@@ -42,8 +42,6 @@ public class ManagerScript : MonoBehaviour {
     public int scr;
     public int thresh;
 
-    public GetAPIData api;
-
     /// <summary>
     /// ///
     /// </summary>

@@ -2770,6 +2770,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2049482015}
   - component: {fileID: 2049482014}
+  - component: {fileID: 2049482016}
   m_Layer: 0
   m_Name: ManagerScript
   m_TagString: Untagged
@@ -2789,11 +2790,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempType: 0
-  worlds: []
-  listOfPositions: []
+  worlds:
+  - objectReferences:
+    - {fileID: 0}
+    - {fileID: 0}
+    worldReference: 0
+  - objectReferences:
+    - {fileID: 0}
+    - {fileID: 0}
+    worldReference: 1
+  listOfPositions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
   scr: 0
   thresh: 0
-  api: {fileID: 0}
 --- !u!4 &2049482015
 Transform:
   m_ObjectHideFlags: 0
@@ -2807,6 +2818,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2049482016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2049482013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa6a70013aa6ff34c92f795d5341dd8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempType: 0
+  ids:
+  - showIds: 66ec0100
+    showReference: 0
+  - showIds: da1a0200
+    showReference: 1
+  startDate: 2018-05-01
+  endDate: 2018-07-01
+  sortBy: total_interactions
+  count: 10
+  score: 0
+  responseText: {fileID: 0}
 --- !u!1001 &2093535992
 Prefab:
   m_ObjectHideFlags: 0
@@ -2957,7 +2991,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa6a70013aa6ff34c92f795d5341dd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  listIds: 126054
+  tempType: 0
+  ids: []
   startDate: 2018-05-01
   endDate: 2018-07-01
   sortBy: total_interactions

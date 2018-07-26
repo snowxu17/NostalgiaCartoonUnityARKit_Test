@@ -6,7 +6,7 @@ using System.IO;
 using SimpleJSON;
 
 [System.Serializable]
-public enum showIDs
+public enum showTypes
 {
     RUGRATS,
     HEYARNOLD
@@ -14,18 +14,25 @@ public enum showIDs
 
 public class GetAPIData : MonoBehaviour {
 
+    [System.Serializable]
+    public struct showIdList
+    {
+        [Tooltip("FB Rugrats ID: 126054, IG Rugrats ID: 625259, FB HeyArnold ID: 137946 , IG HeyArnold ID: 625251 ")]
+        public int[] showIds;
+        public showTypes showReference;
+    }
+
+    public showTypes tempType;
+    public showIdList[] ids;
+
     private string POSTS_ENDPOINT = "https://api.crowdtangle.com/posts";      
 
-    //private string API_TOKEN_FB = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
-    //private string API_TOKEN_IG = "VaVU9gRX1Gi5imI8E3PQzPkV9MzeWOwDkgL7RDFJ";
-
-    //FB Rugrats ID: 126054, IG Rugrats ID: 625259, FB HeyArnold ID: , IG HeyArnold ID: 
-    //public int listIds = 126054;
-
+    //API_TOKEN_FB = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
+    //API_TOKEN_IG = "VaVU9gRX1Gi5imI8E3PQzPkV9MzeWOwDkgL7RDFJ";   
     private string API_TOKEN = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
 
     //[Tooltip("FB Rugrats ID: 126054, IG Rugrats ID: 625259, FB HeyArnold ID: , IG HeyArnold ID: ")]       
-    public int listIds = 126054;
+    //public int listIds = 126054;
     public string startDate = "2018-05-01";
     public string endDate = "2018-07-01";
     public string sortBy = "total_interactions";
@@ -36,21 +43,51 @@ public class GetAPIData : MonoBehaviour {
     public Text responseText;
 
 
-    public void RequestFB()
+    /*public void Request()
     {
+       
         WWWForm form = new WWWForm();
         Dictionary<string, string> headers = form.headers;
         headers["x-api-token"] = API_TOKEN;
-        WWW request = new WWW(POSTS_ENDPOINT 
+        WWW request = new WWW(POSTS_ENDPOINT
             + "?startDate=" + startDate
             + "&endDate=" + endDate
             + "&sortBy=" + sortBy
-            + "&listIds=" + listIds 
-            + "&count=" + count, 
+            + "&listIds=" + ids
+            + "&count=" + count,
             null, headers);
 
         Debug.Log(request.url);
         StartCoroutine(OnResponse(request));
+        
+    }
+    */
+
+    private void Awake()
+    {
+        Request(ids);
+    }
+
+    public void Request(showIdList[] ids)
+    {
+        for (int i = 0; i < ids.Length; i++)
+        {            
+            WWWForm form = new WWWForm();
+            Dictionary<string, string> headers = form.headers;
+            headers["x-api-token"] = API_TOKEN;
+            WWW request = new WWW(POSTS_ENDPOINT
+                + "?startDate=" + startDate
+                + "&endDate=" + endDate
+                + "&sortBy=" + sortBy
+                + "&listIds=" + ids[i]
+                + "&count=" + count,
+                null, headers);
+
+            Debug.Log(ids[i]);
+
+            //Debug.Log(request.url);
+            StartCoroutine(OnResponse(request));
+        }
     }
 
 
@@ -76,7 +113,7 @@ public class GetAPIData : MonoBehaviour {
             score = post["score"].AsInt;
             Debug.Log("Account name: " + account + "; Caption: " + message + "; Score: " + score);
             //Debug.Log(message);
-            //Debug.Log("score);
+            Debug.Log("score");
 
             rugratsScores.Add(score);
             parsedData.Add("Account name: " + account + "; Message: " + message + "; Score: " + score);
