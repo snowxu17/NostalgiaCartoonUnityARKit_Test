@@ -17,7 +17,7 @@ public class ScrollbarController : MonoBehaviour
 
     float zoomSpeed = 0.0001f;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {        
         scrollbar.gameObject.SetActive(false);
 
@@ -65,10 +65,15 @@ public class ScrollbarController : MonoBehaviour
             {
                 scrollbar.GetComponent<Scrollbar>().size -= deltaMagnitudeDiff * zoomSpeed;
                 scrollbar.GetComponent<Scrollbar>().size = Mathf.Clamp(scrollbar.GetComponent<Scrollbar>().size, 0, 1.0f);
-            }
+            }            
         }
     }
 
+    IEnumerator AlterTime(string startDate, string endDate)
+    {       
+
+        yield return null;
+    }
 
     public virtual void Update()
     {

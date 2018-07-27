@@ -37,6 +37,7 @@ public class ManagerScript : MonoBehaviour {
 
     public Vector3[] listOfPositions;
 
+    GetAPIData api;
     //*** TESTING ONLY
 
     public int scr;
@@ -61,7 +62,9 @@ public class ManagerScript : MonoBehaviour {
         DeActivateAllObjs(worlds);
 
         //JUST FOR TESTING
-        RevealItems(scr,thresh, this.gameObject, tempType);
+        //RevealItems(scr,thresh, this.gameObject, tempType);
+       // RevealItems(9000, 2000, this.gameObject, tempType);
+        //Debug.Log("Object revealed!");
     }
 
 
