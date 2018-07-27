@@ -19,7 +19,6 @@ namespace UnityEngine.XR.iOS
 
         bool isDetecting = false;
         bool parentPlaced = false;
-        bool childPlaced = false;
 
         bool timeChange = false;
 
@@ -43,6 +42,8 @@ namespace UnityEngine.XR.iOS
 
         public void Start()
         {
+            parentPlaced = true;
+
             childObject = gameObject.transform.GetChild(0).gameObject;
             child_rigidbody = childObject.GetComponent<Rigidbody>();
             Debug.Log("Accessing child: " + childObject.name);
@@ -54,11 +55,11 @@ namespace UnityEngine.XR.iOS
         public void PlaceWhenHitButton()
         {
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
-            {                
+            {
                 childObject.GetComponent<LeanSelectable>().Deselect();
 
                 isDetecting = false;
-                childPlaced = true;
+                parentPlaced = true;
             }
         }
 
@@ -82,9 +83,9 @@ namespace UnityEngine.XR.iOS
             childObject.GetComponent<LeanTranslate>().enabled = false;
             childObject.GetComponent<LeanScale>().enabled = false;
             Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
- 
+
             isDetecting = false;
-            childPlaced = true;
+            parentPlaced = true;
         }
 
         public void TransformSingleObject()
@@ -102,7 +103,7 @@ namespace UnityEngine.XR.iOS
             Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
             isDetecting = false;
-            childPlaced = true;
+            parentPlaced = true;
 
         }
 
@@ -129,6 +130,24 @@ namespace UnityEngine.XR.iOS
             }
         }
 
+        public void DetectionOff()
+        {
+            if (isDetecting == true)
+            {
+                isDetecting = false;
+                Debug.Log("Plane detection off!");
+            }
+        }
+
+        public void DetectionOn()
+        {
+            if (isDetecting == false)
+            {
+                isDetecting = true;
+                Debug.Log("Plane detection on!");
+            }
+        }
+
         private bool IsPointerOverUIObject()
         {
             PointerEventData eventDataCurrentPosition = new PointerEventData(EventSystem.current);
@@ -141,7 +160,7 @@ namespace UnityEngine.XR.iOS
 
         public void ARPlaceObjectsOnPlane()
         {
-            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
+            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject() && parentPlaced == false)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //Ray ray = Camera.main.ViewportPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -152,25 +171,19 @@ namespace UnityEngine.XR.iOS
                 //effectively similar to calling HitTest with ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent
                 if (Physics.Raycast(ray, out hit, maxRayDistance, collisionLayer))
                 {
-                    parentPlaced = true;
-                    childPlaced = true;
 
-                    if (parentPlaced == true && childPlaced == true)
-                    {
-                        //we're going to get the position from the contact point
-                        m_HitTransform.position = hit.point;
-                        Debug.Log(string.Format("Position x:{0:0.######} y:{1:0.######} z:{2:0.######}",
-                                                m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
+                    //we're going to get the position from the contact point
+                    m_HitTransform.position = hit.point;
+                    Debug.Log(string.Format("Position x:{0:0.######} y:{1:0.######} z:{2:0.######}",
+                                            m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
 
-                        //and the rotation from the transform of the plane collider
-                        m_HitTransform.rotation = hit.transform.rotation;
+                    //and the rotation from the transform of the plane collider
+                    m_HitTransform.rotation = hit.transform.rotation;
 
-                        parentPlaced = false;
-                        childPlaced = false;
-                        isDetecting = false;
-                    }
                 }
             }
+
+            //parentPlaced = true;
         }
 
 
@@ -180,22 +193,38 @@ namespace UnityEngine.XR.iOS
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
             }
+
+            if (parentPlaced == false)
+            {
+                childObject.GetComponent<LeanSelectable>().enabled = false;
+            }
+                       
+            if (scrollbar.isActiveAndEnabled == true)
+            {
+                childObject.GetComponent<LeanSelectable>().enabled = false;
+                //// Bug here
+                isDetecting = false;
+            }
            
             if (scanButton.isActiveAndEnabled == false)
-            {
-                isDetecting = true;
-                Debug.Log("Is detecting!");
+            {                
 
                 childObject.GetComponent<LeanSelectable>().enabled = true;
 
-                if (childObject.GetComponent<LeanSelectable>().IsSelected == false && childPlaced == false)
+                // If childobj are not selected and are placed on parent
+                if (childObject.GetComponent<LeanSelectable>().IsSelected == false && parentPlaced == true)
                 {
-                    //isDetecting = true;
-                    //Debug.Log("Is detecting!");
+                    // Then detect plane to transform
+                    isDetecting = true;
+                    parentPlaced = false;
+                    Debug.Log("Is detecting plane and parent not placed!");
+
 
                     ARPlaceObjectsOnPlane();
-                }
-                
+
+                    parentPlaced = true;
+                    isDetecting = false;
+                }                
 
                 PlaceWhenDeselected();
             }

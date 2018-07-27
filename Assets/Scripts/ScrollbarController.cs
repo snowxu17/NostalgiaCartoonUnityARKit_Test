@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Lean.Touch;
+
 
 
 public class ScrollbarController : MonoBehaviour
 {
-    public LeanScale ls;        
+    public GetAPIData api;
+    // pull start-end date and map that to the scrollbar
 
     public Button showScrollbar;
     public Button hideScrollbar;
     public Scrollbar scrollbar;
     public GameObject hitTestObj;
 
-    public float perspectiveZoomSpeed = 0.5f;
-    public float zoomSpeed = 0.5f;
-    public bool timeChange;
+    float zoomSpeed = 0.0001f;
 
     protected virtual void Start()
-    {
-        ls = FindObjectOfType(typeof(LeanScale)) as LeanScale;
-
+    {        
         scrollbar.gameObject.SetActive(false);
 
         showScrollbar.onClick.AddListener(ShowTimeUI);
@@ -29,7 +26,6 @@ public class ScrollbarController : MonoBehaviour
 
         scrollbar.GetComponent<Scrollbar>().size = 0.05f;
 
-        timeChange = false;
     }
 
     protected virtual void ShowTimeUI()
@@ -44,18 +40,9 @@ public class ScrollbarController : MonoBehaviour
         scrollbar.gameObject.SetActive(false);
     }
 
-    public virtual void Update()
+
+    protected virtual void ScaleScrollbar()
     {       
-        /*
-        var fingers = LeanSelectable.GetFingersOrClear(ls.IgnoreStartedOverGui, ls.IgnoreIsOverGui, ls.RequiredFingerCount, ls.RequiredSelectable);
-        var pinchScale = LeanGesture.GetPinchScale(fingers, ls.WheelSensitivity);
-
-        Mathf.Lerp(0.0f, 1.0f, (pinchScale - 0.9f) / (1.0f - 0.9f));           
-        scrollbar.GetComponent<Scrollbar>().size = pinchScale;
-        Debug.Log("Pinch Scaleeeee : " + pinchScale);
-        */
-
-
         if (Input.touchCount == 2)
         {
             // Store both touches.
@@ -73,19 +60,19 @@ public class ScrollbarController : MonoBehaviour
             // Find the difference in the distances between each frame.
             float deltaMagnitudeDiff = prevTouchDeltaMag - touchDeltaMag;
 
-            //// pseudo code: if scrollbar is selected and transform for other objects are turned off
+
             if (scrollbar.isActiveAndEnabled == true)
             {
-                timeChange = true;
-
-                scrollbar.GetComponent<Scrollbar>().size += deltaMagnitudeDiff * zoomSpeed;
-                scrollbar.GetComponent<Scrollbar>().size = Mathf.Max(scrollbar.GetComponent<Scrollbar>().size, 1.0f);
-            }
-
-            else
-            {
-                timeChange = false;
+                scrollbar.GetComponent<Scrollbar>().size -= deltaMagnitudeDiff * zoomSpeed;
+                scrollbar.GetComponent<Scrollbar>().size = Mathf.Clamp(scrollbar.GetComponent<Scrollbar>().size, 0, 1.0f);
             }
         }
+    }
+
+
+
+    public virtual void Update()
+    {
+        ScaleScrollbar();
     }
 }
