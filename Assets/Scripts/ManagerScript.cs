@@ -124,7 +124,7 @@ public class ManagerScript : MonoBehaviour {
 
         while (itemsFound < num && itemsFound < worlds[index].objectReferences.Length)
         {
-            randomNum = Random.Range(0, this.worlds[index].objectReferences.Length - 1);
+            randomNum = Random.Range(0, this.worlds[index].objectReferences.Length);
 
             //If this object is not already active
             if (!worlds[index].objectReferences[randomNum].activeInHierarchy)

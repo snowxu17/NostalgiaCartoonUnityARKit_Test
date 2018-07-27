@@ -141,18 +141,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tempType: 0
-  ids:
-  - showIds: 66ec0100
-    showReference: 0
-  - showIds: da1a0200
-    showReference: 1
+  shows:
+  - Id: 126054
+    showName: 1
   startDate: 2018-05-01
   endDate: 2018-07-01
   sortBy: total_interactions
   count: 10
-  score: 0
-  responseText: {fileID: 1607176472}
-  APIButton: {fileID: 0}
+  t_scr: 0
 --- !u!4 &208440259
 Transform:
   m_ObjectHideFlags: 0
@@ -482,29 +478,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 689875519}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 208440258}
-        m_MethodName: Request
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 208440257}
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &689875519

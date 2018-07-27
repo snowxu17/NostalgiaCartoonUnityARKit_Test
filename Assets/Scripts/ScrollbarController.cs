@@ -70,7 +70,6 @@ public class ScrollbarController : MonoBehaviour
     }
 
 
-
     public virtual void Update()
     {
         ScaleScrollbar();
