@@ -37,6 +37,7 @@ public class GetAPIData : MonoBehaviour {
     public Text responseText;
     public Dropdown s_dropdown;
     public Dropdown e_dropdown;
+    public GameObject warning;
 
     public int numDays;
 
@@ -45,11 +46,22 @@ public class GetAPIData : MonoBehaviour {
 
 
     private void Awake()
-    {
+    {        
+        ChangeStartTime();
+        ChangeEndTime();
+
         Request(show);
 
-        // on awake set default time range to now - 1 month ago
-        
+        /*
+        s_dropdown.onValueChanged.AddListener(delegate 
+        { DropdownValueChanged(s_dropdown);
+        });
+
+        e_dropdown.onValueChanged.AddListener(delegate
+        {
+            DropdownValueChanged(e_dropdown);
+        });
+        */
     }
 
     public void Request(showIdList show)
@@ -58,8 +70,8 @@ public class GetAPIData : MonoBehaviour {
         Dictionary<string, string> headers = form.headers;
         headers["x-api-token"] = API_TOKEN;
         WWW request = new WWW(POSTS_ENDPOINT
-            + "?startDate=" + startDate
-            + "&endDate=" + endDate
+            + "?startDate=" + startDates[e_dropdown.value]
+            + "&endDate=" + endDates[e_dropdown.value]
             + "&sortBy=" + sortBy
             + "&listIds=" + this.show.Id
             + "&count=" + count,
@@ -96,7 +108,7 @@ public class GetAPIData : MonoBehaviour {
             //parsedData.Add("Account name: " + account + "; Caption: " + message + "; Score: " + score);
 
             t_scr += score;
-            //Debug.Log(" + " + score + ", total score: " + t_scr);
+            Debug.Log(" + " + score + ", total score: " + t_scr);
         }
 
         if (req.isDone == true)
@@ -129,11 +141,14 @@ public class GetAPIData : MonoBehaviour {
 
     }  
 
+
     public void ChangeStartTime()
     {
-        int idx = s_dropdown.value;
+        //Dropdown menu index
+        int s_idx = s_dropdown.value;
+        string s_date;
 
-        Debug.Log(s_dropdown.gameObject.name + " selected dropdown value: " + s_dropdown.value);
+        //Debug.Log(s_dropdown.gameObject.name + " selected dropdown value: " + s_idx);
 
         for (int i = 0; i < s_dropdown.options.Count; i++)
         {            
@@ -145,48 +160,80 @@ public class GetAPIData : MonoBehaviour {
                 s_y -= 1;
             }
 
-            string startDate = System.Convert.ToString(s_y) + "-" + System.Convert.ToString(s_m) + "-01";        
-            Debug.Log("start month : " + startDate);
+            if (s_m < 10)
+            {
+                s_date = System.Convert.ToString(s_y) + "-0" + System.Convert.ToString(s_m) + "-01";
+            }
+            else
+            {
+                s_date = System.Convert.ToString(s_y) + "-" + System.Convert.ToString(s_m) + "-01";
+            }
 
-            startDates.Add(startDate);
+           //Debug.Log("start month : " + s_date);
+
+            startDates.Add(s_date);
         }
-        Debug.Log("Selected start date: " + startDates[idx]);
+
+        Debug.Log("Selected start date: " + startDates[s_idx]);
+        StartCoroutine(CheckIndex());
     }
 
     public void ChangeEndTime()
     {
-        //Dropdown index
-        int idx = e_dropdown.value;
+        int e_idx = e_dropdown.value;
+        string e_date;
 
-        Debug.Log(e_dropdown.gameObject.name + " selected dropdown value: " + idx);
-
-        int currentMonth = System.DateTime.Now.Month;
-        int currentYear = System.DateTime.Now.Year;
+        //Debug.Log(e_dropdown.gameObject.name + " selected dropdown value: " + e_idx);
 
         for (int j = 0; j < e_dropdown.options.Count; j++)
         {
             int e_m = System.DateTime.Now.AddMonths(- j).Month;
-            int e_y = currentYear;
+            int e_y = System.DateTime.Now.Year;
 
-            if (currentMonth <= j)
+            if (System.DateTime.Now.Month <= j)
             {
                 e_y -= 1;
             }
 
-            string endDate = System.Convert.ToString(e_y) + "-" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(System.DateTime.DaysInMonth(e_y, e_m));
-            Debug.Log("end month : " + endDate);
+            if (e_m < 10)
+            {
+                e_date = System.Convert.ToString(e_y) + "-0" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(System.DateTime.DaysInMonth(e_y, e_m));
+            }
+            else
+            {
+                e_date = System.Convert.ToString(e_y) + "-" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(System.DateTime.DaysInMonth(e_y, e_m));
+            }
+            
+            //Debug.Log("end month : " + e_date);
 
-            endDates.Add(endDate);
+            endDates.Add(e_date);
         }
 
-        Debug.Log("Selected end date: " + endDates[idx]);
+        Debug.Log("Selected end date: " + endDates[e_idx]);
+        StartCoroutine(CheckIndex());
     }
+
 
     public IEnumerator CheckIndex()
     {
+        // When start date and end date are the same
+        if (s_dropdown.value == e_dropdown.value - 1 || s_dropdown.value < e_dropdown.value - 1)
+        {
+            Debug.Log("Time range error!");
 
+            s_dropdown.value = 0;
+            e_dropdown.value = 0;
+
+            warning.SetActive(true);
+        }
+        else { warning.SetActive(false); }
 
         yield return null;
     }
 
+
+    private void DropdownValueChanged(Dropdown change)
+    {
+        Request(show);
+    }
 }

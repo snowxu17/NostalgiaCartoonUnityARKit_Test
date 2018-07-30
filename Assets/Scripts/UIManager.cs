@@ -6,12 +6,15 @@ using UnityEngine.XR.iOS;
 
 public class UIManager : MonoBehaviour {
 
-    //public  GameObject parentObject;
     public Button scanButton;
     public Button placeObjectButton;
     public Button restartButton;
+
+    // Time change related
     public Button showScrollbar;
     public Scrollbar scrollBar;
+    public Dropdown s_Dropdown;
+    public Dropdown e_Dropdown;
 
     void Start ()
     {

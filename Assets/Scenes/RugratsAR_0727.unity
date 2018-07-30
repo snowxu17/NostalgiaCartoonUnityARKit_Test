@@ -1839,7 +1839,10 @@ MonoBehaviour:
   responseText: {fileID: 0}
   s_dropdown: {fileID: 645984320}
   e_dropdown: {fileID: 2089130329}
+  warning: {fileID: 922154122}
   numDays: 0
+  startDates: []
+  endDates: []
 --- !u!114 &704549323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2099,6 +2102,80 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 28}
   m_Pivot: {x: 0.5, y: 1}
+--- !u!1 &922154122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 922154123}
+  - component: {fileID: 922154125}
+  - component: {fileID: 922154124}
+  m_Layer: 5
+  m_Name: Time_warning
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &922154123
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922154122}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1310939383}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 30, y: 0}
+  m_SizeDelta: {x: 300, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &922154124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922154122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 0, b: 0.70456123, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Please re-select time range!
+--- !u!222 &922154125
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 922154122}
 --- !u!1 &975389813
 GameObject:
   m_ObjectHideFlags: 0
@@ -3087,6 +3164,7 @@ RectTransform:
   - {fileID: 741270867}
   - {fileID: 645984319}
   - {fileID: 2089130328}
+  - {fileID: 922154123}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5459,7 +5537,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2133521674}
   - component: {fileID: 2133521673}
-  - component: {fileID: 2133521675}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -5483,6 +5560,8 @@ MonoBehaviour:
   restartButton: {fileID: 1501673864}
   showScrollbar: {fileID: 699694665}
   scrollBar: {fileID: 128313668}
+  s_Dropdown: {fileID: 645984320}
+  e_Dropdown: {fileID: 2089130329}
 --- !u!4 &2133521674
 Transform:
   m_ObjectHideFlags: 0
@@ -5496,27 +5575,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2133521675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2133521672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa6a70013aa6ff34c92f795d5341dd8a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tempType: 0
-  show:
-    Id: 0
-    showName: 0
-  startDate: 2018-05-01
-  endDate: 2018-07-01
-  sortBy: total_interactions
-  count: 10
-  totalScore: 0
-  responseText: {fileID: 0}
-  s_dropdown: {fileID: 645984320}
-  e_dropdown: {fileID: 2089130329}
-  numDays: 0
