@@ -4,11 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-
 public class ScrollbarController : MonoBehaviour
 {
-    public GetAPIData api;
-    // pull start-end date and map that to the scrollbar
+    private GetAPIData api;
 
     public Button showScrollbar;
     public Button hideScrollbar;
@@ -25,6 +23,8 @@ public class ScrollbarController : MonoBehaviour
         hideScrollbar.onClick.AddListener(HideTimeUI);
 
         scrollbar.GetComponent<Scrollbar>().size = 0.05f;
+
+        api = FindObjectOfType(typeof(GetAPIData)) as GetAPIData;
 
     }
 
@@ -69,14 +69,26 @@ public class ScrollbarController : MonoBehaviour
         }
     }
 
-    IEnumerator AlterTime(string startDate, string endDate)
-    {       
+    IEnumerator AlterTime(int numDays)
+    {    
+        float n_size = api.numDays / 365;
 
-        yield return null;
+        // days = scrollbar.GetComponent<Scrollbar>().size * 365
+        // startDate = value - size/2;
+        // endDate = value + size/2;
+
+        //Debug.Log("dayyyyyyy: " + api.numDays);       
+
+        yield return n_size;
+       
+        // also every change in scrollbar, re-pull the data from api
     }
 
     public virtual void Update()
     {
         ScaleScrollbar();
+
+        //StartCoroutine(AlterTime(api.numDays));
+        //Debug.Log("dayssss" + api.numDays);
     }
 }

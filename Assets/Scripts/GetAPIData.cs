@@ -5,12 +5,6 @@ using UnityEngine.UI;
 using System.IO;
 using SimpleJSON;
 
-[System.Serializable]
-public enum showTypes
-{
-    RUGRATS,
-    HEYARNOLD
-};
 
 public class GetAPIData : MonoBehaviour {
 
@@ -39,16 +33,23 @@ public class GetAPIData : MonoBehaviour {
 
     private int score;
     public int totalScore;
-    //public int t_scr;
 
     public Text responseText;
+    public Dropdown s_dropdown;
+    public Dropdown e_dropdown;
+
+    public int numDays;
+
+    public List<string> startDates;
+    public List<string> endDates;
 
 
     private void Awake()
     {
         Request(show);
 
-        DayCounter(startDate, endDate);
+        // on awake set default time range to now - 1 month ago
+        
     }
 
     public void Request(showIdList show)
@@ -67,7 +68,8 @@ public class GetAPIData : MonoBehaviour {
         Debug.Log("Data requested!");
         Debug.Log("Show id :" + this.show.Id);
         Debug.Log(request.url);
-        StartCoroutine(OnResponse(request, show));        
+        StartCoroutine(OnResponse(request, show));
+        StartCoroutine(DayCounter(startDate, endDate));
     }
 
     private IEnumerator OnResponse(WWW req, showIdList show)
@@ -94,35 +96,97 @@ public class GetAPIData : MonoBehaviour {
             //parsedData.Add("Account name: " + account + "; Caption: " + message + "; Score: " + score);
 
             t_scr += score;
-            Debug.Log(" + " + score + ", total score: " + t_scr);
+            //Debug.Log(" + " + score + ", total score: " + t_scr);
         }
 
         if (req.isDone == true)
         {
             Debug.Log("Data downloaded.");
-        }
+            totalScore = t_scr;    
+        }        
 
-        totalScore = t_scr;
-        Debug.Log("End total score: " + totalScore);
+        if (totalScore > 0)
+        {
+            Debug.Log("End total score: " + totalScore);
+
+            ManagerScript.instance.RevealItems(totalScore, 70000, this.gameObject, tempType);
+        }
     }
 
-    public void DayCounter(string startDate, string endDate)
-    {
+    
+    public IEnumerator DayCounter(string startDate, string endDate)
+    {        
         string[] start = startDate.Replace('-', ',').Split(',');
         string[] end = endDate.Replace('-', ',').Split(',');
 
-        System.DateTime s = new System.DateTime (System.Convert.ToInt32(start[0]), System.Convert.ToInt32(start[1]), System.Convert.ToInt32(start[2]));
-        System.DateTime e = new System.DateTime (System.Convert.ToInt32(end[0]), System.Convert.ToInt32(end[1]), System.Convert.ToInt32(end[2]));
+        System.DateTime s = new System.DateTime(System.Convert.ToInt32(start[0]), System.Convert.ToInt32(start[1]), System.Convert.ToInt32(start[2]));
+        System.DateTime e = new System.DateTime(System.Convert.ToInt32(end[0]), System.Convert.ToInt32(end[1]), System.Convert.ToInt32(end[2]));
 
         var numDays = e.Subtract(s).TotalDays;
         Debug.Log("numDays: " + numDays);
-  
-        //yield return numDays; 
+
+        yield return numDays;
+
+    }  
+
+    public void ChangeStartTime()
+    {
+        int idx = s_dropdown.value;
+
+        Debug.Log(s_dropdown.gameObject.name + " selected dropdown value: " + s_dropdown.value);
+
+        for (int i = 0; i < s_dropdown.options.Count; i++)
+        {            
+            int s_m = System.DateTime.Now.AddMonths(-1 - i).Month;
+            int s_y = System.DateTime.Now.Year;
+
+            if ( System.DateTime.Now.Month <= 1 + i)
+            {
+                s_y -= 1;
+            }
+
+            string startDate = System.Convert.ToString(s_y) + "-" + System.Convert.ToString(s_m) + "-01";        
+            Debug.Log("start month : " + startDate);
+
+            startDates.Add(startDate);
+        }
+        Debug.Log("Selected start date: " + startDates[idx]);
     }
 
-    public void Update()
+    public void ChangeEndTime()
     {
-        //bugggggggy????
-        //ManagerScript.instance.RevealItems(totalScore, 2000, this.gameObject, worldTypes.HEYARNOLD);
+        //Dropdown index
+        int idx = e_dropdown.value;
+
+        Debug.Log(e_dropdown.gameObject.name + " selected dropdown value: " + idx);
+
+        int currentMonth = System.DateTime.Now.Month;
+        int currentYear = System.DateTime.Now.Year;
+
+        for (int j = 0; j < e_dropdown.options.Count; j++)
+        {
+            int e_m = System.DateTime.Now.AddMonths(- j).Month;
+            int e_y = currentYear;
+
+            if (currentMonth <= j)
+            {
+                e_y -= 1;
+            }
+
+            string endDate = System.Convert.ToString(e_y) + "-" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(System.DateTime.DaysInMonth(e_y, e_m));
+            Debug.Log("end month : " + endDate);
+
+            endDates.Add(endDate);
+        }
+
+        Debug.Log("Selected end date: " + endDates[idx]);
     }
+
+    public IEnumerator CheckIndex()
+    {
+
+
+        yield return null;
+    }
+
 }

@@ -20,7 +20,7 @@ public class TimeSpanHandler : MonoBehaviour {
     private void Update()
     {
         //Debug.Log("jhfghsdafaskjf: " + api.OnResponse.t_scr);
-        ManagerScript.instance.RevealItems(api.totalScore, 2000, parent, worldTypes.HEYARNOLD);
+        //ManagerScript.instance.RevealItems(api.totalScore, 2000, parent, worldTypes.HEYARNOLD);
     }
 
 }

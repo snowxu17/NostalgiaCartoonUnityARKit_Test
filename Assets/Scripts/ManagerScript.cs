@@ -4,7 +4,7 @@ using UnityEngine;
 
 //Allow these enums to be accessed elsewhere
 [System.Serializable]
-public enum worldTypes
+public enum showTypes
 {
     RUGRATS,
     HEYARNOLD
@@ -16,7 +16,7 @@ public class ManagerScript : MonoBehaviour {
     public struct worldObjectList
     {
         public GameObject[] objectReferences;
-        public worldTypes worldReference;
+        public showTypes worldReference;
     }
     [System.Serializable]
     public struct objectArrangement
@@ -25,10 +25,7 @@ public class ManagerScript : MonoBehaviour {
         public int minDistanceFromOrigin;
 
     }
-
-    public worldTypes tempType;
     
-
     //This is how you create a "singleton type" of pattern -- there should only be one of these scripts in a scene -- you can use "instance" to reference it at all times to understand the behavior of the app
     public static ManagerScript instance;
 
@@ -39,7 +36,7 @@ public class ManagerScript : MonoBehaviour {
 
     GetAPIData api;
     //*** TESTING ONLY
-
+    public showTypes tempType;
     public int scr;
     public int thresh;
 
@@ -63,7 +60,6 @@ public class ManagerScript : MonoBehaviour {
 
         //JUST FOR TESTING
         //RevealItems(scr,thresh, this.gameObject, tempType);
-       // RevealItems(9000, 2000, this.gameObject, tempType);
         //Debug.Log("Object revealed!");
     }
 
@@ -93,7 +89,7 @@ public class ManagerScript : MonoBehaviour {
      
     }
 
-    private void ActivateRandomObject(worldTypes world, worldObjectList[] worlds, int numberOfObjs, GameObject plane)
+    private void ActivateRandomObject(showTypes world, worldObjectList[] worlds, int numberOfObjs, GameObject plane)
     {
         for (int i = 0; i < this.worlds.Length; i++)
         {
@@ -112,7 +108,7 @@ public class ManagerScript : MonoBehaviour {
     }
 
     //Input the score/number value you are comparing with, threshold/number value to reveal item, the arplane you will be parenting the object to.. the main plane you find in the space, which world you are in
-    public void RevealItems(int score, int threshold, GameObject activeARPlane, worldTypes world)
+    public void RevealItems(int score, int threshold, GameObject activeARPlane, showTypes world)
     {
         int itemsToReveal = score / threshold;
 
