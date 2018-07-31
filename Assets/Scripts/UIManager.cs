@@ -32,14 +32,14 @@ public class UIManager : MonoBehaviour {
         scanButton.gameObject.SetActive(false);
     }
 
-    public void ShowTimeUI()
+    private void ShowTimeUI()
     {
         showDropdown.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
         e_Dropdown.gameObject.SetActive(true); 
     }
 
-    public void HideTimeUI()
+    private void HideTimeUI()
     {
         showDropdown.gameObject.SetActive(true);
         s_Dropdown.gameObject.SetActive(false);
@@ -54,7 +54,7 @@ public class UIManager : MonoBehaviour {
         {
             placeObjectButton.gameObject.SetActive(false);
             restartButton.gameObject.SetActive(false);
-            showDropdown.gameObject.SetActive(false);
+            showDropdown.gameObject.SetActive(false);            
         }
      
         // Show UI bottons after reset button is off
@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour {
             placeObjectButton.gameObject.SetActive(true);
             restartButton.gameObject.SetActive(true);
 
-            if(s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
+            if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
             {
                 showDropdown.gameObject.SetActive(true);
             }

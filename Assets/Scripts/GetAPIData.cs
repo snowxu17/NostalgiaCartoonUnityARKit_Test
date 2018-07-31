@@ -25,9 +25,9 @@ public class GetAPIData : MonoBehaviour {
     ////API_TOKEN_FB = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
     ////API_TOKEN_IG = "VaVU9gRX1Gi5imI8E3PQzPkV9MzeWOwDkgL7RDFJ";   
     private string API_TOKEN = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
-    
-    public string startDate = "2018-05-01";
-    public string endDate = "2018-07-01";
+
+    public string startDate; //= "2018-05-01";
+    public string endDate; //= "2018-07-01";
     public string sortBy = "total_interactions";
     public int count = 10;
 
@@ -40,15 +40,16 @@ public class GetAPIData : MonoBehaviour {
     int last_s_idx;
     int last_e_idx;
     public GameObject warning;
+    public GameObject loading;
 
-    public int numDays;
+    int numDays;
 
-    public List<int> thresholds;
+    List<int> thresholds;
 
     public List<string> startDates;
     public List<string> endDates;
 
-    public Button scanButton;
+    public GameObject parent;
 
 
 
@@ -59,6 +60,7 @@ public class GetAPIData : MonoBehaviour {
 
         Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
         
+        /*
         s_dropdown.onValueChanged.AddListener(delegate 
         { DropdownValueChanged(s_dropdown);
         });
@@ -66,7 +68,8 @@ public class GetAPIData : MonoBehaviour {
         e_dropdown.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(e_dropdown);
-        });        
+        });
+        */
     }
 
     public void Request(showIdList show, string startDate, string endDate)
@@ -81,11 +84,11 @@ public class GetAPIData : MonoBehaviour {
             + "&listIds=" + this.show.Id
             + "&count=" + count,
             null, headers);
-
-        Debug.Log("Data requested!");
-        Debug.Log("Show id :" + this.show.Id);
+        
+        //Debug.Log("Show id :" + this.show.Id);
         Debug.Log(request.url);
-        //StartCoroutine(OnResponse(request, show));
+        Debug.Log("Data requested!");
+        StartCoroutine(OnResponse(request, show));
         StartCoroutine(DayCounter(startDate, endDate));
     }
 
@@ -113,20 +116,20 @@ public class GetAPIData : MonoBehaviour {
             //parsedData.Add("Account name: " + account + "; Caption: " + message + "; Score: " + score);
 
             t_scr += score;
-            Debug.Log(" + " + score + ", total score: " + t_scr);
+            //Debug.Log(" + " + score + ", total score: " + t_scr);
         }
 
         if (req.isDone == true)
-        {
+        {            
             Debug.Log("Data downloaded.");
-            totalScore = t_scr;    
-        }        
-
-        if (totalScore > 0)
+            totalScore = t_scr;
+        }
+        
+        if (totalScore > 10000)
         {
             Debug.Log("End total score: " + totalScore);
-
-            ManagerScript.instance.RevealItems(totalScore, 70000, this.gameObject, tempType);
+            loading.SetActive(false);
+            ManagerScript.instance.RevealItems(totalScore, 200000, parent, tempType);
         }
     }
 
@@ -179,7 +182,7 @@ public class GetAPIData : MonoBehaviour {
             startDates.Add(s_date);
         }
 
-        Debug.Log("Selected start date: " + startDates[s_idx]);
+        //Debug.Log("Selected start date: " + startDates[s_idx]);
         StartCoroutine(CheckIndex());
     }
 
@@ -214,7 +217,7 @@ public class GetAPIData : MonoBehaviour {
             endDates.Add(e_date);
         }
 
-        Debug.Log("Selected end date: " + endDates[e_idx]);
+        //Debug.Log("Selected end date: " + endDates[e_idx]);
         StartCoroutine(CheckIndex());
     }
 
@@ -236,8 +239,13 @@ public class GetAPIData : MonoBehaviour {
         yield return null;
     }
 
-    void DropdownValueChanged(Dropdown change)
-    {         
+
+    public void DropdownValueChanged()
+    {        
+        loading.SetActive(true);
+        Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
+        
+        /*
         if (last_s_idx != s_dropdown.value)
         {
             //Debug.Log("last_s index: " + last_s_idx + ", current s_index: " + s_dropdown.value);
@@ -257,6 +265,7 @@ public class GetAPIData : MonoBehaviour {
 
             last_e_idx = e_dropdown.value;
         }
+        */
 
     }
 }

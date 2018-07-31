@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RugratsAR_0724.unity
     guid: 003fb4194a506b841b5c000f4c13b3b0
+  - enabled: 1
+    path: Assets/Scenes/API.unity
+    guid: cfa4e6646eb122e4ebbe81c228fc6fe4
   m_configObjects: {}

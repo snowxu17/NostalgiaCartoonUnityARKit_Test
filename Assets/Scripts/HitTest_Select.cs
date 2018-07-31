@@ -76,13 +76,13 @@ namespace UnityEngine.XR.iOS
             // Drop object to AR plane and enable gravity
             childObject.GetComponent<Rigidbody>().useGravity = true;
             childObject.GetComponent<Rigidbody>().isKinematic = false;
-            Debug.Log("Child object " + childObject.name + " gravity on!");
+            //Debug.Log("Child object " + childObject.name + " gravity on!");
 
             // Disable object tranformation
             childObject.GetComponent<LeanRotate>().enabled = false;
             childObject.GetComponent<LeanTranslate>().enabled = false;
             childObject.GetComponent<LeanScale>().enabled = false;
-            Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
+            //Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
 
             isDetecting = false;
             parentPlaced = true;
@@ -94,13 +94,13 @@ namespace UnityEngine.XR.iOS
             childObject.transform.position += Vector3.up * 0.05F;
             child_rigidbody.useGravity = false;
             child_rigidbody.isKinematic = true;
-            Debug.Log("Child object " + childObject.name + " gravity off!");
+            //Debug.Log("Child object " + childObject.name + " gravity off!");
 
             // Enable object transform
             childObject.GetComponent<LeanRotate>().enabled = true;
             childObject.GetComponent<LeanTranslate>().enabled = true;
             childObject.GetComponent<LeanScale>().enabled = true;
-            Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
+            //Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
             isDetecting = false;
             parentPlaced = true;
