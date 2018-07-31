@@ -68,7 +68,7 @@ public class ScrollbarController : MonoBehaviour
             }            
         }
     }
-
+    /*
     IEnumerator AlterTime(int numDays)
     {    
         float n_size = api.numDays / 365;
@@ -91,4 +91,5 @@ public class ScrollbarController : MonoBehaviour
         //StartCoroutine(AlterTime(api.numDays));
         //Debug.Log("dayssss" + api.numDays);
     }
+    */
 }

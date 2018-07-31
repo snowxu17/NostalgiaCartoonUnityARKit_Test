@@ -37,12 +37,19 @@ public class GetAPIData : MonoBehaviour {
     public Text responseText;
     public Dropdown s_dropdown;
     public Dropdown e_dropdown;
+    int last_s_idx;
+    int last_e_idx;
     public GameObject warning;
 
     public int numDays;
 
+    public List<int> thresholds;
+
     public List<string> startDates;
     public List<string> endDates;
+
+    public Button scanButton;
+
 
 
     private void Awake()
@@ -50,9 +57,8 @@ public class GetAPIData : MonoBehaviour {
         ChangeStartTime();
         ChangeEndTime();
 
-        Request(show);
-
-        /*
+        Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
+        
         s_dropdown.onValueChanged.AddListener(delegate 
         { DropdownValueChanged(s_dropdown);
         });
@@ -60,17 +66,16 @@ public class GetAPIData : MonoBehaviour {
         e_dropdown.onValueChanged.AddListener(delegate
         {
             DropdownValueChanged(e_dropdown);
-        });
-        */
+        });        
     }
 
-    public void Request(showIdList show)
+    public void Request(showIdList show, string startDate, string endDate)
     {                 
         WWWForm form = new WWWForm();
         Dictionary<string, string> headers = form.headers;
         headers["x-api-token"] = API_TOKEN;
         WWW request = new WWW(POSTS_ENDPOINT
-            + "?startDate=" + startDates[e_dropdown.value]
+            + "?startDate=" + startDates[s_dropdown.value]
             + "&endDate=" + endDates[e_dropdown.value]
             + "&sortBy=" + sortBy
             + "&listIds=" + this.show.Id
@@ -80,7 +85,7 @@ public class GetAPIData : MonoBehaviour {
         Debug.Log("Data requested!");
         Debug.Log("Show id :" + this.show.Id);
         Debug.Log(request.url);
-        StartCoroutine(OnResponse(request, show));
+        //StartCoroutine(OnResponse(request, show));
         StartCoroutine(DayCounter(startDate, endDate));
     }
 
@@ -231,9 +236,27 @@ public class GetAPIData : MonoBehaviour {
         yield return null;
     }
 
+    void DropdownValueChanged(Dropdown change)
+    {         
+        if (last_s_idx != s_dropdown.value)
+        {
+            //Debug.Log("last_s index: " + last_s_idx + ", current s_index: " + s_dropdown.value);
+            //Debug.Log(startDates[s_dropdown.value] + "," + endDates[e_dropdown.value]);
 
-    private void DropdownValueChanged(Dropdown change)
-    {
-        Request(show);
+            Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
+
+            last_s_idx = s_dropdown.value;
+        }
+
+        if(last_e_idx != e_dropdown.value)
+        {
+            //Debug.Log("last_e index: " + last_e_idx + ", current e_index: " + e_dropdown.value);
+            //Debug.Log(startDates[s_dropdown.value] + "," +  endDates[e_dropdown.value]);
+
+            Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
+
+            last_e_idx = e_dropdown.value;
+        }
+
     }
 }
