@@ -129,6 +129,8 @@ public class GetAPIData : MonoBehaviour {
         {
             Debug.Log("End total score: " + totalScore);
             loading.SetActive(false);
+
+            ManagerScript.instance.ResetWorlds();
             ManagerScript.instance.RevealItems(totalScore, 200000, parent, tempType);
         }
     }
@@ -245,6 +247,7 @@ public class GetAPIData : MonoBehaviour {
         loading.SetActive(true);
         Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
         
+        // If not using UI to pull data
         /*
         if (last_s_idx != s_dropdown.value)
         {
