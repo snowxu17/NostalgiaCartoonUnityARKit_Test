@@ -14,13 +14,14 @@ namespace UnityEngine.XR.iOS
 
         GameObject childObject;
         Rigidbody child_rigidbody;
+
         Button scanButton;
-        public Scrollbar scrollbar;
+        Button placeButton;
+        public Dropdown s_dropdown;
 
         bool isDetecting = false;
-        bool parentPlaced = false;
-
-        bool timeChange = false;
+        //bool parentPlaced = false;
+        //bool timeChange = false;
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
         {
@@ -41,30 +42,33 @@ namespace UnityEngine.XR.iOS
         }
 
         public void Start()
-        {
-            parentPlaced = true;
-
+        {            
             childObject = gameObject.transform.GetChild(0).gameObject;
             child_rigidbody = childObject.GetComponent<Rigidbody>();
             Debug.Log("Accessing child: " + childObject.name);
 
             scanButton = GameObject.Find("Button_setWorldOrigin").GetComponent<Button>();
-            //scrollbar = GameObject.Find("Scrollbar_time").GetComponent<Scrollbar>();
+
+            placeButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
+            placeButton.onClick.AddListener(PlaceWhenHitButton);
         }
 
         public void PlaceWhenHitButton()
         {
+            Debug.Log(placeButton.name + " is pressed!");
+
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
             {
                 childObject.GetComponent<LeanSelectable>().Deselect();
 
-                isDetecting = false;
-                parentPlaced = true;
+                //isDetecting = false;
+                //parentPlaced = true;
             }
         }
 
         public void PlaceWhenDeselected()
         {
+            
             if (childObject.GetComponent<LeanSelectable>().IsSelected == false)
             {
                 DropSingleObject();
@@ -85,7 +89,7 @@ namespace UnityEngine.XR.iOS
             //Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
 
             isDetecting = false;
-            parentPlaced = true;
+            //parentPlaced = true;
         }
 
         public void TransformSingleObject()
@@ -103,31 +107,23 @@ namespace UnityEngine.XR.iOS
             //Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
 
             isDetecting = false;
-            parentPlaced = true;
+            ///parentPlaced = true;           
 
         }
 
         private void DeselectOnTimeChange()
         {
-            if (timeChange == true)
+            // Only enable selectable for scene objects when not changing time
+            if (s_dropdown.isActiveAndEnabled == true)
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
+                isDetecting = false;
             }
 
-            if (timeChange == false)
+            if (s_dropdown.isActiveAndEnabled == false)
             {
                 childObject.GetComponent<LeanSelectable>().enabled = true;
-            }
-
-            if (scrollbar.isActiveAndEnabled == true)
-            {
-                timeChange = true;
-            }
-
-            if (scrollbar.isActiveAndEnabled == false)
-            {
-                timeChange = false;
-            }
+            }          
         }
 
         public void DetectionOff()
@@ -160,7 +156,7 @@ namespace UnityEngine.XR.iOS
 
         public void ARPlaceObjectsOnPlane()
         {
-            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject() && parentPlaced == false)
+            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //Ray ray = Camera.main.ViewportPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));
@@ -182,8 +178,7 @@ namespace UnityEngine.XR.iOS
 
                 }
             }
-
-            //parentPlaced = true;
+           
         }
 
 
@@ -194,42 +189,37 @@ namespace UnityEngine.XR.iOS
                 childObject.GetComponent<LeanSelectable>().enabled = false;
             }
 
+            /*
             if (parentPlaced == false)
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
             }
-                       
-            if (scrollbar.isActiveAndEnabled == true)
-            {
-                childObject.GetComponent<LeanSelectable>().enabled = false;
-                //// Bug here
-                isDetecting = false;
-            }
-           
+            */
+
+                              
             if (scanButton.isActiveAndEnabled == false)
             {                
-
                 childObject.GetComponent<LeanSelectable>().enabled = true;
 
                 // If childobj are not selected and are placed on parent
-                if (childObject.GetComponent<LeanSelectable>().IsSelected == false && parentPlaced == true)
-                {
+                //if (childObject.GetComponent<LeanSelectable>().IsSelected == false && parentPlaced == true)
+                //{
                     // Then detect plane to transform
                     isDetecting = true;
-                    parentPlaced = false;
-                    Debug.Log("Is detecting plane and parent not placed!");
+                //parentPlaced = false;
+                //Debug.Log("Is detecting plane and parent not placed!");
+                
 
-
-                    ARPlaceObjectsOnPlane();
-
-                    parentPlaced = true;
-                    isDetecting = false;
-                }                
-
+                if (childObject.GetComponent<LeanSelectable>().IsSelected == false)
+                {
+                    isDetecting = true;
+                    ARPlaceObjectsOnPlane();                    
+                }                   
+                
                 PlaceWhenDeselected();
-            }
 
-            DeselectOnTimeChange();
+                DeselectOnTimeChange();
+            }
         }
     }
 }

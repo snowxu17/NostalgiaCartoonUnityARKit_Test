@@ -1,25 +1,69 @@
 fileFormatVersion: 2
-guid: cd75a0b3e9baf3543bcdef74cfe6d68e
+guid: 26184a9b2cd588b4db8fef329233f4af
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: ChildCube
+    100000: Ancle_L
+    100002: Ancle_R
+    100004: //RootNode
+    100006: Arnold
+    100008: Belly
+    100010: Chest
+    100012: Foot_L
+    100014: Foot_R
+    100016: ForeArm_L
+    100018: ForeArm_R
+    100020: Hand_L
+    100022: Hand_R
+    100024: Head
+    100026: Leg_L
+    100028: Leg_R
+    100030: Neck
+    100032: Root
+    100034: Shoulder_L
+    100036: Shoulder_R
+    100038: Thigh_L
+    100040: Thigh_R
+    100042: Toe_L
+    100044: Toe_R
+    100046: Wrist_L
+    100048: Wrist_R
+    400000: Ancle_L
+    400002: Ancle_R
+    400004: //RootNode
+    400006: Arnold
+    400008: Belly
+    400010: Chest
+    400012: Foot_L
+    400014: Foot_R
+    400016: ForeArm_L
+    400018: ForeArm_R
+    400020: Hand_L
+    400022: Hand_R
+    400024: Head
+    400026: Leg_L
+    400028: Leg_R
+    400030: Neck
+    400032: Root
+    400034: Shoulder_L
+    400036: Shoulder_R
+    400038: Thigh_L
+    400040: Thigh_R
+    400042: Toe_L
+    400044: Toe_R
+    400046: Wrist_L
+    400048: Wrist_R
+    2100000: Arnold_mat
+    4300000: Arnold
+    7400000: Take 001
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: ChildCube_MAT
-    second: {fileID: 2100000, guid: f19a2447e8ed0a64ead2c7356ca01b40, type: 2}
+    13700000: Arnold
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
+    materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -46,7 +90,7 @@ ModelImporter:
   meshes:
     lODScreenPercentages: []
     globalScale: 1
-    meshCompression: 3
+    meshCompression: 0
     addColliders: 0
     importVisibility: 1
     importBlendShapes: 1
@@ -64,7 +108,7 @@ ModelImporter:
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
