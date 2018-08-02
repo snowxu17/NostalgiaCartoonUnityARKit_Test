@@ -14,14 +14,16 @@ namespace UnityEngine.XR.iOS
 
         GameObject childObject;
         Rigidbody child_rigidbody;
+        GameObject scanMock;
+
+        Transform objectHit;
 
         Button scanButton;
         Button placeButton;
         public Dropdown s_dropdown;
 
         bool isDetecting = false;
-        //bool parentPlaced = false;
-        //bool timeChange = false;
+        bool parentPlaced = false;        
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
         {
@@ -51,24 +53,21 @@ namespace UnityEngine.XR.iOS
 
             placeButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
             placeButton.onClick.AddListener(PlaceWhenHitButton);
+
+            scanMock = GameObject.Find("ShortTable 1").gameObject;
         }
 
         public void PlaceWhenHitButton()
         {
-            Debug.Log(placeButton.name + " is pressed!");
-
+            //Debug.Log(placeButton.name + " is pressed!");
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
             {
                 childObject.GetComponent<LeanSelectable>().Deselect();
-
-                //isDetecting = false;
-                //parentPlaced = true;
             }
         }
 
         public void PlaceWhenDeselected()
-        {
-            
+        {            
             if (childObject.GetComponent<LeanSelectable>().IsSelected == false)
             {
                 DropSingleObject();
@@ -86,29 +85,25 @@ namespace UnityEngine.XR.iOS
             childObject.GetComponent<LeanRotate>().enabled = false;
             childObject.GetComponent<LeanTranslate>().enabled = false;
             childObject.GetComponent<LeanScale>().enabled = false;
-            //Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");
-
-            isDetecting = false;
-            //parentPlaced = true;
+            //Debug.Log("Child object " + childObject.name + " is de-activated from transformation!");                      
         }
 
         public void TransformSingleObject()
         {
-            // Lift object from the AR plane and make it flaot
-            childObject.transform.position += Vector3.up * 0.05F;
-            child_rigidbody.useGravity = false;
-            child_rigidbody.isKinematic = true;
-            //Debug.Log("Child object " + childObject.name + " gravity off!");
+            //if (parentPlaced == true && isDetecting)
+            //{
+                // Lift object from the AR plane and make it flaot
+                childObject.transform.position += Vector3.up * 0.05F;
+                child_rigidbody.useGravity = false;
+                child_rigidbody.isKinematic = true;
+                //Debug.Log("Child object " + childObject.name + " gravity off!");
 
-            // Enable object transform
-            childObject.GetComponent<LeanRotate>().enabled = true;
-            childObject.GetComponent<LeanTranslate>().enabled = true;
-            childObject.GetComponent<LeanScale>().enabled = true;
-            //Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");
-
-            isDetecting = false;
-            ///parentPlaced = true;           
-
+                // Enable object transform
+                childObject.GetComponent<LeanRotate>().enabled = true;
+                childObject.GetComponent<LeanTranslate>().enabled = true;
+                childObject.GetComponent<LeanScale>().enabled = true;
+                //Debug.Log("Child object " + childObject.name + " is selected and activated for transformation!");                                          
+            //}
         }
 
         private void DeselectOnTimeChange()
@@ -176,9 +171,13 @@ namespace UnityEngine.XR.iOS
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
 
+                    objectHit = hit.transform;
+
                 }
             }
-           
+
+            //parentPlaced = true;
+            //isDetecting = false;
         }
 
 
@@ -187,38 +186,29 @@ namespace UnityEngine.XR.iOS
             if (scanButton.isActiveAndEnabled == true)
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
+                isDetecting = false;
             }
-
-            /*
-            if (parentPlaced == false)
-            {
-                childObject.GetComponent<LeanSelectable>().enabled = false;
-            }
-            */
-
                               
             if (scanButton.isActiveAndEnabled == false)
-            {                
-                childObject.GetComponent<LeanSelectable>().enabled = true;
-
-                // If childobj are not selected and are placed on parent
-                //if (childObject.GetComponent<LeanSelectable>().IsSelected == false && parentPlaced == true)
-                //{
-                    // Then detect plane to transform
-                    isDetecting = true;
-                //parentPlaced = false;
-                //Debug.Log("Is detecting plane and parent not placed!");
-                
-
-                if (childObject.GetComponent<LeanSelectable>().IsSelected == false)
-                {
-                    isDetecting = true;
-                    ARPlaceObjectsOnPlane();                    
-                }                   
-                
+            {                                           
                 PlaceWhenDeselected();
-
                 DeselectOnTimeChange();
+                
+                if (parentPlaced == false)
+                {
+                    childObject.GetComponent<LeanSelectable>().enabled = false;
+                    isDetecting = true;   //detect ar plane                 
+
+                    ARPlaceObjectsOnPlane();
+                    parentPlaced = true;
+                    isDetecting = false; // stop detect ar plane detecion
+                } 
+                
+                if(parentPlaced == true && isDetecting == false)
+                {
+                    //isDetecting = false; 
+                    childObject.GetComponent<LeanSelectable>().enabled = true;  // Start to allow object selection and transformation                       
+                }
             }
         }
     }

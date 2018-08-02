@@ -33,8 +33,8 @@ namespace Lean.Touch
 		[Tooltip("The minimum scale value on all axes")]
 		public Vector3 ScaleMin;
 
-		[Tooltip("The maximum scale value on all axes")]
-		public Vector3 ScaleMax;
+        [Tooltip("The maximum scale value on all axes")]
+        public Vector3 ScaleMax;
 
         public float pinch;
 
@@ -52,9 +52,11 @@ namespace Lean.Touch
 				RequiredSelectable = GetComponent<LeanSelectable>();
 			}
 
-            //ScaleMin = new Vector3 (0.1f, 0.1f, 0.1f);
-            ScaleMax = new Vector3 (10f, 10f, 10f);
-		}
+            IgnoreIsOverGui = true;
+            IgnoreStartedOverGui = true;
+            ScaleClamp = true;
+            ScaleMax = new Vector3(10f, 10f, 10f);
+        }
 
 		protected virtual void Update()
 		{
