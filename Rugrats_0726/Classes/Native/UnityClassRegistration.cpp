@@ -201,7 +201,7 @@ class AudioMixerGroup;
 class AudioMixerGroupController; 
 class AudioMixerSnapshot; 
 class AudioMixerSnapshotController; 
-class Avatar; 
+class Avatar; template <> void RegisterClass<Avatar>(const char*);
 class AvatarMask; 
 class BillboardAsset; 
 class ComputeShader; 
@@ -212,8 +212,8 @@ class LightProbes; template <> void RegisterClass<LightProbes>(const char*);
 class Material; template <> void RegisterClass<Material>(const char*);
 class ProceduralMaterial; 
 class Mesh; template <> void RegisterClass<Mesh>(const char*);
-class Motion; 
-class AnimationClip; 
+class Motion; template <> void RegisterClass<Motion>(const char*);
+class AnimationClip; template <> void RegisterClass<AnimationClip>(const char*);
 class PreviewAnimationClip; 
 class NavMeshData; 
 class OcclusionCullingData; 
@@ -221,7 +221,7 @@ class PhysicMaterial; template <> void RegisterClass<PhysicMaterial>(const char*
 class PhysicsMaterial2D; 
 class PreloadData; template <> void RegisterClass<PreloadData>(const char*);
 class RuntimeAnimatorController; template <> void RegisterClass<RuntimeAnimatorController>(const char*);
-class AnimatorController; 
+class AnimatorController; template <> void RegisterClass<AnimatorController>(const char*);
 class AnimatorOverrideController; template <> void RegisterClass<AnimatorOverrideController>(const char*);
 class SampleClip; template <> void RegisterClass<SampleClip>(const char*);
 class AudioClip; template <> void RegisterClass<AudioClip>(const char*);
@@ -286,7 +286,7 @@ void RegisterAllClasses()
 {
 void RegisterBuiltinTypes();
 RegisterBuiltinTypes();
-	//Total: 78 non stripped classes
+	//Total: 82 non stripped classes
 	//0. Behaviour
 	RegisterClass<Behaviour>("Core");
 	//1. Unity::Component
@@ -437,11 +437,19 @@ RegisterBuiltinTypes();
 	RegisterClass<Physics2DSettings>("Physics2D");
 	//74. UnityConnectSettings
 	RegisterClass<UnityConnectSettings>("UnityConnect");
-	//75. BoxCollider
+	//75. Motion
+	RegisterClass<Motion>("Animation");
+	//76. AnimationClip
+	RegisterClass<AnimationClip>("Animation");
+	//77. AnimatorController
+	RegisterClass<AnimatorController>("Animation");
+	//78. BoxCollider
 	RegisterClass<BoxCollider>("Physics");
-	//76. FlareLayer
+	//79. FlareLayer
 	RegisterClass<FlareLayer>("Core");
-	//77. PhysicMaterial
+	//80. PhysicMaterial
 	RegisterClass<PhysicMaterial>("Physics");
+	//81. Avatar
+	RegisterClass<Avatar>("Animation");
 
 }

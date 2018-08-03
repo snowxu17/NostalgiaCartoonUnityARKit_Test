@@ -350,6 +350,7 @@ extern const Il2CppType LeanSelect_t1468903490_0_0_0;
 extern const Il2CppType LeanSelectable_t2178850769_0_0_0;
 extern const Il2CppType List_1_t683400304_0_0_0;
 extern const Il2CppType LeanTouch_t2951860335_0_0_0;
+extern const Il2CppType showIdList_t2455688092_0_0_0;
 extern const Il2CppType ARHitTestResult_t1279023930_0_0_0;
 extern const Il2CppType worldObjectList_t629674552_0_0_0;
 extern const Il2CppType ARHitTestResultType_t475323638_0_0_0;
@@ -1366,6 +1367,8 @@ static const RuntimeType* GenInst_List_1_t683400304_0_0_0_Types[] = { (&List_1_t
 extern const Il2CppGenericInst GenInst_List_1_t683400304_0_0_0 = { 1, GenInst_List_1_t683400304_0_0_0_Types };
 static const RuntimeType* GenInst_LeanTouch_t2951860335_0_0_0_Types[] = { (&LeanTouch_t2951860335_0_0_0) };
 extern const Il2CppGenericInst GenInst_LeanTouch_t2951860335_0_0_0 = { 1, GenInst_LeanTouch_t2951860335_0_0_0_Types };
+static const RuntimeType* GenInst_showIdList_t2455688092_0_0_0_Types[] = { (&showIdList_t2455688092_0_0_0) };
+extern const Il2CppGenericInst GenInst_showIdList_t2455688092_0_0_0 = { 1, GenInst_showIdList_t2455688092_0_0_0_Types };
 static const RuntimeType* GenInst_ARHitTestResult_t1279023930_0_0_0_Types[] = { (&ARHitTestResult_t1279023930_0_0_0) };
 extern const Il2CppGenericInst GenInst_ARHitTestResult_t1279023930_0_0_0 = { 1, GenInst_ARHitTestResult_t1279023930_0_0_0_Types };
 static const RuntimeType* GenInst_worldObjectList_t629674552_0_0_0_Types[] = { (&worldObjectList_t629674552_0_0_0) };
@@ -1934,7 +1937,7 @@ static const RuntimeType* GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_L
 extern const Il2CppGenericInst GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_LinkedListDictionary_2_t983847087_gp_1_0_0_0 = { 2, GenInst_LinkedListDictionary_2_t983847087_gp_0_0_0_0_LinkedListDictionary_2_t983847087_gp_1_0_0_0_Types };
 static const RuntimeType* GenInst_LLEntry_t3405167986_gp_1_0_0_0_Types[] = { (&LLEntry_t3405167986_gp_1_0_0_0) };
 extern const Il2CppGenericInst GenInst_LLEntry_t3405167986_gp_1_0_0_0 = { 1, GenInst_LLEntry_t3405167986_gp_1_0_0_0_Types };
-extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[675] = 
+extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[676] = 
 {
 	&GenInst_RuntimeObject_0_0_0,
 	&GenInst_Int32_t2950945753_0_0_0,
@@ -2327,6 +2330,7 @@ extern const Il2CppGenericInst* const g_Il2CppGenericInstTable[675] =
 	&GenInst_LeanSelectable_t2178850769_0_0_0,
 	&GenInst_List_1_t683400304_0_0_0,
 	&GenInst_LeanTouch_t2951860335_0_0_0,
+	&GenInst_showIdList_t2455688092_0_0_0,
 	&GenInst_ARHitTestResult_t1279023930_0_0_0,
 	&GenInst_worldObjectList_t629674552_0_0_0,
 	&GenInst_ARHitTestResultType_t475323638_0_0_0,

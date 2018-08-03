@@ -16,8 +16,6 @@ namespace UnityEngine.XR.iOS
         Rigidbody child_rigidbody;
         GameObject scanMock;
 
-        Transform objectHit;
-
         Button scanButton;
         Button placeButton;
         public Dropdown s_dropdown;
@@ -54,12 +52,14 @@ namespace UnityEngine.XR.iOS
             placeButton = GameObject.Find("Button_PlaceObject").GetComponent<Button>();
             placeButton.onClick.AddListener(PlaceWhenHitButton);
 
-            scanMock = GameObject.Find("ShortTable 1").gameObject;
+            //scanMock = GameObject.Find("ShortTable 1").gameObject;
+
+            isDetecting = true;
         }
 
         public void PlaceWhenHitButton()
         {
-            //Debug.Log(placeButton.name + " is pressed!");
+            Debug.Log(placeButton.name + " is pressed!");
             if (childObject.GetComponent<LeanSelectable>().IsSelected == true)
             {
                 childObject.GetComponent<LeanSelectable>().Deselect();
@@ -122,22 +122,21 @@ namespace UnityEngine.XR.iOS
         }
 
         public void DetectionOff()
-        {
-            if (isDetecting == true)
-            {
+        {            
                 isDetecting = false;
                 Debug.Log("Plane detection off!");
-            }
+
+                //parentPlaced = true;                
         }
 
-        public void DetectionOn()
-        {
-            if (isDetecting == false)
-            {
-                isDetecting = true;
-                Debug.Log("Plane detection on!");
-            }
-        }
+        //public void DetectionOn()
+        //{
+        //    if (isDetecting == false)
+        //    {
+        //        isDetecting = true;
+        //        Debug.Log("Plane detection on!");
+        //    }
+        //}
 
         private bool IsPointerOverUIObject()
         {
@@ -150,7 +149,7 @@ namespace UnityEngine.XR.iOS
 
 
         public void ARPlaceObjectsOnPlane()
-        {
+        {           
             if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -171,7 +170,7 @@ namespace UnityEngine.XR.iOS
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
 
-                    objectHit = hit.transform;
+                    //objectHit = hit.transform;
 
                 }
             }
@@ -186,29 +185,33 @@ namespace UnityEngine.XR.iOS
             if (scanButton.isActiveAndEnabled == true)
             {
                 childObject.GetComponent<LeanSelectable>().enabled = false;
-                isDetecting = false;
+                //isDetecting = false;
             }
                               
             if (scanButton.isActiveAndEnabled == false)
             {                                           
                 PlaceWhenDeselected();
                 DeselectOnTimeChange();
+
                 
-                if (parentPlaced == false)
-                {
-                    childObject.GetComponent<LeanSelectable>().enabled = false;
-                    isDetecting = true;   //detect ar plane                 
+                //if (parentPlaced == false)
+                //{
+                    //childObject.GetComponent<LeanSelectable>().enabled = false;//cant
+                //    isDetecting = true;   //cant have isDetecting keep running in update                
 
                     ARPlaceObjectsOnPlane();
-                    parentPlaced = true;
-                    isDetecting = false; // stop detect ar plane detecion
-                } 
+
+                //    parentPlaced = true;
                 
-                if(parentPlaced == true && isDetecting == false)
-                {
-                    //isDetecting = false; 
+                //} 
+                
+                //if(parentPlaced == true && isDetecting == false)
+
+                if (isDetecting == false)
+                {                    
                     childObject.GetComponent<LeanSelectable>().enabled = true;  // Start to allow object selection and transformation                       
                 }
+
             }
         }
     }

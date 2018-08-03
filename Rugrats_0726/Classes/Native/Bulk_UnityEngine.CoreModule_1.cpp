@@ -199,6 +199,8 @@ struct ObjectU5BU5D_t2843939325;
 struct WaitForEndOfFrame_t1314943911;
 // UnityEngine.YieldInstruction
 struct YieldInstruction_t403091072;
+// UnityEngine.WaitForSeconds
+struct WaitForSeconds_t1699091251;
 // UnityEngine.WaitForSecondsRealtime
 struct WaitForSecondsRealtime_t189548121;
 // UnityEngine.CustomYieldInstruction
@@ -10716,6 +10718,16 @@ extern "C" void WaitForSeconds_t1699091251_marshal_com_back(const WaitForSeconds
 // Conversion method for clean up from marshalling of: UnityEngine.WaitForSeconds
 extern "C" void WaitForSeconds_t1699091251_marshal_com_cleanup(WaitForSeconds_t1699091251_marshaled_com& marshaled)
 {
+}
+// System.Void UnityEngine.WaitForSeconds::.ctor(System.Single)
+extern "C"  void WaitForSeconds__ctor_m2199082655 (WaitForSeconds_t1699091251 * __this, float ___seconds0, const RuntimeMethod* method)
+{
+	{
+		YieldInstruction__ctor_m1498450609(__this, /*hidden argument*/NULL);
+		float L_0 = ___seconds0;
+		__this->set_m_Seconds_0(L_0);
+		return;
+	}
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

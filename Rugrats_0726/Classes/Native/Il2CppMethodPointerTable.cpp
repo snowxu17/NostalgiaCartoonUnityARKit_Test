@@ -1338,6 +1338,7 @@ extern "C" void Convert_ToInt32_m1613163543 ();
 extern "C" void Convert_ToInt32_m1085875835 ();
 extern "C" void Convert_ToInt32_m1405693041 ();
 extern "C" void Convert_ToInt32_m1085744762 ();
+extern "C" void Convert_ToInt32_m1758051682 ();
 extern "C" void Convert_ToInt32_m2128774575 ();
 extern "C" void Convert_ToInt32_m3956995719 ();
 extern "C" void Convert_ToInt32_m825155517 ();
@@ -1389,6 +1390,7 @@ extern "C" void Convert_ToSingle_m3983149863 ();
 extern "C" void Convert_ToSingle_m2791508777 ();
 extern "C" void Convert_ToSingle_m3600812843 ();
 extern "C" void Convert_ToSingle_m3605848385 ();
+extern "C" void Convert_ToString_m3064051180 ();
 extern "C" void Convert_ToString_m2219349533 ();
 extern "C" void Convert_ToString_m1854379141 ();
 extern "C" void Convert_ToUInt16_m3116648921 ();
@@ -1477,6 +1479,7 @@ extern "C" void DateTime_FromTicks_m4059645178_AdjustorThunk ();
 extern "C" void DateTime_get_Month_m1566006993_AdjustorThunk ();
 extern "C" void DateTime_get_Day_m1623500273_AdjustorThunk ();
 extern "C" void DateTime_get_DayOfWeek_m2326490739_AdjustorThunk ();
+extern "C" void DateTime_get_TimeOfDay_m82064893_AdjustorThunk ();
 extern "C" void DateTime_get_Hour_m4153505178_AdjustorThunk ();
 extern "C" void DateTime_get_Minute_m87527789_AdjustorThunk ();
 extern "C" void DateTime_get_Second_m2686182256_AdjustorThunk ();
@@ -1491,6 +1494,7 @@ extern "C" void DateTime_get_Kind_m2154871796_AdjustorThunk ();
 extern "C" void DateTime_Add_m2995894549_AdjustorThunk ();
 extern "C" void DateTime_AddTicks_m3396580426_AdjustorThunk ();
 extern "C" void DateTime_AddMilliseconds_m3713972790_AdjustorThunk ();
+extern "C" void DateTime_AddMonths_m2010113531_AdjustorThunk ();
 extern "C" void DateTime_AddSeconds_m332574389_AdjustorThunk ();
 extern "C" void DateTime_Compare_m2855073242 ();
 extern "C" void DateTime_CompareTo_m3687348273_AdjustorThunk ();
@@ -1520,6 +1524,7 @@ extern "C" void DateTime_ParseExact_m2711902273 ();
 extern "C" void DateTime_ParseExact_m1132380469 ();
 extern "C" void DateTime_CheckStyle_m1392838900 ();
 extern "C" void DateTime_ParseExact_m317338046 ();
+extern "C" void DateTime_Subtract_m77007479_AdjustorThunk ();
 extern "C" void DateTime_Subtract_m3522513701_AdjustorThunk ();
 extern "C" void DateTime_ToString_m884486936_AdjustorThunk ();
 extern "C" void DateTime_ToString_m1916142975_AdjustorThunk ();
@@ -8773,8 +8778,12 @@ extern "C" void Resolution_get_height_m933996501_AdjustorThunk ();
 extern "C" void Resolution_ToString_m1790511863_AdjustorThunk ();
 extern "C" void Resources_GetBuiltinResource_m3641967638 ();
 extern "C" void Scene_get_handle_m1544696971_AdjustorThunk ();
+extern "C" void Scene_get_name_m622963475_AdjustorThunk ();
 extern "C" void Scene_GetHashCode_m2998285532_AdjustorThunk ();
 extern "C" void Scene_Equals_m581999093_AdjustorThunk ();
+extern "C" void Scene_GetNameInternal_m992487900 ();
+extern "C" void SceneManager_GetActiveScene_m1825203488 ();
+extern "C" void SceneManager_INTERNAL_CALL_GetActiveScene_m1427626561 ();
 extern "C" void SceneManager_LoadScene_m2298600132 ();
 extern "C" void SceneManager_LoadSceneAsyncNameIndexInternal_m4031498323 ();
 extern "C" void SceneManager_Internal_SceneLoaded_m2694652025 ();
@@ -9068,6 +9077,7 @@ extern "C" void Vector4_ToString_m1596036856_AdjustorThunk ();
 extern "C" void Vector4_SqrMagnitude_m1488236336 ();
 extern "C" void Vector4__cctor_m2519631228 ();
 extern "C" void WaitForEndOfFrame__ctor_m1381314187 ();
+extern "C" void WaitForSeconds__ctor_m2199082655 ();
 extern "C" void WaitForSecondsRealtime__ctor_m507157904 ();
 extern "C" void WaitForSecondsRealtime_get_keepWaiting_m846832224 ();
 extern "C" void YieldInstruction__ctor_m1498450609 ();
@@ -11670,6 +11680,15 @@ extern "C" void JSONString_WriteToStringBuilder_m1475190596 ();
 extern "C" void JSONString_Equals_m2864760385 ();
 extern "C" void JSONString_GetHashCode_m1151196332 ();
 extern "C" void JSONString_SerializeBinary_m2906924898 ();
+extern "C" void AnimatedText__ctor_m3382084573 ();
+extern "C" void AnimatedText_Start_m3182950735 ();
+extern "C" void AnimatedText_TypeText_m4133110210 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0__ctor_m179616622 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0_MoveNext_m1029079075 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m2785828892 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m505302139 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0_Dispose_m3268138286 ();
+extern "C" void U3CTypeTextU3Ec__Iterator0_Reset_m4213812082 ();
 extern "C" void AR3DOFCameraManager__ctor_m835078711 ();
 extern "C" void AR3DOFCameraManager_Start_m4006410559 ();
 extern "C" void AR3DOFCameraManager_SetCamera_m1045572650 ();
@@ -11774,6 +11793,12 @@ extern "C" void ColorSliderImage_RegenerateTexture_m3389274210 ();
 extern "C" void DontDestroyOnLoad__ctor_m3560632095 ();
 extern "C" void DontDestroyOnLoad_Start_m760802735 ();
 extern "C" void DontDestroyOnLoad_Update_m329266444 ();
+extern "C" void DropdownController__ctor_m495889152 ();
+extern "C" void DropdownController_Awake_m1973397555 ();
+extern "C" void DropdownController_Update_m4128677268 ();
+extern "C" void DropDownController1__ctor_m1201884187 ();
+extern "C" void DropDownController1_Start_m3928734387 ();
+extern "C" void DropDownController1_Update_m3493046693 ();
 extern "C" void FocusSquare__ctor_m356069346 ();
 extern "C" void FocusSquare_get_SquareState_m3842226931 ();
 extern "C" void FocusSquare_set_SquareState_m1202258047 ();
@@ -11788,8 +11813,37 @@ extern "C" void GenerateImageAnchor_RemoveImageAnchor_m3057317329 ();
 extern "C" void GenerateImageAnchor_OnDestroy_m1187011896 ();
 extern "C" void GenerateImageAnchor_Update_m4032084861 ();
 extern "C" void GetAPIData__ctor_m1221359242 ();
-extern "C" void GetAPIData_Request_m719678161 ();
-extern "C" void GetAPIData_OnResponse_m2042125735 ();
+extern "C" void GetAPIData_Awake_m2161832291 ();
+extern "C" void GetAPIData_Request_m1770926186 ();
+extern "C" void GetAPIData_OnResponse_m4023018313 ();
+extern "C" void GetAPIData_DayCounter_m3525119032 ();
+extern "C" void GetAPIData_ChangeStartTime_m604737858 ();
+extern "C" void GetAPIData_ChangeEndTime_m1574871187 ();
+extern "C" void GetAPIData_CheckIndex_m784476192 ();
+extern "C" void GetAPIData_DropdownValueChanged_m677062246 ();
+extern "C" void GetAPIData_TwoWorlds__ctor_m1356322648 ();
+extern "C" void GetAPIData_TwoWorlds_Awake_m387784295 ();
+extern "C" void GetAPIData_TwoWorlds_Request_m3109186193 ();
+extern "C" void GetAPIData_TwoWorlds_OnResponse_m677540247 ();
+extern "C" void GetAPIData_TwoWorlds_DayCounter_m933025219 ();
+extern "C" void U3COnResponseU3Ec__Iterator0__ctor_m2762738791 ();
+extern "C" void U3COnResponseU3Ec__Iterator0_MoveNext_m121115165 ();
+extern "C" void U3COnResponseU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m1561613278 ();
+extern "C" void U3COnResponseU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m1034793060 ();
+extern "C" void U3COnResponseU3Ec__Iterator0_Dispose_m2994638901 ();
+extern "C" void U3COnResponseU3Ec__Iterator0_Reset_m3114422255 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2__ctor_m3257975047 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2_MoveNext_m1890686166 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m3694043320 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2_System_Collections_IEnumerator_get_Current_m3201857014 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2_Dispose_m3400001373 ();
+extern "C" void U3CCheckIndexU3Ec__Iterator2_Reset_m3710065315 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1__ctor_m2010647263 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1_MoveNext_m1532148305 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m57485318 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1_System_Collections_IEnumerator_get_Current_m4096367155 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1_Dispose_m2032660710 ();
+extern "C" void U3CDayCounterU3Ec__Iterator1_Reset_m203513271 ();
 extern "C" void U3COnResponseU3Ec__Iterator0__ctor_m142758843 ();
 extern "C" void U3COnResponseU3Ec__Iterator0_MoveNext_m579255800 ();
 extern "C" void U3COnResponseU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m405928414 ();
@@ -12126,9 +12180,9 @@ extern "C" void ManagerScript__ctor_m1584315347 ();
 extern "C" void ManagerScript_Awake_m2171988787 ();
 extern "C" void ManagerScript_DeActivateAllObjs_m902673125 ();
 extern "C" void ManagerScript_InitializeLocations_m2349594760 ();
-extern "C" void ManagerScript_ActivateRandomObject_m3385782567 ();
+extern "C" void ManagerScript_ActivateRandomObject_m837632268 ();
 extern "C" void ManagerScript_ResetWorlds_m3252759714 ();
-extern "C" void ManagerScript_RevealItems_m3786919953 ();
+extern "C" void ManagerScript_RevealItems_m206970274 ();
 extern "C" void ManagerScript_delayedActivate_m4175321517 ();
 extern "C" void U3CdelayedActivateU3Ec__Iterator0__ctor_m1774660512 ();
 extern "C" void U3CdelayedActivateU3Ec__Iterator0_MoveNext_m2170259280 ();
@@ -12159,15 +12213,11 @@ extern "C" void RelocalizationControl_TrackingChanged_m3601232766 ();
 extern "C" void RelocalizationControl_OnDestroy_m3212065883 ();
 extern "C" void RelocalizationControl_UpdateText_m2603321700 ();
 extern "C" void RelocalizationControl_ToggleRelocalization_m4119116151 ();
-extern "C" void restartScene__ctor_m2174717034 ();
-extern "C" void restartScene_Update_m3265143408 ();
-extern "C" void restartScene_loadScene_m1381800405 ();
-extern "C" void restartScene_resetScene_m571670886 ();
 extern "C" void ScrollbarController__ctor_m2155908447 ();
-extern "C" void ScrollbarController_Start_m3053080249 ();
+extern "C" void ScrollbarController_Awake_m662310927 ();
 extern "C" void ScrollbarController_ShowTimeUI_m3187660652 ();
 extern "C" void ScrollbarController_HideTimeUI_m1610744859 ();
-extern "C" void ScrollbarController_Update_m3141881851 ();
+extern "C" void ScrollbarController_ScaleScrollbar_m1635553229 ();
 extern "C" void SetWorldOriginControl__ctor_m2461701294 ();
 extern "C" void SetWorldOriginControl_Update_m1474788567 ();
 extern "C" void SetWorldOriginControl_SetWorldOrigin_m1851116680 ();
@@ -12185,9 +12235,14 @@ extern "C" void SVBoxSlider_RegenerateSVTexture_m3382550199 ();
 extern "C" void TiltWindow__ctor_m1549845387 ();
 extern "C" void TiltWindow_Start_m735426265 ();
 extern "C" void TiltWindow_Update_m2838027175 ();
+extern "C" void TimeSpanHandler__ctor_m3316433419 ();
+extern "C" void TimeSpanHandler_Awake_m4162003571 ();
+extern "C" void TimeSpanHandler_Update_m3014268796 ();
 extern "C" void UIManager__ctor_m873742767 ();
-extern "C" void UIManager_Start_m1211894305 ();
+extern "C" void UIManager_Awake_m2672258407 ();
 extern "C" void UIManager_SetWorldOrigin_m3347244952 ();
+extern "C" void UIManager_ShowTimeUI_m745321502 ();
+extern "C" void UIManager_HideTimeUI_m2650558419 ();
 extern "C" void UIManager_Update_m1085197836 ();
 extern "C" void UnityARCameraManager__ctor_m2711679314 ();
 extern "C" void UnityARCameraManager_Start_m1330996880 ();
@@ -12364,7 +12419,6 @@ extern "C" void HitTest_Select_DropSingleObject_m3355235165 ();
 extern "C" void HitTest_Select_TransformSingleObject_m286518245 ();
 extern "C" void HitTest_Select_DeselectOnTimeChange_m3705624655 ();
 extern "C" void HitTest_Select_DetectionOff_m1199552575 ();
-extern "C" void HitTest_Select_DetectionOn_m3867806995 ();
 extern "C" void HitTest_Select_IsPointerOverUIObject_m2533794622 ();
 extern "C" void HitTest_Select_ARPlaceObjectsOnPlane_m2640830551 ();
 extern "C" void HitTest_Select_Update_m3103054095 ();
@@ -12763,7 +12817,12 @@ extern "C" void VideoFormatsExample_Start_m1615238214 ();
 extern "C" void VideoFormatsExample_OnDestroy_m541603283 ();
 extern "C" void VideoFormatsExample_PopulateVideoFormatButtons_m595526008 ();
 extern "C" void VideoFormatsExample_ExampletButtonPressed_m2588664126 ();
-extern const Il2CppMethodPointer g_MethodPointers[12744] = 
+extern "C" void WorldManager__ctor_m2849045736 ();
+extern "C" void WorldManager_Update_m2751716510 ();
+extern "C" void WorldManager_restartScene_m1910262916 ();
+extern "C" void WorldManager_resetScene_m4262194985 ();
+extern "C" void WorldManager_SwitchWorld_m2584050814 ();
+extern const Il2CppMethodPointer g_MethodPointers[12803] = 
 {
 	Locale_GetText_m3374010885,
 	Locale_GetText_m1601577974,
@@ -14084,6 +14143,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	Convert_ToInt32_m1085875835,
 	Convert_ToInt32_m1405693041,
 	Convert_ToInt32_m1085744762,
+	Convert_ToInt32_m1758051682,
 	Convert_ToInt32_m2128774575,
 	Convert_ToInt32_m3956995719,
 	Convert_ToInt32_m825155517,
@@ -14135,6 +14195,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	Convert_ToSingle_m2791508777,
 	Convert_ToSingle_m3600812843,
 	Convert_ToSingle_m3605848385,
+	Convert_ToString_m3064051180,
 	Convert_ToString_m2219349533,
 	Convert_ToString_m1854379141,
 	Convert_ToUInt16_m3116648921,
@@ -14223,6 +14284,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	DateTime_get_Month_m1566006993_AdjustorThunk,
 	DateTime_get_Day_m1623500273_AdjustorThunk,
 	DateTime_get_DayOfWeek_m2326490739_AdjustorThunk,
+	DateTime_get_TimeOfDay_m82064893_AdjustorThunk,
 	DateTime_get_Hour_m4153505178_AdjustorThunk,
 	DateTime_get_Minute_m87527789_AdjustorThunk,
 	DateTime_get_Second_m2686182256_AdjustorThunk,
@@ -14237,6 +14299,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	DateTime_Add_m2995894549_AdjustorThunk,
 	DateTime_AddTicks_m3396580426_AdjustorThunk,
 	DateTime_AddMilliseconds_m3713972790_AdjustorThunk,
+	DateTime_AddMonths_m2010113531_AdjustorThunk,
 	DateTime_AddSeconds_m332574389_AdjustorThunk,
 	DateTime_Compare_m2855073242,
 	DateTime_CompareTo_m3687348273_AdjustorThunk,
@@ -14266,6 +14329,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	DateTime_ParseExact_m1132380469,
 	DateTime_CheckStyle_m1392838900,
 	DateTime_ParseExact_m317338046,
+	DateTime_Subtract_m77007479_AdjustorThunk,
 	DateTime_Subtract_m3522513701_AdjustorThunk,
 	DateTime_ToString_m884486936_AdjustorThunk,
 	DateTime_ToString_m1916142975_AdjustorThunk,
@@ -21519,8 +21583,12 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	Resolution_ToString_m1790511863_AdjustorThunk,
 	Resources_GetBuiltinResource_m3641967638,
 	Scene_get_handle_m1544696971_AdjustorThunk,
+	Scene_get_name_m622963475_AdjustorThunk,
 	Scene_GetHashCode_m2998285532_AdjustorThunk,
 	Scene_Equals_m581999093_AdjustorThunk,
+	Scene_GetNameInternal_m992487900,
+	SceneManager_GetActiveScene_m1825203488,
+	SceneManager_INTERNAL_CALL_GetActiveScene_m1427626561,
 	SceneManager_LoadScene_m2298600132,
 	SceneManager_LoadSceneAsyncNameIndexInternal_m4031498323,
 	SceneManager_Internal_SceneLoaded_m2694652025,
@@ -21814,6 +21882,7 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	Vector4_SqrMagnitude_m1488236336,
 	Vector4__cctor_m2519631228,
 	WaitForEndOfFrame__ctor_m1381314187,
+	WaitForSeconds__ctor_m2199082655,
 	WaitForSecondsRealtime__ctor_m507157904,
 	WaitForSecondsRealtime_get_keepWaiting_m846832224,
 	YieldInstruction__ctor_m1498450609,
@@ -24416,6 +24485,15 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	JSONString_Equals_m2864760385,
 	JSONString_GetHashCode_m1151196332,
 	JSONString_SerializeBinary_m2906924898,
+	AnimatedText__ctor_m3382084573,
+	AnimatedText_Start_m3182950735,
+	AnimatedText_TypeText_m4133110210,
+	U3CTypeTextU3Ec__Iterator0__ctor_m179616622,
+	U3CTypeTextU3Ec__Iterator0_MoveNext_m1029079075,
+	U3CTypeTextU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m2785828892,
+	U3CTypeTextU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m505302139,
+	U3CTypeTextU3Ec__Iterator0_Dispose_m3268138286,
+	U3CTypeTextU3Ec__Iterator0_Reset_m4213812082,
 	AR3DOFCameraManager__ctor_m835078711,
 	AR3DOFCameraManager_Start_m4006410559,
 	AR3DOFCameraManager_SetCamera_m1045572650,
@@ -24520,6 +24598,12 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	DontDestroyOnLoad__ctor_m3560632095,
 	DontDestroyOnLoad_Start_m760802735,
 	DontDestroyOnLoad_Update_m329266444,
+	DropdownController__ctor_m495889152,
+	DropdownController_Awake_m1973397555,
+	DropdownController_Update_m4128677268,
+	DropDownController1__ctor_m1201884187,
+	DropDownController1_Start_m3928734387,
+	DropDownController1_Update_m3493046693,
 	FocusSquare__ctor_m356069346,
 	FocusSquare_get_SquareState_m3842226931,
 	FocusSquare_set_SquareState_m1202258047,
@@ -24534,8 +24618,37 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	GenerateImageAnchor_OnDestroy_m1187011896,
 	GenerateImageAnchor_Update_m4032084861,
 	GetAPIData__ctor_m1221359242,
-	GetAPIData_Request_m719678161,
-	GetAPIData_OnResponse_m2042125735,
+	GetAPIData_Awake_m2161832291,
+	GetAPIData_Request_m1770926186,
+	GetAPIData_OnResponse_m4023018313,
+	GetAPIData_DayCounter_m3525119032,
+	GetAPIData_ChangeStartTime_m604737858,
+	GetAPIData_ChangeEndTime_m1574871187,
+	GetAPIData_CheckIndex_m784476192,
+	GetAPIData_DropdownValueChanged_m677062246,
+	GetAPIData_TwoWorlds__ctor_m1356322648,
+	GetAPIData_TwoWorlds_Awake_m387784295,
+	GetAPIData_TwoWorlds_Request_m3109186193,
+	GetAPIData_TwoWorlds_OnResponse_m677540247,
+	GetAPIData_TwoWorlds_DayCounter_m933025219,
+	U3COnResponseU3Ec__Iterator0__ctor_m2762738791,
+	U3COnResponseU3Ec__Iterator0_MoveNext_m121115165,
+	U3COnResponseU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m1561613278,
+	U3COnResponseU3Ec__Iterator0_System_Collections_IEnumerator_get_Current_m1034793060,
+	U3COnResponseU3Ec__Iterator0_Dispose_m2994638901,
+	U3COnResponseU3Ec__Iterator0_Reset_m3114422255,
+	U3CCheckIndexU3Ec__Iterator2__ctor_m3257975047,
+	U3CCheckIndexU3Ec__Iterator2_MoveNext_m1890686166,
+	U3CCheckIndexU3Ec__Iterator2_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m3694043320,
+	U3CCheckIndexU3Ec__Iterator2_System_Collections_IEnumerator_get_Current_m3201857014,
+	U3CCheckIndexU3Ec__Iterator2_Dispose_m3400001373,
+	U3CCheckIndexU3Ec__Iterator2_Reset_m3710065315,
+	U3CDayCounterU3Ec__Iterator1__ctor_m2010647263,
+	U3CDayCounterU3Ec__Iterator1_MoveNext_m1532148305,
+	U3CDayCounterU3Ec__Iterator1_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m57485318,
+	U3CDayCounterU3Ec__Iterator1_System_Collections_IEnumerator_get_Current_m4096367155,
+	U3CDayCounterU3Ec__Iterator1_Dispose_m2032660710,
+	U3CDayCounterU3Ec__Iterator1_Reset_m203513271,
 	U3COnResponseU3Ec__Iterator0__ctor_m142758843,
 	U3COnResponseU3Ec__Iterator0_MoveNext_m579255800,
 	U3COnResponseU3Ec__Iterator0_System_Collections_Generic_IEnumeratorU3CobjectU3E_get_Current_m405928414,
@@ -24872,9 +24985,9 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	ManagerScript_Awake_m2171988787,
 	ManagerScript_DeActivateAllObjs_m902673125,
 	ManagerScript_InitializeLocations_m2349594760,
-	ManagerScript_ActivateRandomObject_m3385782567,
+	ManagerScript_ActivateRandomObject_m837632268,
 	ManagerScript_ResetWorlds_m3252759714,
-	ManagerScript_RevealItems_m3786919953,
+	ManagerScript_RevealItems_m206970274,
 	ManagerScript_delayedActivate_m4175321517,
 	U3CdelayedActivateU3Ec__Iterator0__ctor_m1774660512,
 	U3CdelayedActivateU3Ec__Iterator0_MoveNext_m2170259280,
@@ -24905,15 +25018,11 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	RelocalizationControl_OnDestroy_m3212065883,
 	RelocalizationControl_UpdateText_m2603321700,
 	RelocalizationControl_ToggleRelocalization_m4119116151,
-	restartScene__ctor_m2174717034,
-	restartScene_Update_m3265143408,
-	restartScene_loadScene_m1381800405,
-	restartScene_resetScene_m571670886,
 	ScrollbarController__ctor_m2155908447,
-	ScrollbarController_Start_m3053080249,
+	ScrollbarController_Awake_m662310927,
 	ScrollbarController_ShowTimeUI_m3187660652,
 	ScrollbarController_HideTimeUI_m1610744859,
-	ScrollbarController_Update_m3141881851,
+	ScrollbarController_ScaleScrollbar_m1635553229,
 	SetWorldOriginControl__ctor_m2461701294,
 	SetWorldOriginControl_Update_m1474788567,
 	SetWorldOriginControl_SetWorldOrigin_m1851116680,
@@ -24931,9 +25040,14 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	TiltWindow__ctor_m1549845387,
 	TiltWindow_Start_m735426265,
 	TiltWindow_Update_m2838027175,
+	TimeSpanHandler__ctor_m3316433419,
+	TimeSpanHandler_Awake_m4162003571,
+	TimeSpanHandler_Update_m3014268796,
 	UIManager__ctor_m873742767,
-	UIManager_Start_m1211894305,
+	UIManager_Awake_m2672258407,
 	UIManager_SetWorldOrigin_m3347244952,
+	UIManager_ShowTimeUI_m745321502,
+	UIManager_HideTimeUI_m2650558419,
 	UIManager_Update_m1085197836,
 	UnityARCameraManager__ctor_m2711679314,
 	UnityARCameraManager_Start_m1330996880,
@@ -25110,7 +25224,6 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	HitTest_Select_TransformSingleObject_m286518245,
 	HitTest_Select_DeselectOnTimeChange_m3705624655,
 	HitTest_Select_DetectionOff_m1199552575,
-	HitTest_Select_DetectionOn_m3867806995,
 	HitTest_Select_IsPointerOverUIObject_m2533794622,
 	HitTest_Select_ARPlaceObjectsOnPlane_m2640830551,
 	HitTest_Select_Update_m3103054095,
@@ -25509,4 +25622,9 @@ extern const Il2CppMethodPointer g_MethodPointers[12744] =
 	VideoFormatsExample_OnDestroy_m541603283,
 	VideoFormatsExample_PopulateVideoFormatButtons_m595526008,
 	VideoFormatsExample_ExampletButtonPressed_m2588664126,
+	WorldManager__ctor_m2849045736,
+	WorldManager_Update_m2751716510,
+	WorldManager_restartScene_m1910262916,
+	WorldManager_resetScene_m4262194985,
+	WorldManager_SwitchWorld_m2584050814,
 };
