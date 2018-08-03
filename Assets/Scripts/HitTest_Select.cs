@@ -12,8 +12,6 @@ namespace UnityEngine.XR.iOS
         public float maxRayDistance = 30.0f;
         public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
-        //GameObject childObject;
-
         public Button scanButton;
         public Button placeButton;
         public Dropdown s_dropdown;
@@ -91,8 +89,7 @@ namespace UnityEngine.XR.iOS
                     Debug.Log("debug:" + child.gameObject.name);
                     child.gameObject.GetComponent<LeanRotate>().enabled = true;
                     child.gameObject.GetComponent<LeanTranslate>().enabled = true;
-                    child.gameObject.GetComponent<LeanScale>().enabled = true;
-                    
+                    child.gameObject.GetComponent<LeanScale>().enabled = true;                    
                 }
             }            
         }
@@ -175,9 +172,7 @@ namespace UnityEngine.XR.iOS
                 DeselectOnTimeChange();
 
                 if (isDetecting == true)
-                {
-                    //childObject.GetComponent<LeanSelectable>().enabled = false;
-
+                {                    
                     foreach (Transform child in gameObject.transform)
                     {
                         child.gameObject.GetComponent<LeanSelectable>().enabled = false;
@@ -187,8 +182,7 @@ namespace UnityEngine.XR.iOS
                 }                         
 
                 if (isDetecting == false)
-                {
-                    //childObject.GetComponent<LeanSelectable>().enabled = true;  // Start to allow object selection and transformation       
+                {                        
                     foreach (Transform child in gameObject.transform)
                     {
                         child.gameObject.GetComponent<LeanSelectable>().enabled = true;                        
