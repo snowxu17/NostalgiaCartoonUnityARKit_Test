@@ -70,6 +70,7 @@ public class GetAPIData : MonoBehaviour {
             DropdownValueChanged(e_dropdown);
         });
         */
+        
     }
 
     public void Request(showIdList show, string startDate, string endDate)
@@ -102,8 +103,8 @@ public class GetAPIData : MonoBehaviour {
             
         JSONNode data = JSON.Parse(req.text);
 
-        List<string> parsedData = new List<string>();
-        List<int> postScores = new List<int>();    
+        //List<string> parsedData = new List<string>();
+        //List<int> postScores = new List<int>();    
             
         foreach (JSONNode post in data["result"]["posts"])
         {
@@ -131,7 +132,7 @@ public class GetAPIData : MonoBehaviour {
             loading.SetActive(false);
 
             ManagerScript.instance.ResetWorlds();
-            ManagerScript.instance.RevealItems(totalScore, 200000, parent, tempType);
+            ManagerScript.instance.RevealItems(totalScore, 70000, parent, tempType);
         }
     }
 
