@@ -1,21 +1,21 @@
 fileFormatVersion: 2
-guid: 6e97de072184bbf46827cfc98806f3a7
+guid: 88dfb401d90e96940b2e0ea41919f80f
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Ancle_L
     100002: Ancle_R
-    100004: Arnold
-    100006: //RootNode
-    100008: Belly
-    100010: Chest
-    100012: Foot_L
-    100014: Foot_R
-    100016: ForeArm_L
-    100018: ForeArm_R
-    100020: Hand_L
-    100022: Hand_R
-    100024: Head
+    100004: Belly
+    100006: Chest
+    100008: Foot_L
+    100010: Foot_R
+    100012: ForeArm_L
+    100014: ForeArm_R
+    100016: Hand_L
+    100018: Hand_R
+    100020: Head
+    100022: Helga
+    100024: //RootNode
     100026: Leg_L
     100028: Leg_R
     100030: Neck
@@ -30,17 +30,17 @@ ModelImporter:
     100048: Wrist_R
     400000: Ancle_L
     400002: Ancle_R
-    400004: Arnold
-    400006: //RootNode
-    400008: Belly
-    400010: Chest
-    400012: Foot_L
-    400014: Foot_R
-    400016: ForeArm_L
-    400018: ForeArm_R
-    400020: Hand_L
-    400022: Hand_R
-    400024: Head
+    400004: Belly
+    400006: Chest
+    400008: Foot_L
+    400010: Foot_R
+    400012: ForeArm_L
+    400014: ForeArm_R
+    400016: Hand_L
+    400018: Hand_R
+    400020: Head
+    400022: Helga
+    400024: //RootNode
     400026: Leg_L
     400028: Leg_R
     400030: Neck
@@ -53,11 +53,11 @@ ModelImporter:
     400044: Toe_R
     400046: Wrist_L
     400048: Wrist_R
-    2100000: Arnold_mat
-    4300000: Arnold
+    2100000: Helga_mat
+    4300000: Helga
     7400000: Take 001
     9500000: //RootNode
-    13700000: Arnold
+    13700000: Helga
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -90,7 +90,7 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 4000
+      lastFrame: 195
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -114,10 +114,10 @@ ModelImporter:
       maskType: 3
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
-    isReadable: 1
+    isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 3
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

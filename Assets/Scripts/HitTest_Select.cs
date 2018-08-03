@@ -182,7 +182,10 @@ namespace UnityEngine.XR.iOS
                 }                         
 
                 if (isDetecting == false)
-                {                        
+                {
+                    // Stop rendering AR Plane; need to test if this works
+                    UnityARUtility.CreatePlaneInScene(null);
+
                     foreach (Transform child in gameObject.transform)
                     {
                         child.gameObject.GetComponent<LeanSelectable>().enabled = true;                        
