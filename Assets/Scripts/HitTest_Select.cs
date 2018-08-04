@@ -88,7 +88,7 @@ namespace UnityEngine.XR.iOS
                 {                   
                     Debug.Log("debug:" + child.gameObject.name);
                     child.gameObject.GetComponent<LeanRotate>().enabled = true;
-                    child.gameObject.GetComponent<LeanTranslate>().enabled = true;
+                    //child.gameObject.GetComponent<LeanTranslate>().enabled = true;
                     child.gameObject.GetComponent<LeanScale>().enabled = true;                    
                 }
             }            
