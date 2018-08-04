@@ -184,7 +184,7 @@ namespace UnityEngine.XR.iOS
                 if (isDetecting == false)
                 {
                     // Stop rendering AR Plane; need to test if this works
-                    UnityARUtility.CreatePlaneInScene(null);
+                    //UnityARUtility.CreatePlaneInScene(null);
 
                     foreach (Transform child in gameObject.transform)
                     {
