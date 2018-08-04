@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/API.unity
     guid: cfa4e6646eb122e4ebbe81c228fc6fe4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/RugratsAR_0727.unity
     guid: bb216f6e016da4c48906b5e519a73bda
+  - enabled: 1
+    path: Assets/Scenes/ArnoldAR_0803.unity
+    guid: 236acccbf4f40f34d9b82741837da78d
   m_configObjects: {}

@@ -15,7 +15,7 @@ public class AddChildComponent : MonoBehaviour {
 
             child.gameObject.GetComponent<Rigidbody>().drag = 10;
             child.gameObject.GetComponent<Rigidbody>().angularDrag = 10;
-            child.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotation;
+            child.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
         }
 
     }
