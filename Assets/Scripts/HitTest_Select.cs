@@ -16,7 +16,7 @@ namespace UnityEngine.XR.iOS
         public Button placeButton;
         public Dropdown s_dropdown;
 
-        bool isDetecting = false;
+        public bool isDetecting = false;
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
         {
