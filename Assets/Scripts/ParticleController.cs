@@ -8,8 +8,7 @@ using UnityEngine.XR.iOS;
 public class ParticleController : MonoBehaviour {
 
     public List<ParticleSystem> PSs;
-    public HitTest_Select hitTest;
-       
+    private HitTest_Select ht;   
 	
 	void Awake () 
     {
@@ -18,8 +17,7 @@ public class ParticleController : MonoBehaviour {
             PSs.Add(childParticle.GetComponent<ParticleSystem>());
             childParticle.gameObject.SetActive(false);
         }
-
-        hitTest = FindObjectOfType(typeof(HitTest_Select)) as HitTest_Select;
+        ht = HitTest_Select.Instance();
 	}
 		
 
@@ -31,7 +29,7 @@ public class ParticleController : MonoBehaviour {
 
     public void ActivateParticleEffect()
     {        
-        if (hitTest.isDetecting == false)
+        if (ht.isDetecting == false)
         {
             foreach (ParticleSystem childParticle in PSs)
             {

@@ -130,7 +130,7 @@ public class GetAPIData : MonoBehaviour {
             loading.SetActive(false);
 
             ManagerScript.instance.ResetWorlds();
-            ManagerScript.instance.RevealItems(totalScore, 70000, parent, tempType);
+            ManagerScript.instance.RevealItems(totalScore, 120000, parent, tempType);
         }
     }
 

@@ -15,10 +15,12 @@ public class UIManager : MonoBehaviour {
     public Dropdown e_Dropdown;
     public Button showDropdown;
     public Button hideDropdown;
-    public GameObject obj;
+    public GameObject obj;    
+    public float timeLeft = 7.0f;
+    private HitTest_Select ht;
 
     private void Awake ()
-    {
+    {      
         scanButton.onClick.AddListener(SetWorldOrigin);
 
         s_Dropdown.gameObject.SetActive(false);
@@ -26,6 +28,8 @@ public class UIManager : MonoBehaviour {
 
         showDropdown.onClick.AddListener(ShowTimeUI);
         hideDropdown.onClick.AddListener(HideTimeUI);
+
+        ht = HitTest_Select.Instance();
     }
 
     public void SetWorldOrigin()
@@ -34,15 +38,17 @@ public class UIManager : MonoBehaviour {
         scanButton.gameObject.SetActive(false);
     }
 
-    private void ShowTimeUI()
+    public void ShowTimeUI()
     {
+        //// Editor
         showDropdown.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
         e_Dropdown.gameObject.SetActive(true);
     }
 
-    private void HideTimeUI()
+    public void HideTimeUI()
     {
+        //// Editor
         showDropdown.gameObject.SetActive(true);
         s_Dropdown.gameObject.SetActive(false);
         e_Dropdown.gameObject.SetActive(false);
@@ -64,7 +70,15 @@ public class UIManager : MonoBehaviour {
     }
 
     void Update ()
-    {       
+    {
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft < 0.0f)
+        {
+            scanButton.gameObject.SetActive(false);
+            timeLeft = 0;
+        }
+
         // Hide UI bottons when reset world orgin button is on        
         if (scanButton.isActiveAndEnabled == true)
         {
@@ -76,20 +90,19 @@ public class UIManager : MonoBehaviour {
      
         // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
-        {                        
-            //placeObjectButton.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);                      
-
+        {                  
+            restartButton.gameObject.SetActive(true);    
+            
+            if(ht.isDetecting == true)
+            {
+                detectButton.gameObject.SetActive(true);
+            }
+            
             if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
             {
                 showDropdown.gameObject.SetActive(true);
             }
-
-            if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
-            {
-                restartButton.gameObject.SetActive(false);
-                //placeObjectButton.gameObject.SetActive(false);
-            }
+            
         }
     }
 }

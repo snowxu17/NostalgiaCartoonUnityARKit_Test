@@ -7,14 +7,24 @@ using Lean.Touch;
 namespace UnityEngine.XR.iOS
 {
     public class HitTest_Select : MonoBehaviour
-    {
+    {        
+        private static HitTest_Select ht;
+        public static HitTest_Select Instance()
+        {
+            if (!ht)
+            {
+                ht = FindObjectOfType(typeof(HitTest_Select)) as HitTest_Select;
+            }
+            return ht;
+        }
+
         public Transform m_HitTransform;
         public float maxRayDistance = 30.0f;
         public LayerMask collisionLayer = 1 << 10;  //ARKitPlane layer
 
         public Button scanButton;
         public Button placeButton;
-        public Dropdown s_dropdown;
+        public Dropdown s_dropdown;        
 
         public bool isDetecting = false;
 
@@ -87,12 +97,13 @@ namespace UnityEngine.XR.iOS
                 foreach (Transform child in gameObject.transform)
                 {                   
                     //Debug.Log("debug:" + child.gameObject.name);
-                    child.gameObject.GetComponent<LeanRotate>().enabled = true;
-                    //child.gameObject.GetComponent<LeanTranslate>().enabled = true;
+                    //child.gameObject.GetComponent<LeanRotate>().enabled = true;
+                    child.gameObject.GetComponent<LeanTranslate>().enabled = true;
                     child.gameObject.GetComponent<LeanScale>().enabled = true;                    
                 }
             }            
         }
+
 
         private void DeselectOnTimeChange()
         {            
@@ -100,7 +111,7 @@ namespace UnityEngine.XR.iOS
             {
                 foreach (Transform child in gameObject.transform)
                 {
-                    child.gameObject.GetComponent<LeanSelectable>().Deselect();
+                    child.gameObject.GetComponent<LeanSelectable>().enabled = false;
 
                 }
             }
@@ -184,8 +195,18 @@ namespace UnityEngine.XR.iOS
 
                 if (isDetecting == false)
                 {
-                    // Stop rendering AR Plane; need to test if this works
-                    //UnityARUtility.CreatePlaneInScene(null);
+                    ////Need to test this
+                    UnityARPlaneDetection planeDetection = UnityARPlaneDetection.None;
+                    ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
+                    config.planeDetection = planeDetection;
+                    config.getPointCloudData = false;
+                    config.enableLightEstimation = false;
+
+                    /*
+                    GameObject.Find("PointCloudParticleExample").SetActive(false);
+                    GameObject.Find("ParticlePrefab(Clone)").SetActive(false);
+                    GameObject.Find("GeneratePlanes").SetActive(false);
+                    */
 
                     foreach (Transform child in gameObject.transform)
                     {
