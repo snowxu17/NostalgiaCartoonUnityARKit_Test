@@ -86,7 +86,7 @@ namespace UnityEngine.XR.iOS
             {            
                 foreach (Transform child in gameObject.transform)
                 {                   
-                    Debug.Log("debug:" + child.gameObject.name);
+                    //Debug.Log("debug:" + child.gameObject.name);
                     child.gameObject.GetComponent<LeanRotate>().enabled = true;
                     //child.gameObject.GetComponent<LeanTranslate>().enabled = true;
                     child.gameObject.GetComponent<LeanScale>().enabled = true;                    
@@ -100,7 +100,8 @@ namespace UnityEngine.XR.iOS
             {
                 foreach (Transform child in gameObject.transform)
                 {
-                    child.gameObject.GetComponent<LeanSelectable>().enabled = false;
+                    child.gameObject.GetComponent<LeanSelectable>().Deselect();
+
                 }
             }
 
@@ -188,8 +189,12 @@ namespace UnityEngine.XR.iOS
 
                     foreach (Transform child in gameObject.transform)
                     {
-                        child.gameObject.GetComponent<LeanSelectable>().enabled = true;                        
+                        child.gameObject.GetComponent<LeanSelectable>().enabled = true;    
 
+                        if(child.gameObject.GetComponent<LeanSelectable>().IsSelected == true)
+                        {
+                            placeButton.gameObject.SetActive(true);
+                        }
                     }
                 }
             }

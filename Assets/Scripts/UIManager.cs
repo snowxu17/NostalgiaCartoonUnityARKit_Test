@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.iOS;
+using Lean.Touch;
 
 public class UIManager : MonoBehaviour {
 
@@ -14,8 +15,7 @@ public class UIManager : MonoBehaviour {
     public Dropdown e_Dropdown;
     public Button showDropdown;
     public Button hideDropdown;
-
-    float timeLeft = 7.0f;
+    public GameObject obj;
 
     private void Awake ()
     {
@@ -38,7 +38,7 @@ public class UIManager : MonoBehaviour {
     {
         showDropdown.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
-        e_Dropdown.gameObject.SetActive(true); 
+        e_Dropdown.gameObject.SetActive(true);
     }
 
     private void HideTimeUI()
@@ -58,6 +58,11 @@ public class UIManager : MonoBehaviour {
         detectButton.gameObject.SetActive(false);
     }
 
+    public void HidePlaceButton()
+    {
+        placeObjectButton.gameObject.SetActive(false);
+    }
+
     void Update ()
     {       
         // Hide UI bottons when reset world orgin button is on        
@@ -72,10 +77,8 @@ public class UIManager : MonoBehaviour {
         // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
         {                        
-            placeObjectButton.gameObject.SetActive(true);
-            restartButton.gameObject.SetActive(true);
-
-            //detectButton.gameObject.SetActive(true);
+            //placeObjectButton.gameObject.SetActive(true);
+            restartButton.gameObject.SetActive(true);                      
 
             if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
             {
@@ -85,7 +88,7 @@ public class UIManager : MonoBehaviour {
             if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
             {
                 restartButton.gameObject.SetActive(false);
-                placeObjectButton.gameObject.SetActive(false);
+                //placeObjectButton.gameObject.SetActive(false);
             }
         }
     }

@@ -24,8 +24,7 @@ public class AnimatedText : MonoBehaviour
     IEnumerator TypeText()
     {
         //for (int i = 0; i < message.Length; i++)
-        //{
-
+        //{            
         //    if (i < message.Length - 1)
         //    {
         //        textComp.text += message[i];
@@ -37,11 +36,10 @@ public class AnimatedText : MonoBehaviour
         //    if ( i == message.Length - 1)
         //    {
         //        i = 0;
-
         //        textComp.text = "";
 
-        //        textComp.text += message[0];
-        //        //yield return 0;
+        //    //    textComp.text += message[0];
+        //    //    //yield return 0;
 
         //    }
 

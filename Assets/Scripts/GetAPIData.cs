@@ -185,8 +185,6 @@ public class GetAPIData : MonoBehaviour {
            //Debug.Log("start month : " + s_date);
 
             startDates.Add(s_date);
-
-            Debug.Log("start date count: " + startDates.Count);
         }
 
         //Debug.Log("Selected start date: " + startDates[s_idx]);

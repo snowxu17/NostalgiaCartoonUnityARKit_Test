@@ -90,8 +90,8 @@ public class GetAPIData_TwoWorlds : MonoBehaviour
 
             JSONNode data = JSON.Parse(req.text);
 
-            List<string> parsedData = new List<string>();
-            List<int> postScores = new List<int>();
+            //List<string> parsedData = new List<string>();
+            //List<int> postScores = new List<int>();
 
             foreach (JSONNode post in data["result"]["posts"])
             {
