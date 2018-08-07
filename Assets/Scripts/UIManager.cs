@@ -102,6 +102,12 @@ public class UIManager : MonoBehaviour {
             {
                 showDropdown.gameObject.SetActive(true);
             }
+
+
+            if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
+            {
+                restartButton.gameObject.SetActive(false);            
+            }
             
         }
     }

@@ -393,7 +393,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.11
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -1212,7 +1212,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 235175595}
   m_LocalRotation: {x: 0.6593851, y: -0.00000000745058, z: -0, w: 0.7518054}
-  m_LocalPosition: {x: -3.6100001, y: 3.98, z: -0.5700001}
+  m_LocalPosition: {x: 0, y: 3.98, z: -0.5700001}
   m_LocalScale: {x: 10, y: 10.000014, z: 10}
   m_Children: []
   m_Father: {fileID: 349673892}
@@ -1449,7 +1449,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 284626760}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -1521,7 +1521,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -6149,7 +6149,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -3.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.y
@@ -6213,7 +6213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349673891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0, z: 0}
+  m_LocalPosition: {x: -2.35, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 966618618}
@@ -6277,8 +6277,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.4045177, y: 2.278557, z: 0.9448436}
-  m_Center: {x: -3.5818033, y: 1.1517386, z: -0.1232858}
+  m_Size: {x: 1.2257202, y: 2.352066, z: 0.80301577}
+  m_Center: {x: -0.025484636, y: 1.1728936, z: -0.09849217}
 --- !u!114 &349673895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6385,7 +6385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.49663332, g: 0.2520915, b: 0.5188679, a: 1}
+  m_Color: {r: 0.7924528, g: 0.53453183, b: 0.5577348, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -11261,7 +11261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &471008440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12147,6 +12147,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2133521673}
         m_MethodName: ShowTimeUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2133521673}
+        m_MethodName: HideRestartButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13563,7 +13574,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1123990045}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -13635,7 +13646,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -18303,7 +18314,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400006, guid: 5409c01c541a48347b3d3cab51a94f6a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.6
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 5409c01c541a48347b3d3cab51a94f6a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -18355,7 +18366,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400032, guid: 5409c01c541a48347b3d3cab51a94f6a, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 5409c01c541a48347b3d3cab51a94f6a, type: 3}
       propertyPath: m_RootOrder
@@ -18505,7 +18516,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202670958}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -18577,7 +18588,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -24586,7 +24597,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 9563a2ef3f539af4f9ad19da02997026, type: 3}
-    m_FontSize: 15
+    m_FontSize: 14
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
@@ -24881,7 +24892,7 @@ ParticleSystem:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1600279753}
   serializedVersion: 5
-  lengthInSec: 1
+  lengthInSec: 2
   simulationSpeed: 1
   stopAction: 0
   looping: 0
@@ -24953,7 +24964,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 5
       maxCurve:
         serializedVersion: 2

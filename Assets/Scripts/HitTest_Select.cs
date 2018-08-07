@@ -50,7 +50,7 @@ namespace UnityEngine.XR.iOS
         {
             placeButton.onClick.AddListener(PlaceWhenHitButton);            
 
-            isDetecting = true;           
+            isDetecting = true;   
         }
 
         public void PlaceWhenHitButton()
@@ -209,7 +209,7 @@ namespace UnityEngine.XR.iOS
                     */
 
                     foreach (Transform child in gameObject.transform)
-                    {
+                    {                        
                         child.gameObject.GetComponent<LeanSelectable>().enabled = true;    
 
                         if(child.gameObject.GetComponent<LeanSelectable>().IsSelected == true)
