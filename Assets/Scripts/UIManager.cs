@@ -91,7 +91,7 @@ public class UIManager : MonoBehaviour {
         // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
         {                  
-            restartButton.gameObject.SetActive(true);    
+            //restartButton.gameObject.SetActive(true);    
             
             if (ht.isDetecting == true)
             {
@@ -99,15 +99,21 @@ public class UIManager : MonoBehaviour {
                 detectButton.gameObject.SetActive(true);
             }
             
-            if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
+            if (ht.isDetecting == false)
             {
-                showDropdown.gameObject.SetActive(true);
-            }
+                restartButton.gameObject.SetActive(true);
 
-            if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
-            {
-                restartButton.gameObject.SetActive(false);                
-            }
+                if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
+                {
+                    showDropdown.gameObject.SetActive(true);
+                }
+
+                if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
+                {
+                    restartButton.gameObject.SetActive(false);
+                }
+
+            }                       
             
         }
     }
