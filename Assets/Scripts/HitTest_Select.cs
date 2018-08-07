@@ -65,30 +65,6 @@ namespace UnityEngine.XR.iOS
             }
         }
 
-        /*
-        public void PlaceWhenDeselected()
-        {
-            foreach (Transform child in gameObject.transform)
-            {
-                if (child.gameObject.GetComponent<LeanSelectable>().IsSelected == false)
-                {
-                    DropSingleObject();
-                }
-            }
-        }
-
-        
-        public void DropSingleObject()
-        {
-            foreach (Transform child in gameObject.transform)
-            {
-                //Debug.Log("debug:" + child.gameObject.name);
-                child.gameObject.GetComponent<LeanRotate>().enabled = false;
-                child.gameObject.GetComponent<LeanTranslate>().enabled = false;
-                child.gameObject.GetComponent<LeanScale>().enabled = false;
-            }
-        }
-        */
 
         public void TransformSingleObject()
         {            
@@ -179,8 +155,7 @@ namespace UnityEngine.XR.iOS
             }
                               
             if (scanButton.isActiveAndEnabled == false)
-            {                                           
-                //PlaceWhenDeselected();
+            {                                                           
                 DeselectOnTimeChange();
 
                 if (isDetecting == true)

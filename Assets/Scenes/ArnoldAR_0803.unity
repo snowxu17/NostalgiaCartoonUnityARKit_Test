@@ -6183,7 +6183,7 @@ Prefab:
         type: 2}
       propertyPath: m_Animation
       value: 
-      objectReference: {fileID: 7400000, guid: e230f89665bfb7d488bbf9fce92bb453, type: 2}
+      objectReference: {fileID: 7400000, guid: 103cad2a64fdee046bd4e8f5702c580d, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e928ad5026d993b46a693e47b351894b, type: 2}
   m_IsPrefabParent: 0
@@ -11261,7 +11261,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &471008440
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11275,7 +11275,7 @@ RectTransform:
   - {fileID: 373966705}
   - {fileID: 745809178}
   m_Father: {fileID: 1310939383}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -11584,7 +11584,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -50}
-  m_SizeDelta: {x: 250, y: 100}
+  m_SizeDelta: {x: 300, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &570976558
 MonoBehaviour:
@@ -11617,8 +11617,8 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Pinch to rotate and scale
+    m_LineSpacing: 1.3
+  m_Text: Select artifacts and pinch to scale
 --- !u!222 &570976559
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12099,7 +12099,7 @@ RectTransform:
   - {fileID: 615582660}
   - {fileID: 1025177126}
   m_Father: {fileID: 1310939383}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -12157,7 +12157,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2133521673}
-        m_MethodName: HideRestartButton
+        m_MethodName: HidePlaceButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12422,7 +12422,7 @@ RectTransform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 746477873}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -12432,7 +12432,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -50}
+  m_AnchoredPosition: {x: 0, y: 200}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &746477875
@@ -23362,10 +23362,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1026423651689082, guid: e928ad5026d993b46a693e47b351894b, type: 2}
-      propertyPath: m_Name
-      value: rainbowDisk
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e928ad5026d993b46a693e47b351894b, type: 2}
   m_IsPrefabParent: 0
@@ -23401,7 +23397,7 @@ RectTransform:
   - {fileID: 1987373276}
   - {fileID: 1381558100}
   m_Father: {fileID: 1310939383}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -23592,7 +23588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cac8edf84834043ac167deaeba16a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planePrefab: {fileID: 1372998203143648, guid: f879aaf3eeb0c467eb22cbaf08dc97a4,
+  planePrefab: {fileID: 1797016167324776, guid: 5133a305d2196f24e80bae3d37c00833,
     type: 2}
 --- !u!4 &1308259104
 Transform:
@@ -23694,9 +23690,9 @@ RectTransform:
   m_Children:
   - {fileID: 1501673863}
   - {fileID: 1929595985}
-  - {fileID: 471008440}
   - {fileID: 1263163885}
   - {fileID: 699694664}
+  - {fileID: 471008440}
   - {fileID: 741270867}
   - {fileID: 645984319}
   - {fileID: 2089130328}
@@ -24705,7 +24701,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1554640305
 RectTransform:
   m_ObjectHideFlags: 0
@@ -30282,7 +30278,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -250}
+  m_AnchoredPosition: {x: 0, y: -300}
   m_SizeDelta: {x: 130, y: 110}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1929595986
@@ -31614,7 +31610,8 @@ MonoBehaviour:
   e_Dropdown: {fileID: 2089130329}
   showDropdown: {fileID: 699694665}
   hideDropdown: {fileID: 1239904840}
-  obj: {fileID: 2060666316}
+  pinchGuide: {fileID: 570976556}
+  tapGuide: {fileID: 746477873}
   timeLeft: 7
 --- !u!4 &2133521674
 Transform:

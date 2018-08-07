@@ -6,42 +6,36 @@ using Lean.Touch;
 public class ObjectDisk : MonoBehaviour {
 
     GameObject disk;
-	
-	void Start ()
-    {
-        foreach (Transform child in gameObject.transform)
-        {            
-            disk = child.GetChild(0).gameObject;
-            disk.SetActive(false);
-            Debug.Log(disk.name);
-        }
-    }
-	
 
-    public void RevealDisk ()
+    IEnumerator ShowDisk()
     {
         foreach (Transform child in gameObject.transform)
         {
            if (child.GetComponent<LeanSelectable>().IsSelected == true && child.GetComponent<LeanSelectable>().enabled == true)
-            {
-                child.GetChild(0).gameObject.SetActive(true);
+            {                
+                Animator animator = child.GetChild(0).GetComponent<Animator>();
+
+                animator.SetTrigger("GoToShow");
+                animator.ResetTrigger("GoToHide");
+                animator.ResetTrigger("GoToNone");
+
+                yield return null;
             }
         }
     }
 
 
-    public IEnumerator HideDisk ()
+    IEnumerator HideDisk ()
     {
         foreach (Transform child in gameObject.transform)
         {
             if (child.GetComponent<LeanSelectable>().IsSelected == false)
             {
-                Animation anim = child.GetChild(0).GetComponent<Animation>();
+                Animator animator = child.GetChild(0).GetComponent<Animator>();
 
-                //anim.Play("DiskHide");                                
-                //yield return new WaitForSeconds("DiskHide".Length);
-
-                child.GetChild(0).gameObject.SetActive(false);
+                animator.ResetTrigger("GoToShow");
+                animator.SetTrigger("GoToHide");
+                animator.SetTrigger("GoToNone");
 
                 yield return null;
             }
@@ -51,7 +45,8 @@ public class ObjectDisk : MonoBehaviour {
 
 	void Update ()
     {
-        RevealDisk();
+        StartCoroutine(ShowDisk());
+
         StartCoroutine(HideDisk());
 	}
 }

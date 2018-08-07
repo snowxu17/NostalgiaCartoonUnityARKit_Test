@@ -15,7 +15,8 @@ public class UIManager : MonoBehaviour {
     public Dropdown e_Dropdown;
     public Button showDropdown;
     public Button hideDropdown;
-    public GameObject obj;    
+    public GameObject pinchGuide;
+    public GameObject tapGuide;
     public float timeLeft = 7.0f;
     private HitTest_Select ht;
 
@@ -23,13 +24,10 @@ public class UIManager : MonoBehaviour {
     {      
         scanButton.onClick.AddListener(SetWorldOrigin);
 
-        s_Dropdown.gameObject.SetActive(false);
-        e_Dropdown.gameObject.SetActive(false);
-
         showDropdown.onClick.AddListener(ShowTimeUI);
         hideDropdown.onClick.AddListener(HideTimeUI);
 
-        ht = HitTest_Select.Instance();
+        ht = HitTest_Select.Instance();        
     }
 
     public void SetWorldOrigin()
@@ -43,7 +41,7 @@ public class UIManager : MonoBehaviour {
         //// Editor
         showDropdown.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
-        e_Dropdown.gameObject.SetActive(true);
+        e_Dropdown.gameObject.SetActive(true);        
     }
 
     public void HideTimeUI()
@@ -62,6 +60,8 @@ public class UIManager : MonoBehaviour {
     public void OnClickDestroy()
     {      
         detectButton.gameObject.SetActive(false);
+        tapGuide.SetActive(false);
+        pinchGuide.SetActive(true);
     }
 
     public void HidePlaceButton()
@@ -93,8 +93,9 @@ public class UIManager : MonoBehaviour {
         {                  
             restartButton.gameObject.SetActive(true);    
             
-            if(ht.isDetecting == true)
+            if (ht.isDetecting == true)
             {
+                tapGuide.gameObject.SetActive(true);
                 detectButton.gameObject.SetActive(true);
             }
             
@@ -103,10 +104,9 @@ public class UIManager : MonoBehaviour {
                 showDropdown.gameObject.SetActive(true);
             }
 
-
             if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
             {
-                restartButton.gameObject.SetActive(false);            
+                restartButton.gameObject.SetActive(false);                
             }
             
         }
