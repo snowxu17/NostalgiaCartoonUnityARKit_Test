@@ -25,6 +25,8 @@ public class ManagerScript : MonoBehaviour {
         public int minDistanceFromOrigin;
 
     }
+
+    public List<GameObject> arKitPlaneRenderers;
     
     //This is how you create a "singleton type" of pattern -- there should only be one of these scripts in a scene -- you can use "instance" to reference it at all times to understand the behavior of the app
     public static ManagerScript instance;
@@ -47,6 +49,7 @@ public class ManagerScript : MonoBehaviour {
 
     private void Awake()
     {
+        arKitPlaneRenderers = new List<GameObject>();
         //Initialize global reference to this script
         if (instance == null) instance = this;
         else if (instance != this)
@@ -137,4 +140,20 @@ public class ManagerScript : MonoBehaviour {
         yield return null;
     }
 
+
+    public void AddPlaneRenderer(GameObject go)
+    {
+        arKitPlaneRenderers.Add(go);
+    }
+
+    public void DeActivateAllPlanes()
+    {
+        if (arKitPlaneRenderers != null && arKitPlaneRenderers.Count > 0)
+        {
+            for (int i = 0; i < arKitPlaneRenderers.Count; i++)
+            {
+                arKitPlaneRenderers[i].SetActive(false);
+            }
+        }
+    }
 }

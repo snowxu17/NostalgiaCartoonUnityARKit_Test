@@ -12,6 +12,7 @@ namespace UnityEngine.XR.iOS
 		void Start () {
             unityARAnchorManager = new UnityARAnchorManager();
 			UnityARUtility.InitializePlanePrefab (planePrefab);
+            ManagerScript.instance.AddPlaneRenderer(planePrefab);
 		}
 
         void OnDestroy()

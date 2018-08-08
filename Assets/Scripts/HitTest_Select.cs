@@ -139,7 +139,7 @@ namespace UnityEngine.XR.iOS
 
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
-                    UnityARUtility.DeActivatePlanePrefab();
+                    ManagerScript.instance.DeActivateAllPlanes();
 
                 }
             }
