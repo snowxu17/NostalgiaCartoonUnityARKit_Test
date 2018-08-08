@@ -62,6 +62,8 @@ public class UIManager : MonoBehaviour {
         detectButton.gameObject.SetActive(false);
         tapGuide.SetActive(false);
         pinchGuide.SetActive(true);
+
+        GameObject.Find("GeneratePlanes").SetActive(false);
     }
 
     public void HidePlaceButton()

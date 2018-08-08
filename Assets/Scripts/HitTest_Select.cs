@@ -177,11 +177,10 @@ namespace UnityEngine.XR.iOS
                     //config.getPointCloudData = false;
                     //config.enableLightEstimation = false;
 
-                    /*
-                    GameObject.Find("PointCloudParticleExample").SetActive(false);
-                    GameObject.Find("ParticlePrefab(Clone)").SetActive(false);
-                    GameObject.Find("GeneratePlanes").SetActive(false);
-                    */
+                    
+                    //GameObject.Find("PointCloudParticleExample").SetActive(false);
+                    //GameObject.Find("ParticlePrefab(Clone)").SetActive(false);                
+                    
 
                     foreach (Transform child in gameObject.transform)
                     {                        
