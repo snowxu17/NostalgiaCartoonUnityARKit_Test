@@ -138,7 +138,9 @@ namespace UnityEngine.XR.iOS
                                             m_HitTransform.position.x, m_HitTransform.position.y, m_HitTransform.position.z));
 
                     //and the rotation from the transform of the plane collider
-                    m_HitTransform.rotation = hit.transform.rotation;                    
+                    m_HitTransform.rotation = hit.transform.rotation;
+                    UnityARUtility.DeActivatePlanePrefab();
+
                 }
             }
         }
@@ -160,7 +162,6 @@ namespace UnityEngine.XR.iOS
 
                 if (isDetecting == true)
                 {
-                    UnityARUtility.DeActivatePlanePrefab();
                     foreach (Transform child in gameObject.transform)
                     {
                         child.gameObject.GetComponent<LeanSelectable>().enabled = false;
@@ -170,11 +171,7 @@ namespace UnityEngine.XR.iOS
                 }                         
 
                 if (isDetecting == false)
-                {                    
-                    //GameObject.Find("PointCloudParticleExample").SetActive(false);
-                    //GameObject.Find("ParticlePrefab(Clone)").SetActive(false);                
-                    
-
+                {
                     foreach (Transform child in gameObject.transform)
                     {                        
                         child.gameObject.GetComponent<LeanSelectable>().enabled = true;    
