@@ -159,7 +159,8 @@ namespace UnityEngine.XR.iOS
                 DeselectOnTimeChange();
 
                 if (isDetecting == true)
-                {                    
+                {
+                    UnityARUtility.DeActivatePlanePrefab();
                     foreach (Transform child in gameObject.transform)
                     {
                         child.gameObject.GetComponent<LeanSelectable>().enabled = false;

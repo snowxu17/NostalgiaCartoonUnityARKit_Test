@@ -13,6 +13,11 @@ namespace UnityEngine.XR.iOS
 		{
 			planePrefab = go;
 		}
+
+        public static void DeActivatePlanePrefab()
+        {
+            if (planePrefab != null) planePrefab.SetActive(false);
+        }
 		
 		public static GameObject CreatePlaneInScene(ARPlaneAnchor arPlaneAnchor)
 		{
