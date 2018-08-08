@@ -52,7 +52,7 @@ public class UIManager : MonoBehaviour {
         e_Dropdown.gameObject.SetActive(false);
     }
 
-    public void OnClickShow()
+    public void OnClickShowDetectButton()
     {
         detectButton.gameObject.SetActive(true);
     }
