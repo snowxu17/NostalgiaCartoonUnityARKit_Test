@@ -6213,7 +6213,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 349673891}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.35, y: 0, z: 0}
+  m_LocalPosition: {x: -2.35, y: 0, z: -1.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 966618618}
@@ -11411,7 +11411,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &481742512
 Transform:
   m_ObjectHideFlags: 0
@@ -12467,7 +12467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Tap to move the world
+  m_Text: Tap in the frame to move the world
 --- !u!222 &746477876
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -18240,7 +18240,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 88dfb401d90e96940b2e0ea41919f80f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.5
+      value: -2.1000004
       objectReference: {fileID: 0}
     - target: {fileID: 400024, guid: 88dfb401d90e96940b2e0ea41919f80f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -23114,7 +23114,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cd75a0b3e9baf3543bcdef74cfe6d68e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.81
+      value: -0.7900009
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cd75a0b3e9baf3543bcdef74cfe6d68e, type: 3}
       propertyPath: m_LocalRotation.x
@@ -23588,7 +23588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31cac8edf84834043ac167deaeba16a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  planePrefab: {fileID: 1797016167324776, guid: 5133a305d2196f24e80bae3d37c00833,
+  planePrefab: {fileID: 1372998203143648, guid: f879aaf3eeb0c467eb22cbaf08dc97a4,
     type: 2}
 --- !u!4 &1308259104
 Transform:
@@ -23895,7 +23895,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -115}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 380, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1381558101
 MonoBehaviour:
@@ -23929,7 +23929,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.3
-  m_Text: Look at a flat surface and scan !
+  m_Text: FInd a flat surface and scan !
 --- !u!222 &1381558102
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -29919,7 +29919,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4253ea8e96d559a4eb0f6c79b91679e3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.44200015
+      value: -1.158
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4253ea8e96d559a4eb0f6c79b91679e3, type: 3}
       propertyPath: m_LocalRotation.x
