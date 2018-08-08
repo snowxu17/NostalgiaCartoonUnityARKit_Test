@@ -64,6 +64,8 @@ public class UIManager : MonoBehaviour {
         pinchGuide.SetActive(true);
 
         GameObject.Find("GeneratePlanes").SetActive(false);
+        GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
     }
 
     public void HidePlaceButton()
