@@ -169,15 +169,7 @@ namespace UnityEngine.XR.iOS
                 }                         
 
                 if (isDetecting == false)
-                {
-                    ////Need to test this
-                    //UnityARPlaneDetection planeDetection = UnityARPlaneDetection.None;
-                    //ARKitWorldTrackingSessionConfiguration config = new ARKitWorldTrackingSessionConfiguration();
-                    //config.planeDetection = planeDetection;
-                    //config.getPointCloudData = false;
-                    //config.enableLightEstimation = false;
-
-                    
+                {                    
                     //GameObject.Find("PointCloudParticleExample").SetActive(false);
                     //GameObject.Find("ParticlePrefab(Clone)").SetActive(false);                
                     

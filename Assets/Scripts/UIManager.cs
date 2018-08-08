@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour {
     public Button hideDropdown;
     public GameObject pinchGuide;
     public GameObject tapGuide;
-    public float timeLeft = 7.0f;
+    public float timeLeft = 20.0f;
     private HitTest_Select ht;
 
     private void Awake ()
@@ -64,8 +64,8 @@ public class UIManager : MonoBehaviour {
         pinchGuide.SetActive(true);
 
         GameObject.Find("GeneratePlanes").SetActive(false);
-        GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-        GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
+        //GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
+        //GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
     }
 
     public void HidePlaceButton()
