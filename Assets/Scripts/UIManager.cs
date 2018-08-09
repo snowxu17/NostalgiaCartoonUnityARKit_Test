@@ -54,18 +54,16 @@ public class UIManager : MonoBehaviour {
 
     public void OnClickShowDetectButton()
     {
-        detectButton.gameObject.SetActive(true);
+        //detectButton.gameObject.SetActive(true);
     }
 
-    public void OnClickDestroy()
+    public void OnClickDestroy(GameObject tapGuide, GameObject pinchGuide)
     {      
-        detectButton.gameObject.SetActive(false);
+        //detectButton.gameObject.SetActive(false);
         tapGuide.SetActive(false);
         pinchGuide.SetActive(true);
 
         GameObject.Find("GeneratePlanes").SetActive(false);
-        //GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<MeshRenderer>().enabled = false;
-        //GameObject.Find("debugPlanePrefab").transform.GetChild(0).GetComponent<BoxCollider>().enabled = false;
     }
 
     public void HidePlaceButton()
@@ -89,7 +87,7 @@ public class UIManager : MonoBehaviour {
             placeObjectButton.gameObject.SetActive(false);
             restartButton.gameObject.SetActive(false);
             showDropdown.gameObject.SetActive(false);
-            detectButton.gameObject.SetActive(false);
+            //detectButton.gameObject.SetActive(false);
         }
      
         // Show UI bottons after reset button is off
@@ -100,12 +98,13 @@ public class UIManager : MonoBehaviour {
             if (ht.isDetecting == true)
             {
                 tapGuide.gameObject.SetActive(true);
-                detectButton.gameObject.SetActive(true);
+                //detectButton.gameObject.SetActive(true);
             }
             
             if (ht.isDetecting == false)
             {
                 restartButton.gameObject.SetActive(true);
+                OnClickDestroy(tapGuide, pinchGuide);
 
                 if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
                 {

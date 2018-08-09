@@ -11,7 +11,7 @@ public class ShadowPlane : MonoBehaviour {
         shadowPlane.GetComponent<MeshRenderer>().enabled = false;
     }
 
-    public void ShowShadowPlane()
+    public static void ShowShadowPlane(GameObject shadowPlane)
     {
         Debug.Log("Shadow plane on!");
         shadowPlane.GetComponent<MeshRenderer>().enabled = true;

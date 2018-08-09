@@ -11890,7 +11890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &570976557
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12603,6 +12603,7 @@ MonoBehaviour:
   debugRender: {fileID: 1859287369}
   debugString: 
   arKitPlaneRenderers: []
+  originalOutlineARPrefab: {fileID: 0}
   worlds:
   - objectReferences:
     - {fileID: 11315127}
@@ -24151,18 +24152,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1263163887}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2133521673}
-        m_MethodName: OnClickShowDetectButton
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1263163887
@@ -24500,7 +24490,8 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9500000, guid: 5a3ee084a02ab4b45817dfb17138d565, type: 3}
   m_ParentPrefab: {fileID: 100100000, guid: 5a3ee084a02ab4b45817dfb17138d565, type: 3}
   m_IsPrefabParent: 0
 --- !u!1001 &1343868246
@@ -31167,7 +31158,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1859287368
 Transform:
   m_ObjectHideFlags: 0
@@ -31604,7 +31595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1929595985
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31696,8 +31687,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1286139109}
-        m_MethodName: ShowShadowPlane
+      - m_Target: {fileID: 1286139107}
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -32686,6 +32677,7 @@ MonoBehaviour:
   scanButton: {fileID: 1263163886}
   placeButton: {fileID: 471008441}
   s_dropdown: {fileID: 645984320}
+  floor: {fileID: 1066625290}
   isDetecting: 0
 --- !u!114 &2060666319
 MonoBehaviour:

@@ -26,6 +26,8 @@ namespace UnityEngine.XR.iOS
         public Button placeButton;
         public Dropdown s_dropdown;        
 
+        public GameObject floor;
+
         public bool isDetecting = false;
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
@@ -143,6 +145,7 @@ namespace UnityEngine.XR.iOS
                     ManagerScript.instance.debugString += " ARPlaceObjOnPlane ";
                     ManagerScript.instance.DeActivateAllPlanes();
 
+                    isDetecting = false;
                 }
             }
         }
@@ -174,7 +177,7 @@ namespace UnityEngine.XR.iOS
 
                 if (isDetecting == false)
                 {
-                    //ManagerScript.instance.DeActivateAllPlanes();
+                    ShadowPlane.ShowShadowPlane(floor);
 
                     foreach (Transform child in gameObject.transform)
                     {                        
