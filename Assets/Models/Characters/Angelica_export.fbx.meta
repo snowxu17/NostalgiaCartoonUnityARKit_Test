@@ -1,18 +1,18 @@
 fileFormatVersion: 2
-guid: 5409c01c541a48347b3d3cab51a94f6a
+guid: 3f0923da3fd804848b5952116c12fab0
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: Ancle_L
     100002: Ancle_R
-    100004: Arnold
-    100006: //RootNode
-    100008: Belly
-    100010: Chest
-    100012: Foot_L
-    100014: Foot_R
-    100016: ForeArm_L
-    100018: ForeArm_R
+    100004: //RootNode
+    100006: AngelicaPickles
+    100008: Arm_L
+    100010: Arm_R
+    100012: Belly
+    100014: Chest
+    100016: Foot_L
+    100018: Foot_R
     100020: Hand_L
     100022: Hand_R
     100024: Head
@@ -30,14 +30,14 @@ ModelImporter:
     100048: Wrist_R
     400000: Ancle_L
     400002: Ancle_R
-    400004: Arnold
-    400006: //RootNode
-    400008: Belly
-    400010: Chest
-    400012: Foot_L
-    400014: Foot_R
-    400016: ForeArm_L
-    400018: ForeArm_R
+    400004: //RootNode
+    400006: AngelicaPickles
+    400008: Arm_L
+    400010: Arm_R
+    400012: Belly
+    400014: Chest
+    400016: Foot_L
+    400018: Foot_R
     400020: Hand_L
     400022: Hand_R
     400024: Head
@@ -53,11 +53,11 @@ ModelImporter:
     400044: Toe_R
     400046: Wrist_L
     400048: Wrist_R
-    2100000: Arnold_mat
-    4300000: Arnold
+    2100000: AngelicaPickles_mat
+    4300000: AngelicaPickles
     7400000: Take 001
     9500000: //RootNode
-    13700000: Arnold
+    13700000: AngelicaPickles
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -90,7 +90,7 @@ ModelImporter:
       name: Take 001
       takeName: Take 001
       firstFrame: 1
-      lastFrame: 4000
+      lastFrame: 200
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -98,7 +98,7 @@ ModelImporter:
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -117,7 +117,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 4
+    globalScale: 0.4
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
