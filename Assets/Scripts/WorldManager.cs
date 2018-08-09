@@ -18,6 +18,7 @@ public class WorldManager : MonoBehaviour {
 	{
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         Debug.Log("Restart scene!");
+        ManagerScript.instance.ReInitPrefab();
         resetScene();
 	}
 

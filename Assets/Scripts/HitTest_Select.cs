@@ -139,6 +139,8 @@ namespace UnityEngine.XR.iOS
 
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
+                    Debug.LogWarning("ARPlaceObjectsOnPlane about to call deactivate all planes");
+                    ManagerScript.instance.debugString += " ARPlaceObjOnPlane ";
                     ManagerScript.instance.DeActivateAllPlanes();
 
                 }
@@ -172,6 +174,8 @@ namespace UnityEngine.XR.iOS
 
                 if (isDetecting == false)
                 {
+                    //ManagerScript.instance.DeActivateAllPlanes();
+
                     foreach (Transform child in gameObject.transform)
                     {                        
                         child.gameObject.GetComponent<LeanSelectable>().enabled = true;    

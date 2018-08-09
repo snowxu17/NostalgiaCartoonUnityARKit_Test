@@ -11,8 +11,10 @@ namespace UnityEngine.XR.iOS
 		// Use this for initialization
 		void Start () {
             unityARAnchorManager = new UnityARAnchorManager();
+            //  ManagerScript.instance.AddPlaneRenderer(planePrefab);
+            //Debug.LogWarning("UnityARGeneratePlane");
+            ManagerScript.instance.AssignARPrefab(planePrefab);
 			UnityARUtility.InitializePlanePrefab (planePrefab);
-            ManagerScript.instance.AddPlaneRenderer(planePrefab);
 		}
 
         void OnDestroy()

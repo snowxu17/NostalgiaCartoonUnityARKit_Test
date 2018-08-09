@@ -26,7 +26,12 @@ public class ManagerScript : MonoBehaviour {
 
     }
 
+
+    public TextMesh debugRender;
+    public string debugString;
+
     public List<GameObject> arKitPlaneRenderers;
+    public GameObject originalOutlineARPrefab;
     
     //This is how you create a "singleton type" of pattern -- there should only be one of these scripts in a scene -- you can use "instance" to reference it at all times to understand the behavior of the app
     public static ManagerScript instance;
@@ -49,7 +54,13 @@ public class ManagerScript : MonoBehaviour {
 
     private void Awake()
     {
+        Debug.Log("Hey");
+
+
+
+
         arKitPlaneRenderers = new List<GameObject>();
+
         //Initialize global reference to this script
         if (instance == null) instance = this;
         else if (instance != this)
@@ -148,6 +159,9 @@ public class ManagerScript : MonoBehaviour {
 
     public void DeActivateAllPlanes()
     {
+        debugString += " deactPlns:  " + arKitPlaneRenderers.Count;
+        debugRender.text = debugString;
+
         if (arKitPlaneRenderers != null && arKitPlaneRenderers.Count > 0)
         {
             for (int i = 0; i < arKitPlaneRenderers.Count; i++)
@@ -155,5 +169,15 @@ public class ManagerScript : MonoBehaviour {
                 arKitPlaneRenderers[i].SetActive(false);
             }
         }
+        Debug.LogWarning("DeActivatePlanes function called in Manager.. deactivating: " + arKitPlaneRenderers.Count + " planes");
+    }
+
+    public void AssignARPrefab(GameObject go){
+        originalOutlineARPrefab = go;
+    }
+
+    public void ReInitPrefab(){
+        originalOutlineARPrefab.SetActive(true);
+
     }
 }

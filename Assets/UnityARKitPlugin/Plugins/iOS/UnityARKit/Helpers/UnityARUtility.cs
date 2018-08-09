@@ -13,11 +13,7 @@ namespace UnityEngine.XR.iOS
 		{
 			planePrefab = go;
 		}
-        public static void DeActivatePlanePrefab()
-        {
-            if (planePrefab != null) planePrefab.SetActive(false);
-        }
-
+  
         public static GameObject CreatePlaneInScene(ARPlaneAnchor arPlaneAnchor)
 		{
 			GameObject plane;
@@ -25,9 +21,12 @@ namespace UnityEngine.XR.iOS
 				plane = GameObject.Instantiate(planePrefab);
 			} else {
 				plane = new GameObject (); //put in a blank gameObject to get at least a transform to manipulate
+
 			}
 
+
 			plane.name = arPlaneAnchor.identifier;
+            ManagerScript.instance.AddPlaneRenderer(plane);
 
 			ARKitPlaneMeshRender apmr = plane.GetComponent<ARKitPlaneMeshRender> ();
 			if (apmr != null) {
