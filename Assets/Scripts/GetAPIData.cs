@@ -254,11 +254,12 @@ public class GetAPIData : MonoBehaviour {
         {
             Debug.Log("Time range error!");
 
-            s_dropdown.value = 0;
-            e_dropdown.value = 0;
+            //s_dropdown.value = 0;
+            //e_dropdown.value = 0;
 
             warning.SetActive(true);
         }
+
         else { warning.SetActive(false); }
 
         yield return null;

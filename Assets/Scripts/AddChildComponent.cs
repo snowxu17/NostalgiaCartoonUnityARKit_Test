@@ -9,7 +9,7 @@ public class AddChildComponent : MonoBehaviour {
     {
         foreach (Transform child in gameObject.transform)
         {       
-            child.gameObject.AddComponent<LeanRotate>();
+            //child.gameObject.AddComponent<LeanRotate>();
             child.gameObject.AddComponent<LeanScale>();
             child.gameObject.AddComponent<LeanTranslate>();
             child.gameObject.AddComponent<Rigidbody>();
