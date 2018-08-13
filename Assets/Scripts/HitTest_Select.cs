@@ -27,6 +27,8 @@ namespace UnityEngine.XR.iOS
         public Dropdown s_dropdown;        
 
         public GameObject floor;
+        public GameObject wall1;
+        public GameObject wall2;
 
         public bool isDetecting = false;
 
@@ -177,7 +179,7 @@ namespace UnityEngine.XR.iOS
 
                 if (isDetecting == false)
                 {
-                    ShadowPlane.ShowShadowPlane(floor);
+                    ShadowPlane.ShowShadowPlane(floor, wall1, wall2);
 
                     foreach (Transform child in gameObject.transform)
                     {                        

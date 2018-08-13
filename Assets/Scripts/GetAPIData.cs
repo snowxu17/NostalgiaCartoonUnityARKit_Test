@@ -33,6 +33,7 @@ public class GetAPIData : MonoBehaviour {
 
     private int score;
     public int totalScore;
+    public int threshold = 100000;
 
     public Text responseText;
     public Dropdown s_dropdown;
@@ -130,7 +131,7 @@ public class GetAPIData : MonoBehaviour {
             loading.SetActive(false);
 
             ManagerScript.instance.ResetWorlds();
-            ManagerScript.instance.RevealItems(totalScore, 120000, parent, tempType);
+            ManagerScript.instance.RevealItems(totalScore, threshold, parent, tempType);
         }
     }
 
@@ -189,7 +190,6 @@ public class GetAPIData : MonoBehaviour {
 
         //Debug.Log("Selected start date: " + startDates[s_idx]);
         StartCoroutine(CheckIndex());
-        //StartCoroutine(updateDropdownStart(startDates));
         updateDropdownStart(startDates);
     }
 
@@ -220,7 +220,15 @@ public class GetAPIData : MonoBehaviour {
                 if ( j == 0)
                 {
                     e_d = System.DateTime.Now.Day;
-                    e_date = System.Convert.ToString(e_y) + "-0" + System.Convert.ToString(e_m) + "-0" + System.Convert.ToString(e_d);
+
+                    if (e_d > 9)
+                    {
+                        e_date = System.Convert.ToString(e_y) + "-0" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(e_d);
+                    }
+                    else
+                    {
+                        e_date = System.Convert.ToString(e_y) + "-0" + System.Convert.ToString(e_m) + "-0" + System.Convert.ToString(e_d);
+                    }
                 }
             }
 
@@ -231,7 +239,15 @@ public class GetAPIData : MonoBehaviour {
                 if ( j == 0)
                 {
                     e_d = System.DateTime.Now.Day;
-                    e_date = System.Convert.ToString(e_y) + "-" + System.Convert.ToString(e_m) + "-0" + System.Convert.ToString(e_d);
+
+                    if (e_d > 9)
+                    {
+                        e_date = System.Convert.ToString(e_y) + "-0" + System.Convert.ToString(e_m) + "-" + System.Convert.ToString(e_d);
+                    }
+                    else
+                    {
+                        e_date = System.Convert.ToString(e_y) + "-" + System.Convert.ToString(e_m) + "-0" + System.Convert.ToString(e_d);
+                    }
                 }
             }
                                    
