@@ -26,7 +26,6 @@ public class ManagerScript : MonoBehaviour {
 
     }
 
-
     public TextMesh debugRender;
     public string debugString;
 

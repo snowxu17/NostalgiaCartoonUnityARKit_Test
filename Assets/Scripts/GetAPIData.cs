@@ -61,8 +61,16 @@ public class GetAPIData : MonoBehaviour {
         ChangeEndTime();
 
         Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
-        
+
         maxScr = threshold * 19 - 100;
+
+        /*
+        for (int i = 0; i < ManagerScript.instance.worlds.Length; i++)
+        {
+            maxScr = threshold * ManagerScript.instance.worlds[i].objectReferences.Length - 100;       
+        }
+        */
+ 
         Debug.Log("Max score is :" + maxScr);
 
         //s_dropdown.onValueChanged.AddListener(delegate 
