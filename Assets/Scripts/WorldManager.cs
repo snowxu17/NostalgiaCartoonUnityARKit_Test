@@ -8,7 +8,7 @@ public class WorldManager : MonoBehaviour {
 
     public showTypes tempType;
 
-	private void Awake()
+	private void Start()
 	{
         resetScene();
 	}
@@ -18,13 +18,13 @@ public class WorldManager : MonoBehaviour {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         Debug.Log("Restart scene!");
 
+        resetScene();
         ManagerScript.instance.ReInitPrefab();
-        //resetScene();
     }
 
     private void resetScene()
     {
-        ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.Horizontal);
+        ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.Horizontal, false, true, true);
         UnityARSessionNativeInterface.GetARSessionNativeInterface().RunWithConfigAndOptions(sessionConfig, UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking);
     }
 
@@ -34,16 +34,18 @@ public class WorldManager : MonoBehaviour {
         {
             SceneManager.LoadScene("Rugrats", LoadSceneMode.Single);
 
+            resetScene();
             ManagerScript.instance.ReInitPrefab();
-            //resetScene();
+
         }
 
         if (tempType == showTypes.RUGRATS)
         {
             SceneManager.LoadScene("Arnold", LoadSceneMode.Single);
 
+            resetScene();
             ManagerScript.instance.ReInitPrefab();
-            //resetScene();
+
         }
     }
 }

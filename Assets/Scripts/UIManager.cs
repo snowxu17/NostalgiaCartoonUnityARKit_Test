@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR.iOS;
-using Lean.Touch;
 
 public class UIManager : MonoBehaviour {
 
@@ -21,6 +20,9 @@ public class UIManager : MonoBehaviour {
     public float timeLeft = 20.0f;
     private HitTest_Select ht;
 
+    //for test
+    public int plnCt;
+
     private void Awake ()
     {      
         scanButton.onClick.AddListener(SetWorldOrigin);
@@ -28,12 +30,13 @@ public class UIManager : MonoBehaviour {
         showDropdown.onClick.AddListener(ShowTimeUI);
         hideDropdown.onClick.AddListener(HideTimeUI);
 
-        ht = HitTest_Select.Instance();        
+        ht = HitTest_Select.Instance();
+
     }
 
     public void SetWorldOrigin()
     {
-        UnityARSessionNativeInterface.GetARSessionNativeInterface().SetWorldOrigin(Camera.main.transform);
+        //UnityARSessionNativeInterface.GetARSessionNativeInterface().SetWorldOrigin(Camera.main.transform);
         scanButton.gameObject.SetActive(false);
     }
 
@@ -77,11 +80,14 @@ public class UIManager : MonoBehaviour {
 
     void Update ()
     {
+
+        plnCt = ManagerScript.arKitPlaneRenderers.Count;
+
         timeLeft -= Time.deltaTime;
         //Debug.Log(timeLeft);
         if (timeLeft < 0.0f)
         {
-            scanButton.gameObject.SetActive(false);
+            //scanButton.gameObject.SetActive(false);
             timeLeft = 0;
         }
 
@@ -95,10 +101,15 @@ public class UIManager : MonoBehaviour {
             //detectButton.gameObject.SetActive(false);
         }
      
+
+        //if(plnCt > 0)
+        //{
+        //    scanButton.gameObject.SetActive(false);
+        //}
+
         // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
-        {                  
-            
+        {                              
             if (ht.isDetecting == true)
             {
                 tapGuide.gameObject.SetActive(true);
