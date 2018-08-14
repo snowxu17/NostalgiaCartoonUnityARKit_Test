@@ -26,6 +26,7 @@ public class AudioController : MonoBehaviour {
         if (ht.isDetecting == false && m_Play == true)
         {            
             m_MyAudioSource.Play();
+            m_Play = false;
         }
 
     }

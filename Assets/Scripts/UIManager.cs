@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour {
     public Button scanButton;
     public Button placeObjectButton;
     public Button restartButton;
+    public Button switchButton;
     public Button detectButton;
     public Dropdown s_Dropdown;
     public Dropdown e_Dropdown;
@@ -40,6 +41,8 @@ public class UIManager : MonoBehaviour {
     {
         //// Editor
         showDropdown.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        switchButton.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
         e_Dropdown.gameObject.SetActive(true);        
     }
@@ -48,6 +51,8 @@ public class UIManager : MonoBehaviour {
     {
         //// Editor
         showDropdown.gameObject.SetActive(true);
+        restartButton.gameObject.SetActive(true);
+        switchButton.gameObject.SetActive(true);
         s_Dropdown.gameObject.SetActive(false);
         e_Dropdown.gameObject.SetActive(false);
     }
@@ -63,7 +68,6 @@ public class UIManager : MonoBehaviour {
         tapGuide.SetActive(false);
         pinchGuide.SetActive(true);
 
-        GameObject.Find("GeneratePlanes").SetActive(false);
     }
 
     public void HidePlaceButton()
@@ -86,6 +90,7 @@ public class UIManager : MonoBehaviour {
         {
             placeObjectButton.gameObject.SetActive(false);
             restartButton.gameObject.SetActive(false);
+            switchButton.gameObject.SetActive(false);
             showDropdown.gameObject.SetActive(false);
             //detectButton.gameObject.SetActive(false);
         }
@@ -93,7 +98,6 @@ public class UIManager : MonoBehaviour {
         // Show UI bottons after reset button is off
         if (scanButton.isActiveAndEnabled == false)
         {                  
-            //restartButton.gameObject.SetActive(true);    
             
             if (ht.isDetecting == true)
             {
@@ -102,18 +106,20 @@ public class UIManager : MonoBehaviour {
             }
             
             if (ht.isDetecting == false)
-            {
-                restartButton.gameObject.SetActive(true);
+            {                
                 OnClickDestroy(tapGuide, pinchGuide);
 
                 if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
                 {
                     showDropdown.gameObject.SetActive(true);
+                    restartButton.gameObject.SetActive(true);
+                    switchButton.gameObject.SetActive(true);
                 }
 
                 if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
                 {
                     restartButton.gameObject.SetActive(false);
+                    switchButton.gameObject.SetActive(false);
                 }
 
             }                       

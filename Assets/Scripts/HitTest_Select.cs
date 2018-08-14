@@ -149,6 +149,8 @@ namespace UnityEngine.XR.iOS
 
                     isDetecting = false;
                 }
+
+                isDetecting = false;
             }
         }
 
@@ -183,12 +185,13 @@ namespace UnityEngine.XR.iOS
 
                     foreach (Transform child in gameObject.transform)
                     {                        
-                        child.gameObject.GetComponent<LeanSelectable>().enabled = true;    
+                        child.gameObject.GetComponent<LeanSelectable>().enabled = true;   
 
-                        if(child.gameObject.GetComponent<LeanSelectable>().IsSelected == true)
-                        {
-                            placeButton.gameObject.SetActive(true);
-                        }
+                        //if(child.gameObject.GetComponent<LeanSelectable>().IsSelected == true)
+                        //{
+                        //    placeButton.gameObject.SetActive(true);
+                        //}
+                           
                     }
                 }
             }

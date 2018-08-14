@@ -6,25 +6,25 @@ using UnityEngine.XR.iOS;
 
 public class WorldManager : MonoBehaviour {
 
-    showTypes tempType;
+    public showTypes tempType;
 
-    public enum worldName
-    {
-        Rugrats,
-        HeyArnold
-    }
+	private void Awake()
+	{
+        resetScene();
+	}
 
 	public void restartScene()
 	{
         SceneManager.LoadScene(SceneManager.GetActiveScene().name, LoadSceneMode.Single);
         Debug.Log("Restart scene!");
+
         ManagerScript.instance.ReInitPrefab();
-        resetScene();
-	}
+        //resetScene();
+    }
 
     private void resetScene()
     {
-        ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.HorizontalAndVertical);
+        ARKitWorldTrackingSessionConfiguration sessionConfig = new ARKitWorldTrackingSessionConfiguration(UnityARAlignment.UnityARAlignmentGravity, UnityARPlaneDetection.Horizontal);
         UnityARSessionNativeInterface.GetARSessionNativeInterface().RunWithConfigAndOptions(sessionConfig, UnityARSessionRunOption.ARSessionRunOptionRemoveExistingAnchors | UnityARSessionRunOption.ARSessionRunOptionResetTracking);
     }
 
@@ -32,12 +32,18 @@ public class WorldManager : MonoBehaviour {
     {
         if(tempType == showTypes.HEYARNOLD)
         {
-            SceneManager.LoadScene("Rugrats_0727", LoadSceneMode.Single);
+            SceneManager.LoadScene("Rugrats", LoadSceneMode.Single);
+
+            ManagerScript.instance.ReInitPrefab();
+            //resetScene();
         }
 
         if (tempType == showTypes.RUGRATS)
         {
-            SceneManager.LoadScene("API", LoadSceneMode.Single);
+            SceneManager.LoadScene("Arnold", LoadSceneMode.Single);
+
+            ManagerScript.instance.ReInitPrefab();
+            //resetScene();
         }
     }
 }
