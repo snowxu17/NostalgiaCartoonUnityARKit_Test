@@ -6973,6 +6973,7 @@ extern const RuntimeType Comparison_1_t3375297100_0_0_0 = { &Comparison_1_t33752
 Il2CppGenericClass List_1_t2585711361_GenericClass = { 176, { &GenInst_GameObject_t1113636619_0_0_0, NULL }, NULL };
 extern const RuntimeType List_1_t2585711361_0_0_0 = { &List_1_t2585711361_GenericClass, 0, IL2CPP_TYPE_GENERICINST, 0, 0, 0 };
 extern const RuntimeType List_1_t2585711361_0_0_6 = { &List_1_t2585711361_GenericClass, 6, IL2CPP_TYPE_GENERICINST, 0, 0, 0 };
+extern const RuntimeType List_1_t2585711361_0_0_22 = { &List_1_t2585711361_GenericClass, 22, IL2CPP_TYPE_GENERICINST, 0, 0, 0 };
 extern const RuntimeType List_1_t2585711361_0_0_1 = { &List_1_t2585711361_GenericClass, 1, IL2CPP_TYPE_GENERICINST, 0, 0, 0 };
 
 extern const RuntimeType GameObject_t1113636619_0_0_0 = { (void*)1310, 0, IL2CPP_TYPE_CLASS, 0, 0, 0 };
@@ -19193,7 +19194,7 @@ extern const RuntimeType TimeSpanU5BU5D_t4291357516_0_0_0 = { (void*)&TimeSpan_t
 extern const RuntimeType TypeTagU5BU5D_t1563918664_0_0_0 = { (void*)&TypeTag_t3541821701_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
 
 extern const RuntimeType ITrackingHandlerU5BU5D_t3758023570_0_0_0 = { (void*)&ITrackingHandler_t1244553475_0_0_0, 0, IL2CPP_TYPE_SZARRAY, 0, 0, 0 };
-extern const RuntimeType* const  g_Il2CppTypeTable[9997] = 
+extern const RuntimeType* const  g_Il2CppTypeTable[9998] = 
 {
 	&IEnumerator_1_t3512676632_0_0_0,
 	&RuntimeObject_0_0_0,
@@ -28594,6 +28595,7 @@ extern const RuntimeType* const  g_Il2CppTypeTable[9997] =
 	&ManagerScript_t1606117277_1_0_0,
 	&worldObjectListU5BU5D_t564069865_0_0_0,
 	&TextMesh_t1536577757_0_0_6,
+	&List_1_t2585711361_0_0_22,
 	&ManagerScript_t1606117277_0_0_22,
 	&worldObjectListU5BU5D_t564069865_0_0_6,
 	&Vector3U5BU5D_t1718750761_0_0_6,

@@ -15349,8 +15349,6 @@ public:
 	TextMesh_t1536577757 * ___debugRender_2;
 	// System.String ManagerScript::debugString
 	String_t* ___debugString_3;
-	// System.Collections.Generic.List`1<UnityEngine.GameObject> ManagerScript::arKitPlaneRenderers
-	List_1_t2585711361 * ___arKitPlaneRenderers_4;
 	// UnityEngine.GameObject ManagerScript::originalOutlineARPrefab
 	GameObject_t1113636619 * ___originalOutlineARPrefab_5;
 	// ManagerScript/worldObjectList[] ManagerScript::worlds
@@ -15383,15 +15381,6 @@ public:
 	{
 		___debugString_3 = value;
 		Il2CppCodeGenWriteBarrier((&___debugString_3), value);
-	}
-
-	inline static int32_t get_offset_of_arKitPlaneRenderers_4() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277, ___arKitPlaneRenderers_4)); }
-	inline List_1_t2585711361 * get_arKitPlaneRenderers_4() const { return ___arKitPlaneRenderers_4; }
-	inline List_1_t2585711361 ** get_address_of_arKitPlaneRenderers_4() { return &___arKitPlaneRenderers_4; }
-	inline void set_arKitPlaneRenderers_4(List_1_t2585711361 * value)
-	{
-		___arKitPlaneRenderers_4 = value;
-		Il2CppCodeGenWriteBarrier((&___arKitPlaneRenderers_4), value);
 	}
 
 	inline static int32_t get_offset_of_originalOutlineARPrefab_5() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277, ___originalOutlineARPrefab_5)); }
@@ -15458,10 +15447,21 @@ public:
 struct ManagerScript_t1606117277_StaticFields
 {
 public:
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> ManagerScript::arKitPlaneRenderers
+	List_1_t2585711361 * ___arKitPlaneRenderers_4;
 	// ManagerScript ManagerScript::instance
 	ManagerScript_t1606117277 * ___instance_6;
 
 public:
+	inline static int32_t get_offset_of_arKitPlaneRenderers_4() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277_StaticFields, ___arKitPlaneRenderers_4)); }
+	inline List_1_t2585711361 * get_arKitPlaneRenderers_4() const { return ___arKitPlaneRenderers_4; }
+	inline List_1_t2585711361 ** get_address_of_arKitPlaneRenderers_4() { return &___arKitPlaneRenderers_4; }
+	inline void set_arKitPlaneRenderers_4(List_1_t2585711361 * value)
+	{
+		___arKitPlaneRenderers_4 = value;
+		Il2CppCodeGenWriteBarrier((&___arKitPlaneRenderers_4), value);
+	}
+
 	inline static int32_t get_offset_of_instance_6() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277_StaticFields, ___instance_6)); }
 	inline ManagerScript_t1606117277 * get_instance_6() const { return ___instance_6; }
 	inline ManagerScript_t1606117277 ** get_address_of_instance_6() { return &___instance_6; }
@@ -49218,10 +49218,9 @@ extern "C"  void ManagerScript_Awake_m2171988787 (ManagerScript_t1606117277 * __
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
 		Debug_Log_m4051431634(NULL /*static, unused*/, _stringLiteral2600272005, /*hidden argument*/NULL);
 		// arKitPlaneRenderers = new List<GameObject>();
-		// arKitPlaneRenderers = new List<GameObject>();
 		List_1_t2585711361 * L_0 = (List_1_t2585711361 *)il2cpp_codegen_object_new(List_1_t2585711361_il2cpp_TypeInfo_var);
 		List_1__ctor_m1424466557(L_0, /*hidden argument*/List_1__ctor_m1424466557_RuntimeMethod_var);
-		__this->set_arKitPlaneRenderers_4(L_0);
+		((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->set_arKitPlaneRenderers_4(L_0);
 		// if (instance == null) instance = this;
 		ManagerScript_t1606117277 * L_1 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_instance_6();
 		// if (instance == null) instance = this;
@@ -49229,16 +49228,16 @@ extern "C"  void ManagerScript_Awake_m2171988787 (ManagerScript_t1606117277 * __
 		bool L_2 = Object_op_Equality_m1810815630(NULL /*static, unused*/, L_1, (Object_t631007953 *)NULL, /*hidden argument*/NULL);
 		if (!L_2)
 		{
-			goto IL_0031;
+			goto IL_0030;
 		}
 	}
 	{
 		// if (instance == null) instance = this;
 		((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->set_instance_6(__this);
-		goto IL_0058;
+		goto IL_0057;
 	}
 
-IL_0031:
+IL_0030:
 	{
 		// else if (instance != this)
 		ManagerScript_t1606117277 * L_3 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_instance_6();
@@ -49247,7 +49246,7 @@ IL_0031:
 		bool L_4 = Object_op_Inequality_m4071470834(NULL /*static, unused*/, L_3, __this, /*hidden argument*/NULL);
 		if (!L_4)
 		{
-			goto IL_0058;
+			goto IL_0057;
 		}
 	}
 	{
@@ -49263,7 +49262,7 @@ IL_0031:
 		Object_Destroy_m565254235(NULL /*static, unused*/, L_5, /*hidden argument*/NULL);
 	}
 
-IL_0058:
+IL_0057:
 	{
 		// DeActivateAllObjs(worlds);
 		worldObjectListU5BU5D_t564069865* L_6 = __this->get_worlds_7();
@@ -49558,7 +49557,7 @@ extern "C"  void ManagerScript_AddPlaneRenderer_m2642987877 (ManagerScript_t1606
 	}
 	{
 		// arKitPlaneRenderers.Add(go);
-		List_1_t2585711361 * L_0 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_0 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		GameObject_t1113636619 * L_1 = ___go0;
 		// arKitPlaneRenderers.Add(go);
 		NullCheck(L_0);
@@ -49580,7 +49579,7 @@ extern "C"  void ManagerScript_DeActivateAllPlanes_m3900916212 (ManagerScript_t1
 	{
 		// debugString += " deactPlns:  " + arKitPlaneRenderers.Count;
 		String_t* L_0 = __this->get_debugString_3();
-		List_1_t2585711361 * L_1 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_1 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		// debugString += " deactPlns:  " + arKitPlaneRenderers.Count;
 		NullCheck(L_1);
 		int32_t L_2 = List_1_get_Count_m2812834599(L_1, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
@@ -49596,32 +49595,32 @@ extern "C"  void ManagerScript_DeActivateAllPlanes_m3900916212 (ManagerScript_t1
 		NullCheck(L_6);
 		TextMesh_set_text_m446189179(L_6, L_7, /*hidden argument*/NULL);
 		// if (arKitPlaneRenderers != null && arKitPlaneRenderers.Count > 0)
-		List_1_t2585711361 * L_8 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_8 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		if (!L_8)
 		{
-			goto IL_0086;
+			goto IL_0081;
 		}
 	}
 	{
-		List_1_t2585711361 * L_9 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_9 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		// if (arKitPlaneRenderers != null && arKitPlaneRenderers.Count > 0)
 		NullCheck(L_9);
 		int32_t L_10 = List_1_get_Count_m2812834599(L_9, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
 		if ((((int32_t)L_10) <= ((int32_t)0)))
 		{
-			goto IL_0086;
+			goto IL_0081;
 		}
 	}
 	{
 		// for (int i = 0; i < arKitPlaneRenderers.Count; i++)
 		V_0 = 0;
-		goto IL_0074;
+		goto IL_0070;
 	}
 
-IL_005c:
+IL_0059:
 	{
 		// arKitPlaneRenderers[i].SetActive(false);
-		List_1_t2585711361 * L_11 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_11 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		int32_t L_12 = V_0;
 		// arKitPlaneRenderers[i].SetActive(false);
 		NullCheck(L_11);
@@ -49634,26 +49633,26 @@ IL_005c:
 		V_0 = ((int32_t)il2cpp_codegen_add((int32_t)L_14, (int32_t)1));
 	}
 
-IL_0074:
+IL_0070:
 	{
 		// for (int i = 0; i < arKitPlaneRenderers.Count; i++)
 		int32_t L_15 = V_0;
-		List_1_t2585711361 * L_16 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_16 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		// for (int i = 0; i < arKitPlaneRenderers.Count; i++)
 		NullCheck(L_16);
 		int32_t L_17 = List_1_get_Count_m2812834599(L_16, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);
 		if ((((int32_t)L_15) < ((int32_t)L_17)))
 		{
-			goto IL_005c;
+			goto IL_0059;
 		}
 	}
 	{
 	}
 
-IL_0086:
+IL_0081:
 	{
 		// Debug.LogWarning("DeActivatePlanes function called in Manager.. deactivating: " + arKitPlaneRenderers.Count + " planes");
-		List_1_t2585711361 * L_18 = __this->get_arKitPlaneRenderers_4();
+		List_1_t2585711361 * L_18 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_arKitPlaneRenderers_4();
 		// Debug.LogWarning("DeActivatePlanes function called in Manager.. deactivating: " + arKitPlaneRenderers.Count + " planes");
 		NullCheck(L_18);
 		int32_t L_19 = List_1_get_Count_m2812834599(L_18, /*hidden argument*/List_1_get_Count_m2812834599_RuntimeMethod_var);

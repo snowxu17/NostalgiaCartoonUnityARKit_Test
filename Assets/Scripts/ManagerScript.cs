@@ -30,7 +30,7 @@ public class ManagerScript : MonoBehaviour {
     public TextMesh debugRender;
     public string debugString;
 
-    public List<GameObject> arKitPlaneRenderers;
+    public static List<GameObject> arKitPlaneRenderers;
     public GameObject originalOutlineARPrefab;
     
     //This is how you create a "singleton type" of pattern -- there should only be one of these scripts in a scene -- you can use "instance" to reference it at all times to understand the behavior of the app

@@ -7151,8 +7151,6 @@ public:
 	TextMesh_t1536577757 * ___debugRender_2;
 	// System.String ManagerScript::debugString
 	String_t* ___debugString_3;
-	// System.Collections.Generic.List`1<UnityEngine.GameObject> ManagerScript::arKitPlaneRenderers
-	List_1_t2585711361 * ___arKitPlaneRenderers_4;
 	// UnityEngine.GameObject ManagerScript::originalOutlineARPrefab
 	GameObject_t1113636619 * ___originalOutlineARPrefab_5;
 	// ManagerScript/worldObjectList[] ManagerScript::worlds
@@ -7185,15 +7183,6 @@ public:
 	{
 		___debugString_3 = value;
 		Il2CppCodeGenWriteBarrier((&___debugString_3), value);
-	}
-
-	inline static int32_t get_offset_of_arKitPlaneRenderers_4() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277, ___arKitPlaneRenderers_4)); }
-	inline List_1_t2585711361 * get_arKitPlaneRenderers_4() const { return ___arKitPlaneRenderers_4; }
-	inline List_1_t2585711361 ** get_address_of_arKitPlaneRenderers_4() { return &___arKitPlaneRenderers_4; }
-	inline void set_arKitPlaneRenderers_4(List_1_t2585711361 * value)
-	{
-		___arKitPlaneRenderers_4 = value;
-		Il2CppCodeGenWriteBarrier((&___arKitPlaneRenderers_4), value);
 	}
 
 	inline static int32_t get_offset_of_originalOutlineARPrefab_5() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277, ___originalOutlineARPrefab_5)); }
@@ -7260,10 +7249,21 @@ public:
 struct ManagerScript_t1606117277_StaticFields
 {
 public:
+	// System.Collections.Generic.List`1<UnityEngine.GameObject> ManagerScript::arKitPlaneRenderers
+	List_1_t2585711361 * ___arKitPlaneRenderers_4;
 	// ManagerScript ManagerScript::instance
 	ManagerScript_t1606117277 * ___instance_6;
 
 public:
+	inline static int32_t get_offset_of_arKitPlaneRenderers_4() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277_StaticFields, ___arKitPlaneRenderers_4)); }
+	inline List_1_t2585711361 * get_arKitPlaneRenderers_4() const { return ___arKitPlaneRenderers_4; }
+	inline List_1_t2585711361 ** get_address_of_arKitPlaneRenderers_4() { return &___arKitPlaneRenderers_4; }
+	inline void set_arKitPlaneRenderers_4(List_1_t2585711361 * value)
+	{
+		___arKitPlaneRenderers_4 = value;
+		Il2CppCodeGenWriteBarrier((&___arKitPlaneRenderers_4), value);
+	}
+
 	inline static int32_t get_offset_of_instance_6() { return static_cast<int32_t>(offsetof(ManagerScript_t1606117277_StaticFields, ___instance_6)); }
 	inline ManagerScript_t1606117277 * get_instance_6() const { return ___instance_6; }
 	inline ManagerScript_t1606117277 ** get_address_of_instance_6() { return &___instance_6; }

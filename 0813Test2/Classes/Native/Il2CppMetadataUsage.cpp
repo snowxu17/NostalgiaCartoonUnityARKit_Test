@@ -4029,7 +4029,6 @@ const RuntimeMethod* UnityAction_2__ctor_m555915723_RuntimeMethod_var;
 const RuntimeMethod* UnityEvent_2_AddListener_m4249738285_RuntimeMethod_var;
 const RuntimeMethod* SVBoxSlider_HSVChanged_m1464780397_RuntimeMethod_var;
 const RuntimeMethod* UnityEvent_2_RemoveListener_m3373856719_RuntimeMethod_var;
-const RuntimeMethod* UIManager_SetWorldOrigin_m3347244952_RuntimeMethod_var;
 const RuntimeMethod* UIManager_ShowTimeUI_m745321502_RuntimeMethod_var;
 const RuntimeMethod* UIManager_HideTimeUI_m2650558419_RuntimeMethod_var;
 const RuntimeMethod* UnityARCameraManager_FirstFrameUpdate_m4059259399_RuntimeMethod_var;
@@ -8855,7 +8854,7 @@ String_t* _stringLiteral1864861238;
 String_t* _stringLiteral3926843441;
 String_t* _stringLiteral1132744560;
 String_t* _stringLiteral46997234;
-extern void** const g_MetadataUsages[8836] = 
+extern void** const g_MetadataUsages[8835] = 
 {
 	(void**)(&Contraction_t1589275354_0_0_0_var),
 	(void**)(&Level2Map_t3640798870_0_0_0_var),
@@ -12867,7 +12866,6 @@ extern void** const g_MetadataUsages[8836] =
 	(void**)(&UnityEvent_2_AddListener_m4249738285_RuntimeMethod_var),
 	(void**)(&SVBoxSlider_HSVChanged_m1464780397_RuntimeMethod_var),
 	(void**)(&UnityEvent_2_RemoveListener_m3373856719_RuntimeMethod_var),
-	(void**)(&UIManager_SetWorldOrigin_m3347244952_RuntimeMethod_var),
 	(void**)(&UIManager_ShowTimeUI_m745321502_RuntimeMethod_var),
 	(void**)(&UIManager_HideTimeUI_m2650558419_RuntimeMethod_var),
 	(void**)(&UnityARCameraManager_FirstFrameUpdate_m4059259399_RuntimeMethod_var),

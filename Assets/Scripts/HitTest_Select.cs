@@ -124,7 +124,7 @@ namespace UnityEngine.XR.iOS
 
         public void ARPlaceObjectsOnPlane()
         {           
-            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject())
+            if (Input.GetMouseButtonDown(0) && isDetecting == true && !IsPointerOverUIObject() && ManagerScript.arKitPlaneRenderers.Count > 0)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 //Ray ray = Camera.main.ViewportPointToRay(new Vector3(Camera.main.pixelWidth / 2, Camera.main.pixelHeight / 2, 0));

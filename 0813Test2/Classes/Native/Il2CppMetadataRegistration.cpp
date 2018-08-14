@@ -42,7 +42,7 @@ extern const Il2CppMetadataRegistration g_MetadataRegistration =
 	g_Il2CppGenericInstTable,
 	5978,
 	s_Il2CppGenericMethodFunctions,
-	9997,
+	9998,
 	g_Il2CppTypeTable,
 	6340,
 	g_Il2CppMethodSpecTable,
