@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour {
     public GameObject pinchGuide;
     public GameObject tapGuide;
     public float timeLeft = 20.0f;
+
     private HitTest_Select ht;
 
     //for test

@@ -37,24 +37,4 @@ public class ParticleController : MonoBehaviour {
             }
         }
     }
-
-
-   //public bool particleOn
-    //{
-
-    //    get
-    //    {
-    //        return particleOn;
-    //    }
-
-    //    set
-    //    {
-    //        if(hitTest.isDetecting == true)
-    //        {
-    //            particleOn = value;
-
-    //        }
-    //    }
-    //}
-
 }

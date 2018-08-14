@@ -26,26 +26,28 @@ public class GetAPIData : MonoBehaviour {
     ////API_TOKEN_IG = "VaVU9gRX1Gi5imI8E3PQzPkV9MzeWOwDkgL7RDFJ";   
     private string API_TOKEN = "TYUtgI4r8B1wTiYj0O5UJkKrVjsLHXzu6UxBJjLS";
 
-    public string startDate; //= "2018-05-01";
-    public string endDate; //= "2018-07-01";
+    public string startDate; ///in the format of "2018-05-01";
+    public string endDate; ///in the format of "2018-07-01";
     public string sortBy = "total_interactions";
     public int count = 10;
 
     private int score;
-    public int totalScore;
+    private int maxScr;
+    public int totalScore; ///the final score for each show
+
     public int threshold = 100000;
 
     public Text responseText;
     public Dropdown s_dropdown;
     public Dropdown e_dropdown;
-    //int last_s_idx;
-    //int last_e_idx;
+
     public GameObject warning;
     public GameObject loading;
+    public GameObject loadingBox;
+    public GameObject specialEffect;
 
     int numDays;
-
-    List<int> thresholds;
+    float t;
 
     public List<string> startDates;
     public List<string> endDates;
@@ -60,6 +62,8 @@ public class GetAPIData : MonoBehaviour {
 
         Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
         
+        maxScr = threshold * 19 - 100;
+        Debug.Log("Max score is :" + maxScr);
 
         //s_dropdown.onValueChanged.AddListener(delegate 
         //{ DropdownValueChanged(s_dropdown);
@@ -128,10 +132,20 @@ public class GetAPIData : MonoBehaviour {
         if (totalScore > 1000)
         {
             Debug.Log("End total score: " + totalScore);
-            loading.SetActive(false);
+            loading.SetActive(false);            
+            loadingBox.SetActive(false);           
+
+            int m_totalScore = Mathf.Clamp(totalScore, 0, maxScr);
+            Debug.Log("Constrained total score: " + m_totalScore);
+
+            if (totalScore > maxScr)
+            {
+                Debug.Log("total score is bigger!!!!!!!!!!");                                             
+            }
 
             ManagerScript.instance.ResetWorlds();
-            ManagerScript.instance.RevealItems(totalScore, threshold, parent, tempType);
+            ManagerScript.instance.RevealItems(m_totalScore, threshold, parent, tempType);
+            //ManagerScript.instance.RevealItems(totalScore, threshold, parent, tempType);
         }
     }
 
@@ -285,6 +299,7 @@ public class GetAPIData : MonoBehaviour {
     public void DropdownValueChanged()
     {        
         loading.SetActive(true);
+        loadingBox.SetActive(true);
         Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
         
         // If not using UI button to pull data
@@ -321,9 +336,6 @@ public class GetAPIData : MonoBehaviour {
             s_dropdown.options.Add(new Dropdown.OptionData(s_dateOption));
 
         }
-
-        //yield return null;
-
     }
 
     void updateDropdownEnd(List<string> e_dates)
@@ -335,7 +347,22 @@ public class GetAPIData : MonoBehaviour {
             //Debug.Log("e_dateOption: " + e_dateOption);
             e_dropdown.options.Add(new Dropdown.OptionData(e_dateOption));
         }
-
-        //yield return null;
     }
+
+    private void Update()
+    {       
+        if (totalScore > maxScr)
+        {
+            t += Time.deltaTime;
+            Debug.Log("t :" + t);
+
+            if (t < 10.0f)
+            {
+                specialEffect.SetActive(true);
+            }
+
+            else { specialEffect.SetActive(false); }
+        }
+    }
+
 }
