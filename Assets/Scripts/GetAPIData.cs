@@ -364,7 +364,7 @@ public class GetAPIData : MonoBehaviour {
             t += Time.deltaTime;
             Debug.Log("t :" + t);
 
-            if (t < 10.0f)
+            if (t < 30.0f)
             {
                 specialEffect.SetActive(true);
             }
