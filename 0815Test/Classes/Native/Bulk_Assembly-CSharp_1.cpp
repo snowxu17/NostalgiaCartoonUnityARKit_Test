@@ -21464,208 +21464,216 @@ extern "C"  void UIManager_Update_m1085197836 (UIManager_t1042050227 * __this, c
 		float L_4 = __this->get_timeLeft_13();
 		if ((!(((float)L_4) < ((float)(0.0f)))))
 		{
-			goto IL_0040;
+			goto IL_0051;
 		}
 	}
 	{
+		// scanButton.gameObject.SetActive(false);
+		Button_t4055032469 * L_5 = __this->get_scanButton_2();
+		// scanButton.gameObject.SetActive(false);
+		NullCheck(L_5);
+		GameObject_t1113636619 * L_6 = Component_get_gameObject_m442555142(L_5, /*hidden argument*/NULL);
+		// scanButton.gameObject.SetActive(false);
+		NullCheck(L_6);
+		GameObject_SetActive_m796801857(L_6, (bool)0, /*hidden argument*/NULL);
 		// timeLeft = 0;
 		__this->set_timeLeft_13((0.0f));
 	}
 
-IL_0040:
+IL_0051:
 	{
 		// if (scanButton.isActiveAndEnabled == true)
-		Button_t4055032469 * L_5 = __this->get_scanButton_2();
+		Button_t4055032469 * L_7 = __this->get_scanButton_2();
 		// if (scanButton.isActiveAndEnabled == true)
-		NullCheck(L_5);
-		bool L_6 = Behaviour_get_isActiveAndEnabled_m3143666263(L_5, /*hidden argument*/NULL);
-		if (!L_6)
+		NullCheck(L_7);
+		bool L_8 = Behaviour_get_isActiveAndEnabled_m3143666263(L_7, /*hidden argument*/NULL);
+		if (!L_8)
 		{
-			goto IL_0096;
+			goto IL_00a7;
 		}
 	}
 	{
 		// placeObjectButton.gameObject.SetActive(false);
-		Button_t4055032469 * L_7 = __this->get_placeObjectButton_3();
+		Button_t4055032469 * L_9 = __this->get_placeObjectButton_3();
 		// placeObjectButton.gameObject.SetActive(false);
-		NullCheck(L_7);
-		GameObject_t1113636619 * L_8 = Component_get_gameObject_m442555142(L_7, /*hidden argument*/NULL);
-		// placeObjectButton.gameObject.SetActive(false);
-		NullCheck(L_8);
-		GameObject_SetActive_m796801857(L_8, (bool)0, /*hidden argument*/NULL);
-		// restartButton.gameObject.SetActive(false);
-		Button_t4055032469 * L_9 = __this->get_restartButton_4();
-		// restartButton.gameObject.SetActive(false);
 		NullCheck(L_9);
 		GameObject_t1113636619 * L_10 = Component_get_gameObject_m442555142(L_9, /*hidden argument*/NULL);
-		// restartButton.gameObject.SetActive(false);
+		// placeObjectButton.gameObject.SetActive(false);
 		NullCheck(L_10);
 		GameObject_SetActive_m796801857(L_10, (bool)0, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(false);
-		Button_t4055032469 * L_11 = __this->get_switchButton_5();
-		// switchButton.gameObject.SetActive(false);
+		// restartButton.gameObject.SetActive(false);
+		Button_t4055032469 * L_11 = __this->get_restartButton_4();
+		// restartButton.gameObject.SetActive(false);
 		NullCheck(L_11);
 		GameObject_t1113636619 * L_12 = Component_get_gameObject_m442555142(L_11, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(false);
+		// restartButton.gameObject.SetActive(false);
 		NullCheck(L_12);
 		GameObject_SetActive_m796801857(L_12, (bool)0, /*hidden argument*/NULL);
-		// showDropdown.gameObject.SetActive(false);
-		Button_t4055032469 * L_13 = __this->get_showDropdown_9();
-		// showDropdown.gameObject.SetActive(false);
+		// switchButton.gameObject.SetActive(false);
+		Button_t4055032469 * L_13 = __this->get_switchButton_5();
+		// switchButton.gameObject.SetActive(false);
 		NullCheck(L_13);
 		GameObject_t1113636619 * L_14 = Component_get_gameObject_m442555142(L_13, /*hidden argument*/NULL);
-		// showDropdown.gameObject.SetActive(false);
+		// switchButton.gameObject.SetActive(false);
 		NullCheck(L_14);
 		GameObject_SetActive_m796801857(L_14, (bool)0, /*hidden argument*/NULL);
+		// showDropdown.gameObject.SetActive(false);
+		Button_t4055032469 * L_15 = __this->get_showDropdown_9();
+		// showDropdown.gameObject.SetActive(false);
+		NullCheck(L_15);
+		GameObject_t1113636619 * L_16 = Component_get_gameObject_m442555142(L_15, /*hidden argument*/NULL);
+		// showDropdown.gameObject.SetActive(false);
+		NullCheck(L_16);
+		GameObject_SetActive_m796801857(L_16, (bool)0, /*hidden argument*/NULL);
 	}
 
-IL_0096:
+IL_00a7:
 	{
 		// if (scanButton.isActiveAndEnabled == false)
-		Button_t4055032469 * L_15 = __this->get_scanButton_2();
+		Button_t4055032469 * L_17 = __this->get_scanButton_2();
 		// if (scanButton.isActiveAndEnabled == false)
-		NullCheck(L_15);
-		bool L_16 = Behaviour_get_isActiveAndEnabled_m3143666263(L_15, /*hidden argument*/NULL);
-		if (L_16)
+		NullCheck(L_17);
+		bool L_18 = Behaviour_get_isActiveAndEnabled_m3143666263(L_17, /*hidden argument*/NULL);
+		if (L_18)
 		{
-			goto IL_0188;
+			goto IL_0199;
 		}
 	}
 	{
 		// if (ht.isDetecting == true)
-		HitTest_Select_t1409098171 * L_17 = __this->get_ht_14();
-		NullCheck(L_17);
-		bool L_18 = L_17->get_isDetecting_12();
-		if (!L_18)
+		HitTest_Select_t1409098171 * L_19 = __this->get_ht_14();
+		NullCheck(L_19);
+		bool L_20 = L_19->get_isDetecting_12();
+		if (!L_20)
 		{
-			goto IL_00ca;
+			goto IL_00db;
 		}
 	}
 	{
 		// tapGuide.gameObject.SetActive(true);
-		GameObject_t1113636619 * L_19 = __this->get_tapGuide_12();
+		GameObject_t1113636619 * L_21 = __this->get_tapGuide_12();
 		// tapGuide.gameObject.SetActive(true);
-		NullCheck(L_19);
-		GameObject_t1113636619 * L_20 = GameObject_get_gameObject_m3693461266(L_19, /*hidden argument*/NULL);
+		NullCheck(L_21);
+		GameObject_t1113636619 * L_22 = GameObject_get_gameObject_m3693461266(L_21, /*hidden argument*/NULL);
 		// tapGuide.gameObject.SetActive(true);
-		NullCheck(L_20);
-		GameObject_SetActive_m796801857(L_20, (bool)1, /*hidden argument*/NULL);
+		NullCheck(L_22);
+		GameObject_SetActive_m796801857(L_22, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_00ca:
+IL_00db:
 	{
 		// if (ht.isDetecting == false)
-		HitTest_Select_t1409098171 * L_21 = __this->get_ht_14();
-		NullCheck(L_21);
-		bool L_22 = L_21->get_isDetecting_12();
-		if (L_22)
+		HitTest_Select_t1409098171 * L_23 = __this->get_ht_14();
+		NullCheck(L_23);
+		bool L_24 = L_23->get_isDetecting_12();
+		if (L_24)
 		{
-			goto IL_0187;
+			goto IL_0198;
 		}
 	}
 	{
 		// OnClickDestroy(tapGuide, pinchGuide);
-		GameObject_t1113636619 * L_23 = __this->get_tapGuide_12();
-		GameObject_t1113636619 * L_24 = __this->get_pinchGuide_11();
+		GameObject_t1113636619 * L_25 = __this->get_tapGuide_12();
+		GameObject_t1113636619 * L_26 = __this->get_pinchGuide_11();
 		// OnClickDestroy(tapGuide, pinchGuide);
-		UIManager_OnClickDestroy_m3493996091(__this, L_23, L_24, /*hidden argument*/NULL);
+		UIManager_OnClickDestroy_m3493996091(__this, L_25, L_26, /*hidden argument*/NULL);
 		// if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
-		Dropdown_t2274391225 * L_25 = __this->get_s_Dropdown_7();
-		// if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
-		NullCheck(L_25);
-		bool L_26 = Behaviour_get_isActiveAndEnabled_m3143666263(L_25, /*hidden argument*/NULL);
-		if (L_26)
-		{
-			goto IL_0142;
-		}
-	}
-	{
-		Dropdown_t2274391225 * L_27 = __this->get_e_Dropdown_8();
+		Dropdown_t2274391225 * L_27 = __this->get_s_Dropdown_7();
 		// if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
 		NullCheck(L_27);
 		bool L_28 = Behaviour_get_isActiveAndEnabled_m3143666263(L_27, /*hidden argument*/NULL);
 		if (L_28)
 		{
-			goto IL_0142;
+			goto IL_0153;
+		}
+	}
+	{
+		Dropdown_t2274391225 * L_29 = __this->get_e_Dropdown_8();
+		// if (s_Dropdown.isActiveAndEnabled == false && e_Dropdown.isActiveAndEnabled == false)
+		NullCheck(L_29);
+		bool L_30 = Behaviour_get_isActiveAndEnabled_m3143666263(L_29, /*hidden argument*/NULL);
+		if (L_30)
+		{
+			goto IL_0153;
 		}
 	}
 	{
 		// showDropdown.gameObject.SetActive(true);
-		Button_t4055032469 * L_29 = __this->get_showDropdown_9();
+		Button_t4055032469 * L_31 = __this->get_showDropdown_9();
 		// showDropdown.gameObject.SetActive(true);
-		NullCheck(L_29);
-		GameObject_t1113636619 * L_30 = Component_get_gameObject_m442555142(L_29, /*hidden argument*/NULL);
-		// showDropdown.gameObject.SetActive(true);
-		NullCheck(L_30);
-		GameObject_SetActive_m796801857(L_30, (bool)1, /*hidden argument*/NULL);
-		// restartButton.gameObject.SetActive(true);
-		Button_t4055032469 * L_31 = __this->get_restartButton_4();
-		// restartButton.gameObject.SetActive(true);
 		NullCheck(L_31);
 		GameObject_t1113636619 * L_32 = Component_get_gameObject_m442555142(L_31, /*hidden argument*/NULL);
-		// restartButton.gameObject.SetActive(true);
+		// showDropdown.gameObject.SetActive(true);
 		NullCheck(L_32);
 		GameObject_SetActive_m796801857(L_32, (bool)1, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(true);
-		Button_t4055032469 * L_33 = __this->get_switchButton_5();
-		// switchButton.gameObject.SetActive(true);
+		// restartButton.gameObject.SetActive(true);
+		Button_t4055032469 * L_33 = __this->get_restartButton_4();
+		// restartButton.gameObject.SetActive(true);
 		NullCheck(L_33);
 		GameObject_t1113636619 * L_34 = Component_get_gameObject_m442555142(L_33, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(true);
+		// restartButton.gameObject.SetActive(true);
 		NullCheck(L_34);
 		GameObject_SetActive_m796801857(L_34, (bool)1, /*hidden argument*/NULL);
+		// switchButton.gameObject.SetActive(true);
+		Button_t4055032469 * L_35 = __this->get_switchButton_5();
+		// switchButton.gameObject.SetActive(true);
+		NullCheck(L_35);
+		GameObject_t1113636619 * L_36 = Component_get_gameObject_m442555142(L_35, /*hidden argument*/NULL);
+		// switchButton.gameObject.SetActive(true);
+		NullCheck(L_36);
+		GameObject_SetActive_m796801857(L_36, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_0142:
+IL_0153:
 	{
 		// if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
-		Dropdown_t2274391225 * L_35 = __this->get_s_Dropdown_7();
-		// if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
-		NullCheck(L_35);
-		bool L_36 = Behaviour_get_isActiveAndEnabled_m3143666263(L_35, /*hidden argument*/NULL);
-		if (!L_36)
-		{
-			goto IL_0186;
-		}
-	}
-	{
-		Dropdown_t2274391225 * L_37 = __this->get_e_Dropdown_8();
+		Dropdown_t2274391225 * L_37 = __this->get_s_Dropdown_7();
 		// if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
 		NullCheck(L_37);
 		bool L_38 = Behaviour_get_isActiveAndEnabled_m3143666263(L_37, /*hidden argument*/NULL);
 		if (!L_38)
 		{
-			goto IL_0186;
+			goto IL_0197;
+		}
+	}
+	{
+		Dropdown_t2274391225 * L_39 = __this->get_e_Dropdown_8();
+		// if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
+		NullCheck(L_39);
+		bool L_40 = Behaviour_get_isActiveAndEnabled_m3143666263(L_39, /*hidden argument*/NULL);
+		if (!L_40)
+		{
+			goto IL_0197;
 		}
 	}
 	{
 		// restartButton.gameObject.SetActive(false);
-		Button_t4055032469 * L_39 = __this->get_restartButton_4();
+		Button_t4055032469 * L_41 = __this->get_restartButton_4();
 		// restartButton.gameObject.SetActive(false);
-		NullCheck(L_39);
-		GameObject_t1113636619 * L_40 = Component_get_gameObject_m442555142(L_39, /*hidden argument*/NULL);
-		// restartButton.gameObject.SetActive(false);
-		NullCheck(L_40);
-		GameObject_SetActive_m796801857(L_40, (bool)0, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(false);
-		Button_t4055032469 * L_41 = __this->get_switchButton_5();
-		// switchButton.gameObject.SetActive(false);
 		NullCheck(L_41);
 		GameObject_t1113636619 * L_42 = Component_get_gameObject_m442555142(L_41, /*hidden argument*/NULL);
-		// switchButton.gameObject.SetActive(false);
+		// restartButton.gameObject.SetActive(false);
 		NullCheck(L_42);
 		GameObject_SetActive_m796801857(L_42, (bool)0, /*hidden argument*/NULL);
+		// switchButton.gameObject.SetActive(false);
+		Button_t4055032469 * L_43 = __this->get_switchButton_5();
+		// switchButton.gameObject.SetActive(false);
+		NullCheck(L_43);
+		GameObject_t1113636619 * L_44 = Component_get_gameObject_m442555142(L_43, /*hidden argument*/NULL);
+		// switchButton.gameObject.SetActive(false);
+		NullCheck(L_44);
+		GameObject_SetActive_m796801857(L_44, (bool)0, /*hidden argument*/NULL);
 	}
 
-IL_0186:
+IL_0197:
 	{
 	}
 
-IL_0187:
+IL_0198:
 	{
 	}
 
-IL_0188:
+IL_0199:
 	{
 		// }
 		return;

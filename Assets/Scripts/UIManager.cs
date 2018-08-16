@@ -88,7 +88,7 @@ public class UIManager : MonoBehaviour {
         //Debug.Log(timeLeft);
         if (timeLeft < 0.0f)
         {
-            //scanButton.gameObject.SetActive(false);
+            scanButton.gameObject.SetActive(false);
             timeLeft = 0;
         }
 

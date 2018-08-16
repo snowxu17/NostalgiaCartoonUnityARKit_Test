@@ -497,6 +497,7 @@ extern const RuntimeMethod* Enumerator_MoveNext_m2987439075_RuntimeMethod_var;
 extern const RuntimeMethod* Enumerator_Dispose_m510309855_RuntimeMethod_var;
 extern const uint32_t VideoFormatsExample_PopulateVideoFormatButtons_m595526008_MetadataUsageId;
 extern const uint32_t VideoFormatsExample_ExampletButtonPressed_m2588664126_MetadataUsageId;
+extern const uint32_t WorldManager_Start_m3631358924_MetadataUsageId;
 extern String_t* _stringLiteral1427169051;
 extern const uint32_t WorldManager_restartScene_m1910262916_MetadataUsageId;
 extern const uint32_t WorldManager_resetScene_m4262194985_MetadataUsageId;
@@ -8660,14 +8661,14 @@ extern "C"  void Application_set_targetFrameRate_m3682352535 (RuntimeObject * __
 extern "C"  void UnityARSessionNativeInterface_RunWithConfigAndOptions_m2136170177 (UnityARSessionNativeInterface_t3929719369 * __this, ARKitWorldTrackingSessionConfiguration_t273386347  ___config0, int32_t ___runOptions1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void WorldManager::resetScene()
 extern "C"  void WorldManager_resetScene_m4262194985 (WorldManager_t3626441138 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
+// System.Void ManagerScript::ReInitPrefab()
+extern "C"  void ManagerScript_ReInitPrefab_m718215896 (ManagerScript_t1606117277 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // UnityEngine.SceneManagement.Scene UnityEngine.SceneManagement.SceneManager::GetActiveScene()
 extern "C"  Scene_t2348375561  SceneManager_GetActiveScene_m1825203488 (RuntimeObject * __this /* static, unused */, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.String UnityEngine.SceneManagement.Scene::get_name()
 extern "C"  String_t* Scene_get_name_m622963475 (Scene_t2348375561 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 // System.Void UnityEngine.SceneManagement.SceneManager::LoadScene(System.String,UnityEngine.SceneManagement.LoadSceneMode)
 extern "C"  void SceneManager_LoadScene_m2298600132 (RuntimeObject * __this /* static, unused */, String_t* p0, int32_t p1, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
-// System.Void ManagerScript::ReInitPrefab()
-extern "C"  void ManagerScript_ReInitPrefab_m718215896 (ManagerScript_t1606117277 * __this, const RuntimeMethod* method) IL2CPP_METHOD_ATTR;
 #ifdef __clang__
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Winvalid-offsetof"
@@ -13994,10 +13995,21 @@ extern "C"  void WorldManager__ctor_m2849045736 (WorldManager_t3626441138 * __th
 // System.Void WorldManager::Start()
 extern "C"  void WorldManager_Start_m3631358924 (WorldManager_t3626441138 * __this, const RuntimeMethod* method)
 {
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_method (WorldManager_Start_m3631358924_MetadataUsageId);
+		s_Il2CppMethodInitialized = true;
+	}
 	{
 		// resetScene();
 		// resetScene();
 		WorldManager_resetScene_m4262194985(__this, /*hidden argument*/NULL);
+		// ManagerScript.instance.ReInitPrefab();
+		ManagerScript_t1606117277 * L_0 = ((ManagerScript_t1606117277_StaticFields*)il2cpp_codegen_static_fields_for(ManagerScript_t1606117277_il2cpp_TypeInfo_var))->get_instance_6();
+		// ManagerScript.instance.ReInitPrefab();
+		NullCheck(L_0);
+		ManagerScript_ReInitPrefab_m718215896(L_0, /*hidden argument*/NULL);
 		// }
 		return;
 	}
