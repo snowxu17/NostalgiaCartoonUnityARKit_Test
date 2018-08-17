@@ -11,7 +11,7 @@ public class WorldManager : MonoBehaviour {
 	private void Start()
 	{
         resetScene();
-        ManagerScript.instance.ReInitPrefab();
+        //ManagerScript.instance.ReInitPrefab();
 	}
 
 	public void restartScene()
