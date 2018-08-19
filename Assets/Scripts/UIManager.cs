@@ -17,9 +17,23 @@ public class UIManager : MonoBehaviour {
     public Button hideDropdown;
     public GameObject pinchGuide;
     public GameObject tapGuide;
+    public GameObject tmGuide;
+
     public float timeLeft = 20.0f;
 
+    int counter = 0;
+
     private HitTest_Select ht;
+
+    private static UIManager ui;
+    public static UIManager Instance()
+    {
+        if (!ui)
+        {
+            ui = FindObjectOfType(typeof(UIManager)) as UIManager;
+        }
+        return ui;
+    }
 
     //for test
     public int plnCt;
@@ -48,7 +62,15 @@ public class UIManager : MonoBehaviour {
         restartButton.gameObject.SetActive(false);
         switchButton.gameObject.SetActive(false);
         s_Dropdown.gameObject.SetActive(true);
-        e_Dropdown.gameObject.SetActive(true);        
+        e_Dropdown.gameObject.SetActive(true);
+
+        counter += 1;
+
+        if(counter == 1)
+        {
+            tmGuide.gameObject.SetActive(true);
+        }
+
     }
 
     public void HideTimeUI()
@@ -59,12 +81,24 @@ public class UIManager : MonoBehaviour {
         switchButton.gameObject.SetActive(true);
         s_Dropdown.gameObject.SetActive(false);
         e_Dropdown.gameObject.SetActive(false);
+        tmGuide.gameObject.SetActive(false);
     }
 
-    public void OnClickShowDetectButton()
-    {
-        //detectButton.gameObject.SetActive(true);
-    }
+
+    //public static void HideTimeUI(GameObject showDropdown, GameObject restartButton, GameObject switchButton, GameObject s_Dropdown, GameObject e_Dropdown)
+    //{
+    //    //// Editor
+    //    showDropdown.gameObject.SetActive(true);
+    //    restartButton.gameObject.SetActive(true);
+    //    switchButton.gameObject.SetActive(true);
+    //    s_Dropdown.gameObject.SetActive(false);
+    //    e_Dropdown.gameObject.SetActive(false);
+    //}
+
+    //public void OnClickShowDetectButton()
+    //{
+    //    detectButton.gameObject.SetActive(true);
+    //}
 
     public void OnClickDestroy(GameObject tapGuide, GameObject pinchGuide)
     {      
@@ -74,10 +108,10 @@ public class UIManager : MonoBehaviour {
 
     }
 
-    public void HidePlaceButton()
-    {
-        placeObjectButton.gameObject.SetActive(false);        
-    }
+    //public void HidePlaceButton()
+    //{
+    //    placeObjectButton.gameObject.SetActive(false);        
+    //}
 
     void Update ()
     {
@@ -126,6 +160,7 @@ public class UIManager : MonoBehaviour {
                     showDropdown.gameObject.SetActive(true);
                     restartButton.gameObject.SetActive(true);
                     switchButton.gameObject.SetActive(true);
+
                 }
 
                 if (s_Dropdown.isActiveAndEnabled == true && e_Dropdown.isActiveAndEnabled == true)
@@ -134,7 +169,7 @@ public class UIManager : MonoBehaviour {
                     switchButton.gameObject.SetActive(false);
                 }
 
-            }                       
+            }  
             
         }
     }

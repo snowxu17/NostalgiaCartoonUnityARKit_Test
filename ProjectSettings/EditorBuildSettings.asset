@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Arnold.unity
     guid: 1e985abf31d6f4bf682685ee924d546a
+  - enabled: 0
+    path: Assets/Scenes/LETSGO.unity
+    guid: c2177d4f5208843bab0b1e23da75ee54
   m_configObjects: {}

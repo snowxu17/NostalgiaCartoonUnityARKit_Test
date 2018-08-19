@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 using SimpleJSON;
+using UnityEngine.XR.iOS;
 
 
 public class GetAPIData : MonoBehaviour {
@@ -45,6 +46,9 @@ public class GetAPIData : MonoBehaviour {
     public GameObject loading;
     public GameObject loadingBox;
     public GameObject specialEffect;
+    public GameObject request;
+    public GameObject hideTime;
+    public GameObject tmGuide;
 
     int numDays;
     float t;
@@ -55,8 +59,12 @@ public class GetAPIData : MonoBehaviour {
     public GameObject parent;
 
 
+
     private void Awake()
     {        
+  
+
+
         ChangeStartTime();
         ChangeEndTime();
 
@@ -296,9 +304,24 @@ public class GetAPIData : MonoBehaviour {
             //e_dropdown.value = 0;
 
             warning.SetActive(true);
+            loading.SetActive(false);
+            loadingBox.SetActive(false);
+            request.SetActive(false);
+            hideTime.SetActive(false);
+            tmGuide.SetActive(false);
         }
 
-        else { warning.SetActive(false); }
+
+        else 
+        { 
+            if(s_dropdown.isActiveAndEnabled == true)
+            {                
+                request.SetActive(true);
+                hideTime.SetActive(true);
+            }
+                
+            warning.SetActive(false);                       
+        }
 
         yield return null;
     }
