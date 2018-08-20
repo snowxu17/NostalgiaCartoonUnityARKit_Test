@@ -19,7 +19,7 @@ public class LetsGo : MonoBehaviour {
 
         timeCounter += Time.deltaTime;
 
-        if(timeCounter > 5.0f)
+        if(timeCounter > 5.5f)
         {
             button.SetActive(true);
         }

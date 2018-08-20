@@ -25853,7 +25853,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.366
+      value: 0.318
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalPosition.z
@@ -25861,19 +25861,19 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.874156
+      value: 0.78535926
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.24189399
+      value: -0.052420728
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.2019394
+      value: 0.38636652
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.36953905
+      value: 0.48081577
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_RootOrder
@@ -25881,15 +25881,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 146.744
+      value: 127.274994
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -39.49298
+      value: -66.75
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -43.172974
+      value: -28.52301
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 57f50e89cf587334e95381bc0e6906ec, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -33169,8 +33169,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.417128, y: 1.1755445, z: 0.7473954}
-  m_Center: {x: -0.0059280545, y: 0.3748149, z: 0.010529514}
+  m_Size: {x: 1.2617502, y: 1.1755445, z: 0.8145292}
+  m_Center: {x: -0.017033037, y: 0.3748149, z: -0.06121744}
 --- !u!4 &2101498152 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: cd75a0b3e9baf3543bcdef74cfe6d68e, type: 3}
