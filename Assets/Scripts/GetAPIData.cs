@@ -61,10 +61,7 @@ public class GetAPIData : MonoBehaviour {
 
 
     private void Awake()
-    {        
-  
-
-
+    {   
         ChangeStartTime();
         ChangeEndTime();
 
@@ -325,7 +322,6 @@ public class GetAPIData : MonoBehaviour {
 
         yield return null;
     }
-
 
     public void DropdownValueChanged()
     {        
