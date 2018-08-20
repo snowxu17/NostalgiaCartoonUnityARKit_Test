@@ -318,15 +318,6 @@ MonoBehaviour:
   hideScrollbar: {fileID: 114545492160054470}
   scrollbar: {fileID: 114819254051621792}
   hitTestObj: {fileID: 0}
-  IgnoreStartedOverGui: 0
-  IgnoreIsOverGui: 0
-  RequiredFingerCount: 0
-  RequiredSelectable: {fileID: 114962356984581608}
-  WheelSensitivity: 0
-  Relative: 1
-  ScaleClamp: 0
-  ScaleMin: {x: 0, y: 0, z: 0}
-  ScaleMax: {x: 0, y: 0, z: 0}
 --- !u!114 &114819254051621792
 MonoBehaviour:
   m_ObjectHideFlags: 1

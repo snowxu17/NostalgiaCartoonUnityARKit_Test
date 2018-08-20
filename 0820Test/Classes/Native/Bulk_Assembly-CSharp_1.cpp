@@ -13107,28 +13107,30 @@ public:
 	Dropdown_t2274391225 * ___e_dropdown_16;
 	// UnityEngine.GameObject GetAPIData::warning
 	GameObject_t1113636619 * ___warning_17;
+	// UnityEngine.GameObject GetAPIData::warning_arrows
+	GameObject_t1113636619 * ___warning_arrows_18;
 	// UnityEngine.GameObject GetAPIData::loading
-	GameObject_t1113636619 * ___loading_18;
+	GameObject_t1113636619 * ___loading_19;
 	// UnityEngine.GameObject GetAPIData::loadingBox
-	GameObject_t1113636619 * ___loadingBox_19;
+	GameObject_t1113636619 * ___loadingBox_20;
 	// UnityEngine.GameObject GetAPIData::specialEffect
-	GameObject_t1113636619 * ___specialEffect_20;
+	GameObject_t1113636619 * ___specialEffect_21;
 	// UnityEngine.GameObject GetAPIData::request
-	GameObject_t1113636619 * ___request_21;
+	GameObject_t1113636619 * ___request_22;
 	// UnityEngine.GameObject GetAPIData::hideTime
-	GameObject_t1113636619 * ___hideTime_22;
+	GameObject_t1113636619 * ___hideTime_23;
 	// UnityEngine.GameObject GetAPIData::tmGuide
-	GameObject_t1113636619 * ___tmGuide_23;
+	GameObject_t1113636619 * ___tmGuide_24;
 	// System.Int32 GetAPIData::numDays
-	int32_t ___numDays_24;
+	int32_t ___numDays_25;
 	// System.Single GetAPIData::t
-	float ___t_25;
+	float ___t_26;
 	// System.Collections.Generic.List`1<System.String> GetAPIData::startDates
-	List_1_t3319525431 * ___startDates_26;
+	List_1_t3319525431 * ___startDates_27;
 	// System.Collections.Generic.List`1<System.String> GetAPIData::endDates
-	List_1_t3319525431 * ___endDates_27;
+	List_1_t3319525431 * ___endDates_28;
 	// UnityEngine.GameObject GetAPIData::parent
-	GameObject_t1113636619 * ___parent_28;
+	GameObject_t1113636619 * ___parent_29;
 
 public:
 	inline static int32_t get_offset_of_tempType_2() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tempType_2)); }
@@ -13268,101 +13270,110 @@ public:
 		Il2CppCodeGenWriteBarrier((&___warning_17), value);
 	}
 
-	inline static int32_t get_offset_of_loading_18() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loading_18)); }
-	inline GameObject_t1113636619 * get_loading_18() const { return ___loading_18; }
-	inline GameObject_t1113636619 ** get_address_of_loading_18() { return &___loading_18; }
-	inline void set_loading_18(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_warning_arrows_18() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___warning_arrows_18)); }
+	inline GameObject_t1113636619 * get_warning_arrows_18() const { return ___warning_arrows_18; }
+	inline GameObject_t1113636619 ** get_address_of_warning_arrows_18() { return &___warning_arrows_18; }
+	inline void set_warning_arrows_18(GameObject_t1113636619 * value)
 	{
-		___loading_18 = value;
-		Il2CppCodeGenWriteBarrier((&___loading_18), value);
+		___warning_arrows_18 = value;
+		Il2CppCodeGenWriteBarrier((&___warning_arrows_18), value);
 	}
 
-	inline static int32_t get_offset_of_loadingBox_19() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loadingBox_19)); }
-	inline GameObject_t1113636619 * get_loadingBox_19() const { return ___loadingBox_19; }
-	inline GameObject_t1113636619 ** get_address_of_loadingBox_19() { return &___loadingBox_19; }
-	inline void set_loadingBox_19(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_loading_19() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loading_19)); }
+	inline GameObject_t1113636619 * get_loading_19() const { return ___loading_19; }
+	inline GameObject_t1113636619 ** get_address_of_loading_19() { return &___loading_19; }
+	inline void set_loading_19(GameObject_t1113636619 * value)
 	{
-		___loadingBox_19 = value;
-		Il2CppCodeGenWriteBarrier((&___loadingBox_19), value);
+		___loading_19 = value;
+		Il2CppCodeGenWriteBarrier((&___loading_19), value);
 	}
 
-	inline static int32_t get_offset_of_specialEffect_20() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___specialEffect_20)); }
-	inline GameObject_t1113636619 * get_specialEffect_20() const { return ___specialEffect_20; }
-	inline GameObject_t1113636619 ** get_address_of_specialEffect_20() { return &___specialEffect_20; }
-	inline void set_specialEffect_20(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_loadingBox_20() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loadingBox_20)); }
+	inline GameObject_t1113636619 * get_loadingBox_20() const { return ___loadingBox_20; }
+	inline GameObject_t1113636619 ** get_address_of_loadingBox_20() { return &___loadingBox_20; }
+	inline void set_loadingBox_20(GameObject_t1113636619 * value)
 	{
-		___specialEffect_20 = value;
-		Il2CppCodeGenWriteBarrier((&___specialEffect_20), value);
+		___loadingBox_20 = value;
+		Il2CppCodeGenWriteBarrier((&___loadingBox_20), value);
 	}
 
-	inline static int32_t get_offset_of_request_21() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___request_21)); }
-	inline GameObject_t1113636619 * get_request_21() const { return ___request_21; }
-	inline GameObject_t1113636619 ** get_address_of_request_21() { return &___request_21; }
-	inline void set_request_21(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_specialEffect_21() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___specialEffect_21)); }
+	inline GameObject_t1113636619 * get_specialEffect_21() const { return ___specialEffect_21; }
+	inline GameObject_t1113636619 ** get_address_of_specialEffect_21() { return &___specialEffect_21; }
+	inline void set_specialEffect_21(GameObject_t1113636619 * value)
 	{
-		___request_21 = value;
-		Il2CppCodeGenWriteBarrier((&___request_21), value);
+		___specialEffect_21 = value;
+		Il2CppCodeGenWriteBarrier((&___specialEffect_21), value);
 	}
 
-	inline static int32_t get_offset_of_hideTime_22() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___hideTime_22)); }
-	inline GameObject_t1113636619 * get_hideTime_22() const { return ___hideTime_22; }
-	inline GameObject_t1113636619 ** get_address_of_hideTime_22() { return &___hideTime_22; }
-	inline void set_hideTime_22(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_request_22() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___request_22)); }
+	inline GameObject_t1113636619 * get_request_22() const { return ___request_22; }
+	inline GameObject_t1113636619 ** get_address_of_request_22() { return &___request_22; }
+	inline void set_request_22(GameObject_t1113636619 * value)
 	{
-		___hideTime_22 = value;
-		Il2CppCodeGenWriteBarrier((&___hideTime_22), value);
+		___request_22 = value;
+		Il2CppCodeGenWriteBarrier((&___request_22), value);
 	}
 
-	inline static int32_t get_offset_of_tmGuide_23() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tmGuide_23)); }
-	inline GameObject_t1113636619 * get_tmGuide_23() const { return ___tmGuide_23; }
-	inline GameObject_t1113636619 ** get_address_of_tmGuide_23() { return &___tmGuide_23; }
-	inline void set_tmGuide_23(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_hideTime_23() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___hideTime_23)); }
+	inline GameObject_t1113636619 * get_hideTime_23() const { return ___hideTime_23; }
+	inline GameObject_t1113636619 ** get_address_of_hideTime_23() { return &___hideTime_23; }
+	inline void set_hideTime_23(GameObject_t1113636619 * value)
 	{
-		___tmGuide_23 = value;
-		Il2CppCodeGenWriteBarrier((&___tmGuide_23), value);
+		___hideTime_23 = value;
+		Il2CppCodeGenWriteBarrier((&___hideTime_23), value);
 	}
 
-	inline static int32_t get_offset_of_numDays_24() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___numDays_24)); }
-	inline int32_t get_numDays_24() const { return ___numDays_24; }
-	inline int32_t* get_address_of_numDays_24() { return &___numDays_24; }
-	inline void set_numDays_24(int32_t value)
+	inline static int32_t get_offset_of_tmGuide_24() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tmGuide_24)); }
+	inline GameObject_t1113636619 * get_tmGuide_24() const { return ___tmGuide_24; }
+	inline GameObject_t1113636619 ** get_address_of_tmGuide_24() { return &___tmGuide_24; }
+	inline void set_tmGuide_24(GameObject_t1113636619 * value)
 	{
-		___numDays_24 = value;
+		___tmGuide_24 = value;
+		Il2CppCodeGenWriteBarrier((&___tmGuide_24), value);
 	}
 
-	inline static int32_t get_offset_of_t_25() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___t_25)); }
-	inline float get_t_25() const { return ___t_25; }
-	inline float* get_address_of_t_25() { return &___t_25; }
-	inline void set_t_25(float value)
+	inline static int32_t get_offset_of_numDays_25() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___numDays_25)); }
+	inline int32_t get_numDays_25() const { return ___numDays_25; }
+	inline int32_t* get_address_of_numDays_25() { return &___numDays_25; }
+	inline void set_numDays_25(int32_t value)
 	{
-		___t_25 = value;
+		___numDays_25 = value;
 	}
 
-	inline static int32_t get_offset_of_startDates_26() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___startDates_26)); }
-	inline List_1_t3319525431 * get_startDates_26() const { return ___startDates_26; }
-	inline List_1_t3319525431 ** get_address_of_startDates_26() { return &___startDates_26; }
-	inline void set_startDates_26(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_t_26() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___t_26)); }
+	inline float get_t_26() const { return ___t_26; }
+	inline float* get_address_of_t_26() { return &___t_26; }
+	inline void set_t_26(float value)
 	{
-		___startDates_26 = value;
-		Il2CppCodeGenWriteBarrier((&___startDates_26), value);
+		___t_26 = value;
 	}
 
-	inline static int32_t get_offset_of_endDates_27() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___endDates_27)); }
-	inline List_1_t3319525431 * get_endDates_27() const { return ___endDates_27; }
-	inline List_1_t3319525431 ** get_address_of_endDates_27() { return &___endDates_27; }
-	inline void set_endDates_27(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_startDates_27() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___startDates_27)); }
+	inline List_1_t3319525431 * get_startDates_27() const { return ___startDates_27; }
+	inline List_1_t3319525431 ** get_address_of_startDates_27() { return &___startDates_27; }
+	inline void set_startDates_27(List_1_t3319525431 * value)
 	{
-		___endDates_27 = value;
-		Il2CppCodeGenWriteBarrier((&___endDates_27), value);
+		___startDates_27 = value;
+		Il2CppCodeGenWriteBarrier((&___startDates_27), value);
 	}
 
-	inline static int32_t get_offset_of_parent_28() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___parent_28)); }
-	inline GameObject_t1113636619 * get_parent_28() const { return ___parent_28; }
-	inline GameObject_t1113636619 ** get_address_of_parent_28() { return &___parent_28; }
-	inline void set_parent_28(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_endDates_28() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___endDates_28)); }
+	inline List_1_t3319525431 * get_endDates_28() const { return ___endDates_28; }
+	inline List_1_t3319525431 ** get_address_of_endDates_28() { return &___endDates_28; }
+	inline void set_endDates_28(List_1_t3319525431 * value)
 	{
-		___parent_28 = value;
-		Il2CppCodeGenWriteBarrier((&___parent_28), value);
+		___endDates_28 = value;
+		Il2CppCodeGenWriteBarrier((&___endDates_28), value);
+	}
+
+	inline static int32_t get_offset_of_parent_29() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___parent_29)); }
+	inline GameObject_t1113636619 * get_parent_29() const { return ___parent_29; }
+	inline GameObject_t1113636619 ** get_address_of_parent_29() { return &___parent_29; }
+	inline void set_parent_29(GameObject_t1113636619 * value)
+	{
+		___parent_29 = value;
+		Il2CppCodeGenWriteBarrier((&___parent_29), value);
 	}
 };
 

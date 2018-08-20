@@ -15343,28 +15343,30 @@ public:
 	Dropdown_t2274391225 * ___e_dropdown_16;
 	// UnityEngine.GameObject GetAPIData::warning
 	GameObject_t1113636619 * ___warning_17;
+	// UnityEngine.GameObject GetAPIData::warning_arrows
+	GameObject_t1113636619 * ___warning_arrows_18;
 	// UnityEngine.GameObject GetAPIData::loading
-	GameObject_t1113636619 * ___loading_18;
+	GameObject_t1113636619 * ___loading_19;
 	// UnityEngine.GameObject GetAPIData::loadingBox
-	GameObject_t1113636619 * ___loadingBox_19;
+	GameObject_t1113636619 * ___loadingBox_20;
 	// UnityEngine.GameObject GetAPIData::specialEffect
-	GameObject_t1113636619 * ___specialEffect_20;
+	GameObject_t1113636619 * ___specialEffect_21;
 	// UnityEngine.GameObject GetAPIData::request
-	GameObject_t1113636619 * ___request_21;
+	GameObject_t1113636619 * ___request_22;
 	// UnityEngine.GameObject GetAPIData::hideTime
-	GameObject_t1113636619 * ___hideTime_22;
+	GameObject_t1113636619 * ___hideTime_23;
 	// UnityEngine.GameObject GetAPIData::tmGuide
-	GameObject_t1113636619 * ___tmGuide_23;
+	GameObject_t1113636619 * ___tmGuide_24;
 	// System.Int32 GetAPIData::numDays
-	int32_t ___numDays_24;
+	int32_t ___numDays_25;
 	// System.Single GetAPIData::t
-	float ___t_25;
+	float ___t_26;
 	// System.Collections.Generic.List`1<System.String> GetAPIData::startDates
-	List_1_t3319525431 * ___startDates_26;
+	List_1_t3319525431 * ___startDates_27;
 	// System.Collections.Generic.List`1<System.String> GetAPIData::endDates
-	List_1_t3319525431 * ___endDates_27;
+	List_1_t3319525431 * ___endDates_28;
 	// UnityEngine.GameObject GetAPIData::parent
-	GameObject_t1113636619 * ___parent_28;
+	GameObject_t1113636619 * ___parent_29;
 
 public:
 	inline static int32_t get_offset_of_tempType_2() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tempType_2)); }
@@ -15504,101 +15506,110 @@ public:
 		Il2CppCodeGenWriteBarrier((&___warning_17), value);
 	}
 
-	inline static int32_t get_offset_of_loading_18() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loading_18)); }
-	inline GameObject_t1113636619 * get_loading_18() const { return ___loading_18; }
-	inline GameObject_t1113636619 ** get_address_of_loading_18() { return &___loading_18; }
-	inline void set_loading_18(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_warning_arrows_18() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___warning_arrows_18)); }
+	inline GameObject_t1113636619 * get_warning_arrows_18() const { return ___warning_arrows_18; }
+	inline GameObject_t1113636619 ** get_address_of_warning_arrows_18() { return &___warning_arrows_18; }
+	inline void set_warning_arrows_18(GameObject_t1113636619 * value)
 	{
-		___loading_18 = value;
-		Il2CppCodeGenWriteBarrier((&___loading_18), value);
+		___warning_arrows_18 = value;
+		Il2CppCodeGenWriteBarrier((&___warning_arrows_18), value);
 	}
 
-	inline static int32_t get_offset_of_loadingBox_19() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loadingBox_19)); }
-	inline GameObject_t1113636619 * get_loadingBox_19() const { return ___loadingBox_19; }
-	inline GameObject_t1113636619 ** get_address_of_loadingBox_19() { return &___loadingBox_19; }
-	inline void set_loadingBox_19(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_loading_19() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loading_19)); }
+	inline GameObject_t1113636619 * get_loading_19() const { return ___loading_19; }
+	inline GameObject_t1113636619 ** get_address_of_loading_19() { return &___loading_19; }
+	inline void set_loading_19(GameObject_t1113636619 * value)
 	{
-		___loadingBox_19 = value;
-		Il2CppCodeGenWriteBarrier((&___loadingBox_19), value);
+		___loading_19 = value;
+		Il2CppCodeGenWriteBarrier((&___loading_19), value);
 	}
 
-	inline static int32_t get_offset_of_specialEffect_20() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___specialEffect_20)); }
-	inline GameObject_t1113636619 * get_specialEffect_20() const { return ___specialEffect_20; }
-	inline GameObject_t1113636619 ** get_address_of_specialEffect_20() { return &___specialEffect_20; }
-	inline void set_specialEffect_20(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_loadingBox_20() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___loadingBox_20)); }
+	inline GameObject_t1113636619 * get_loadingBox_20() const { return ___loadingBox_20; }
+	inline GameObject_t1113636619 ** get_address_of_loadingBox_20() { return &___loadingBox_20; }
+	inline void set_loadingBox_20(GameObject_t1113636619 * value)
 	{
-		___specialEffect_20 = value;
-		Il2CppCodeGenWriteBarrier((&___specialEffect_20), value);
+		___loadingBox_20 = value;
+		Il2CppCodeGenWriteBarrier((&___loadingBox_20), value);
 	}
 
-	inline static int32_t get_offset_of_request_21() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___request_21)); }
-	inline GameObject_t1113636619 * get_request_21() const { return ___request_21; }
-	inline GameObject_t1113636619 ** get_address_of_request_21() { return &___request_21; }
-	inline void set_request_21(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_specialEffect_21() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___specialEffect_21)); }
+	inline GameObject_t1113636619 * get_specialEffect_21() const { return ___specialEffect_21; }
+	inline GameObject_t1113636619 ** get_address_of_specialEffect_21() { return &___specialEffect_21; }
+	inline void set_specialEffect_21(GameObject_t1113636619 * value)
 	{
-		___request_21 = value;
-		Il2CppCodeGenWriteBarrier((&___request_21), value);
+		___specialEffect_21 = value;
+		Il2CppCodeGenWriteBarrier((&___specialEffect_21), value);
 	}
 
-	inline static int32_t get_offset_of_hideTime_22() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___hideTime_22)); }
-	inline GameObject_t1113636619 * get_hideTime_22() const { return ___hideTime_22; }
-	inline GameObject_t1113636619 ** get_address_of_hideTime_22() { return &___hideTime_22; }
-	inline void set_hideTime_22(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_request_22() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___request_22)); }
+	inline GameObject_t1113636619 * get_request_22() const { return ___request_22; }
+	inline GameObject_t1113636619 ** get_address_of_request_22() { return &___request_22; }
+	inline void set_request_22(GameObject_t1113636619 * value)
 	{
-		___hideTime_22 = value;
-		Il2CppCodeGenWriteBarrier((&___hideTime_22), value);
+		___request_22 = value;
+		Il2CppCodeGenWriteBarrier((&___request_22), value);
 	}
 
-	inline static int32_t get_offset_of_tmGuide_23() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tmGuide_23)); }
-	inline GameObject_t1113636619 * get_tmGuide_23() const { return ___tmGuide_23; }
-	inline GameObject_t1113636619 ** get_address_of_tmGuide_23() { return &___tmGuide_23; }
-	inline void set_tmGuide_23(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_hideTime_23() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___hideTime_23)); }
+	inline GameObject_t1113636619 * get_hideTime_23() const { return ___hideTime_23; }
+	inline GameObject_t1113636619 ** get_address_of_hideTime_23() { return &___hideTime_23; }
+	inline void set_hideTime_23(GameObject_t1113636619 * value)
 	{
-		___tmGuide_23 = value;
-		Il2CppCodeGenWriteBarrier((&___tmGuide_23), value);
+		___hideTime_23 = value;
+		Il2CppCodeGenWriteBarrier((&___hideTime_23), value);
 	}
 
-	inline static int32_t get_offset_of_numDays_24() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___numDays_24)); }
-	inline int32_t get_numDays_24() const { return ___numDays_24; }
-	inline int32_t* get_address_of_numDays_24() { return &___numDays_24; }
-	inline void set_numDays_24(int32_t value)
+	inline static int32_t get_offset_of_tmGuide_24() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___tmGuide_24)); }
+	inline GameObject_t1113636619 * get_tmGuide_24() const { return ___tmGuide_24; }
+	inline GameObject_t1113636619 ** get_address_of_tmGuide_24() { return &___tmGuide_24; }
+	inline void set_tmGuide_24(GameObject_t1113636619 * value)
 	{
-		___numDays_24 = value;
+		___tmGuide_24 = value;
+		Il2CppCodeGenWriteBarrier((&___tmGuide_24), value);
 	}
 
-	inline static int32_t get_offset_of_t_25() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___t_25)); }
-	inline float get_t_25() const { return ___t_25; }
-	inline float* get_address_of_t_25() { return &___t_25; }
-	inline void set_t_25(float value)
+	inline static int32_t get_offset_of_numDays_25() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___numDays_25)); }
+	inline int32_t get_numDays_25() const { return ___numDays_25; }
+	inline int32_t* get_address_of_numDays_25() { return &___numDays_25; }
+	inline void set_numDays_25(int32_t value)
 	{
-		___t_25 = value;
+		___numDays_25 = value;
 	}
 
-	inline static int32_t get_offset_of_startDates_26() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___startDates_26)); }
-	inline List_1_t3319525431 * get_startDates_26() const { return ___startDates_26; }
-	inline List_1_t3319525431 ** get_address_of_startDates_26() { return &___startDates_26; }
-	inline void set_startDates_26(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_t_26() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___t_26)); }
+	inline float get_t_26() const { return ___t_26; }
+	inline float* get_address_of_t_26() { return &___t_26; }
+	inline void set_t_26(float value)
 	{
-		___startDates_26 = value;
-		Il2CppCodeGenWriteBarrier((&___startDates_26), value);
+		___t_26 = value;
 	}
 
-	inline static int32_t get_offset_of_endDates_27() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___endDates_27)); }
-	inline List_1_t3319525431 * get_endDates_27() const { return ___endDates_27; }
-	inline List_1_t3319525431 ** get_address_of_endDates_27() { return &___endDates_27; }
-	inline void set_endDates_27(List_1_t3319525431 * value)
+	inline static int32_t get_offset_of_startDates_27() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___startDates_27)); }
+	inline List_1_t3319525431 * get_startDates_27() const { return ___startDates_27; }
+	inline List_1_t3319525431 ** get_address_of_startDates_27() { return &___startDates_27; }
+	inline void set_startDates_27(List_1_t3319525431 * value)
 	{
-		___endDates_27 = value;
-		Il2CppCodeGenWriteBarrier((&___endDates_27), value);
+		___startDates_27 = value;
+		Il2CppCodeGenWriteBarrier((&___startDates_27), value);
 	}
 
-	inline static int32_t get_offset_of_parent_28() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___parent_28)); }
-	inline GameObject_t1113636619 * get_parent_28() const { return ___parent_28; }
-	inline GameObject_t1113636619 ** get_address_of_parent_28() { return &___parent_28; }
-	inline void set_parent_28(GameObject_t1113636619 * value)
+	inline static int32_t get_offset_of_endDates_28() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___endDates_28)); }
+	inline List_1_t3319525431 * get_endDates_28() const { return ___endDates_28; }
+	inline List_1_t3319525431 ** get_address_of_endDates_28() { return &___endDates_28; }
+	inline void set_endDates_28(List_1_t3319525431 * value)
 	{
-		___parent_28 = value;
-		Il2CppCodeGenWriteBarrier((&___parent_28), value);
+		___endDates_28 = value;
+		Il2CppCodeGenWriteBarrier((&___endDates_28), value);
+	}
+
+	inline static int32_t get_offset_of_parent_29() { return static_cast<int32_t>(offsetof(GetAPIData_t3030356850, ___parent_29)); }
+	inline GameObject_t1113636619 * get_parent_29() const { return ___parent_29; }
+	inline GameObject_t1113636619 ** get_address_of_parent_29() { return &___parent_29; }
+	inline void set_parent_29(GameObject_t1113636619 * value)
+	{
+		___parent_29 = value;
+		Il2CppCodeGenWriteBarrier((&___parent_29), value);
 	}
 };
 
@@ -28017,7 +28028,7 @@ extern "C"  void GetAPIData_Awake_m2161832291 (GetAPIData_t3030356850 * __this, 
 		GetAPIData_ChangeEndTime_m1574871187(__this, /*hidden argument*/NULL);
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		showIdList_t448996362  L_0 = __this->get_show_3();
-		List_1_t3319525431 * L_1 = __this->get_startDates_26();
+		List_1_t3319525431 * L_1 = __this->get_startDates_27();
 		Dropdown_t2274391225 * L_2 = __this->get_s_dropdown_15();
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_2);
@@ -28025,7 +28036,7 @@ extern "C"  void GetAPIData_Awake_m2161832291 (GetAPIData_t3030356850 * __this, 
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_1);
 		String_t* L_4 = List_1_get_Item_m3346958548(L_1, L_3, /*hidden argument*/List_1_get_Item_m3346958548_RuntimeMethod_var);
-		List_1_t3319525431 * L_5 = __this->get_endDates_27();
+		List_1_t3319525431 * L_5 = __this->get_endDates_28();
 		Dropdown_t2274391225 * L_6 = __this->get_e_dropdown_16();
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_6);
@@ -28092,7 +28103,7 @@ extern "C"  void GetAPIData_Request_m1770926186 (GetAPIData_t3030356850 * __this
 		ArrayElementTypeCheck (L_8, _stringLiteral737442657);
 		(L_8)->SetAt(static_cast<il2cpp_array_size_t>(1), (RuntimeObject *)_stringLiteral737442657);
 		ObjectU5BU5D_t2843939325* L_9 = L_8;
-		List_1_t3319525431 * L_10 = __this->get_startDates_26();
+		List_1_t3319525431 * L_10 = __this->get_startDates_27();
 		Dropdown_t2274391225 * L_11 = __this->get_s_dropdown_15();
 		// + "?startDate=" + startDates[s_dropdown.value]
 		NullCheck(L_11);
@@ -28108,7 +28119,7 @@ extern "C"  void GetAPIData_Request_m1770926186 (GetAPIData_t3030356850 * __this
 		ArrayElementTypeCheck (L_14, _stringLiteral3289031412);
 		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(3), (RuntimeObject *)_stringLiteral3289031412);
 		ObjectU5BU5D_t2843939325* L_15 = L_14;
-		List_1_t3319525431 * L_16 = __this->get_endDates_27();
+		List_1_t3319525431 * L_16 = __this->get_endDates_28();
 		Dropdown_t2274391225 * L_17 = __this->get_e_dropdown_16();
 		// + "&endDate=" + endDates[e_dropdown.value]
 		NullCheck(L_17);
@@ -28284,7 +28295,7 @@ extern "C"  void GetAPIData_ChangeStartTime_m604737858 (GetAPIData_t3030356850 *
 		int32_t L_1 = Dropdown_get_value_m1555353112(L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		// startDates.Clear();
-		List_1_t3319525431 * L_2 = __this->get_startDates_26();
+		List_1_t3319525431 * L_2 = __this->get_startDates_27();
 		// startDates.Clear();
 		NullCheck(L_2);
 		List_1_Clear_m2548850424(L_2, /*hidden argument*/List_1_Clear_m2548850424_RuntimeMethod_var);
@@ -28371,7 +28382,7 @@ IL_0095:
 IL_00b4:
 	{
 		// startDates.Add(s_date);
-		List_1_t3319525431 * L_24 = __this->get_startDates_26();
+		List_1_t3319525431 * L_24 = __this->get_startDates_27();
 		String_t* L_25 = V_1;
 		// startDates.Add(s_date);
 		NullCheck(L_24);
@@ -28404,7 +28415,7 @@ IL_00c5:
 		// StartCoroutine(CheckIndex());
 		MonoBehaviour_StartCoroutine_m3411253000(__this, L_31, /*hidden argument*/NULL);
 		// updateDropdownStart(startDates);
-		List_1_t3319525431 * L_32 = __this->get_startDates_26();
+		List_1_t3319525431 * L_32 = __this->get_startDates_27();
 		// updateDropdownStart(startDates);
 		GetAPIData_updateDropdownStart_m2875079260(__this, L_32, /*hidden argument*/NULL);
 		// }
@@ -28446,7 +28457,7 @@ extern "C"  void GetAPIData_ChangeEndTime_m1574871187 (GetAPIData_t3030356850 * 
 		int32_t L_1 = Dropdown_get_value_m1555353112(L_0, /*hidden argument*/NULL);
 		V_0 = L_1;
 		// endDates.Clear();
-		List_1_t3319525431 * L_2 = __this->get_endDates_27();
+		List_1_t3319525431 * L_2 = __this->get_endDates_28();
 		// endDates.Clear();
 		NullCheck(L_2);
 		List_1_Clear_m2548850424(L_2, /*hidden argument*/List_1_Clear_m2548850424_RuntimeMethod_var);
@@ -28799,7 +28810,7 @@ IL_022a:
 IL_022b:
 	{
 		// endDates.Add(e_date);
-		List_1_t3319525431 * L_103 = __this->get_endDates_27();
+		List_1_t3319525431 * L_103 = __this->get_endDates_28();
 		String_t* L_104 = V_1;
 		// endDates.Add(e_date);
 		NullCheck(L_103);
@@ -28832,7 +28843,7 @@ IL_023c:
 		// StartCoroutine(CheckIndex());
 		MonoBehaviour_StartCoroutine_m3411253000(__this, L_110, /*hidden argument*/NULL);
 		// updateDropdownEnd(endDates);
-		List_1_t3319525431 * L_111 = __this->get_endDates_27();
+		List_1_t3319525431 * L_111 = __this->get_endDates_28();
 		// updateDropdownEnd(endDates);
 		GetAPIData_updateDropdownEnd_m159859444(__this, L_111, /*hidden argument*/NULL);
 		// }
@@ -28879,18 +28890,18 @@ extern "C"  void GetAPIData_DropdownValueChanged_m677062246 (GetAPIData_t3030356
 	}
 	{
 		// loading.SetActive(true);
-		GameObject_t1113636619 * L_0 = __this->get_loading_18();
+		GameObject_t1113636619 * L_0 = __this->get_loading_19();
 		// loading.SetActive(true);
 		NullCheck(L_0);
 		GameObject_SetActive_m796801857(L_0, (bool)1, /*hidden argument*/NULL);
 		// loadingBox.SetActive(true);
-		GameObject_t1113636619 * L_1 = __this->get_loadingBox_19();
+		GameObject_t1113636619 * L_1 = __this->get_loadingBox_20();
 		// loadingBox.SetActive(true);
 		NullCheck(L_1);
 		GameObject_SetActive_m796801857(L_1, (bool)1, /*hidden argument*/NULL);
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		showIdList_t448996362  L_2 = __this->get_show_3();
-		List_1_t3319525431 * L_3 = __this->get_startDates_26();
+		List_1_t3319525431 * L_3 = __this->get_startDates_27();
 		Dropdown_t2274391225 * L_4 = __this->get_s_dropdown_15();
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_4);
@@ -28898,7 +28909,7 @@ extern "C"  void GetAPIData_DropdownValueChanged_m677062246 (GetAPIData_t3030356
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_3);
 		String_t* L_6 = List_1_get_Item_m3346958548(L_3, L_5, /*hidden argument*/List_1_get_Item_m3346958548_RuntimeMethod_var);
-		List_1_t3319525431 * L_7 = __this->get_endDates_27();
+		List_1_t3319525431 * L_7 = __this->get_endDates_28();
 		Dropdown_t2274391225 * L_8 = __this->get_e_dropdown_16();
 		// Request(show, startDates[s_dropdown.value], endDates[e_dropdown.value]);
 		NullCheck(L_8);
@@ -29134,12 +29145,12 @@ extern "C"  void GetAPIData_Update_m4278362972 (GetAPIData_t3030356850 * __this,
 	}
 	{
 		// t += Time.deltaTime;
-		float L_2 = __this->get_t_25();
+		float L_2 = __this->get_t_26();
 		// t += Time.deltaTime;
 		float L_3 = Time_get_deltaTime_m372706562(NULL /*static, unused*/, /*hidden argument*/NULL);
-		__this->set_t_25(((float)il2cpp_codegen_add((float)L_2, (float)L_3)));
+		__this->set_t_26(((float)il2cpp_codegen_add((float)L_2, (float)L_3)));
 		// Debug.Log("t :" + t);
-		float L_4 = __this->get_t_25();
+		float L_4 = __this->get_t_26();
 		float L_5 = L_4;
 		RuntimeObject * L_6 = Box(Single_t1397266774_il2cpp_TypeInfo_var, &L_5);
 		IL2CPP_RUNTIME_CLASS_INIT(String_t_il2cpp_TypeInfo_var);
@@ -29148,7 +29159,7 @@ extern "C"  void GetAPIData_Update_m4278362972 (GetAPIData_t3030356850 * __this,
 		IL2CPP_RUNTIME_CLASS_INIT(Debug_t3317548046_il2cpp_TypeInfo_var);
 		Debug_Log_m4051431634(NULL /*static, unused*/, L_7, /*hidden argument*/NULL);
 		// if (t < 30.0f)
-		float L_8 = __this->get_t_25();
+		float L_8 = __this->get_t_26();
 		if ((!(((float)L_8) < ((float)(30.0f)))))
 		{
 			goto IL_0062;
@@ -29156,7 +29167,7 @@ extern "C"  void GetAPIData_Update_m4278362972 (GetAPIData_t3030356850 * __this,
 	}
 	{
 		// specialEffect.SetActive(true);
-		GameObject_t1113636619 * L_9 = __this->get_specialEffect_20();
+		GameObject_t1113636619 * L_9 = __this->get_specialEffect_21();
 		// specialEffect.SetActive(true);
 		NullCheck(L_9);
 		GameObject_SetActive_m796801857(L_9, (bool)1, /*hidden argument*/NULL);
@@ -29166,7 +29177,7 @@ extern "C"  void GetAPIData_Update_m4278362972 (GetAPIData_t3030356850 * __this,
 IL_0062:
 	{
 		// else { specialEffect.SetActive(false); }
-		GameObject_t1113636619 * L_10 = __this->get_specialEffect_20();
+		GameObject_t1113636619 * L_10 = __this->get_specialEffect_21();
 		// else { specialEffect.SetActive(false); }
 		NullCheck(L_10);
 		GameObject_SetActive_m796801857(L_10, (bool)0, /*hidden argument*/NULL);
@@ -29894,12 +29905,12 @@ extern "C"  bool U3CCheckIndexU3Ec__Iterator2_MoveNext_m1890686166 (U3CCheckInde
 			}
 			case 1:
 			{
-				goto IL_014e;
+				goto IL_0170;
 			}
 		}
 	}
 	{
-		goto IL_0155;
+		goto IL_0177;
 	}
 
 IL_0021:
@@ -29937,7 +29948,7 @@ IL_0021:
 		int32_t L_13 = Dropdown_get_value_m1555353112(L_12, /*hidden argument*/NULL);
 		if ((((int32_t)L_10) >= ((int32_t)((int32_t)il2cpp_codegen_subtract((int32_t)L_13, (int32_t)2)))))
 		{
-			goto IL_00e7;
+			goto IL_00f8;
 		}
 	}
 
@@ -29954,117 +29965,131 @@ IL_0070:
 		// warning.SetActive(true);
 		NullCheck(L_15);
 		GameObject_SetActive_m796801857(L_15, (bool)1, /*hidden argument*/NULL);
-		// loading.SetActive(false);
+		// warning_arrows.SetActive(true);
 		GetAPIData_t3030356850 * L_16 = __this->get_U24this_0();
 		NullCheck(L_16);
-		GameObject_t1113636619 * L_17 = L_16->get_loading_18();
-		// loading.SetActive(false);
+		GameObject_t1113636619 * L_17 = L_16->get_warning_arrows_18();
+		// warning_arrows.SetActive(true);
 		NullCheck(L_17);
-		GameObject_SetActive_m796801857(L_17, (bool)0, /*hidden argument*/NULL);
-		// loadingBox.SetActive(false);
+		GameObject_SetActive_m796801857(L_17, (bool)1, /*hidden argument*/NULL);
+		// loading.SetActive(false);
 		GetAPIData_t3030356850 * L_18 = __this->get_U24this_0();
 		NullCheck(L_18);
-		GameObject_t1113636619 * L_19 = L_18->get_loadingBox_19();
-		// loadingBox.SetActive(false);
+		GameObject_t1113636619 * L_19 = L_18->get_loading_19();
+		// loading.SetActive(false);
 		NullCheck(L_19);
 		GameObject_SetActive_m796801857(L_19, (bool)0, /*hidden argument*/NULL);
-		// request.SetActive(false);
+		// loadingBox.SetActive(false);
 		GetAPIData_t3030356850 * L_20 = __this->get_U24this_0();
 		NullCheck(L_20);
-		GameObject_t1113636619 * L_21 = L_20->get_request_21();
-		// request.SetActive(false);
+		GameObject_t1113636619 * L_21 = L_20->get_loadingBox_20();
+		// loadingBox.SetActive(false);
 		NullCheck(L_21);
 		GameObject_SetActive_m796801857(L_21, (bool)0, /*hidden argument*/NULL);
-		// hideTime.SetActive(false);
+		// request.SetActive(false);
 		GetAPIData_t3030356850 * L_22 = __this->get_U24this_0();
 		NullCheck(L_22);
-		GameObject_t1113636619 * L_23 = L_22->get_hideTime_22();
-		// hideTime.SetActive(false);
+		GameObject_t1113636619 * L_23 = L_22->get_request_22();
+		// request.SetActive(false);
 		NullCheck(L_23);
 		GameObject_SetActive_m796801857(L_23, (bool)0, /*hidden argument*/NULL);
-		// tmGuide.SetActive(false);
+		// hideTime.SetActive(false);
 		GetAPIData_t3030356850 * L_24 = __this->get_U24this_0();
 		NullCheck(L_24);
-		GameObject_t1113636619 * L_25 = L_24->get_tmGuide_23();
-		// tmGuide.SetActive(false);
+		GameObject_t1113636619 * L_25 = L_24->get_hideTime_23();
+		// hideTime.SetActive(false);
 		NullCheck(L_25);
 		GameObject_SetActive_m796801857(L_25, (bool)0, /*hidden argument*/NULL);
-		goto IL_0133;
-	}
-
-IL_00e7:
-	{
-		// if(s_dropdown.isActiveAndEnabled == true)
+		// tmGuide.SetActive(false);
 		GetAPIData_t3030356850 * L_26 = __this->get_U24this_0();
 		NullCheck(L_26);
-		Dropdown_t2274391225 * L_27 = L_26->get_s_dropdown_15();
-		// if(s_dropdown.isActiveAndEnabled == true)
+		GameObject_t1113636619 * L_27 = L_26->get_tmGuide_24();
+		// tmGuide.SetActive(false);
 		NullCheck(L_27);
-		bool L_28 = Behaviour_get_isActiveAndEnabled_m3143666263(L_27, /*hidden argument*/NULL);
-		if (!L_28)
+		GameObject_SetActive_m796801857(L_27, (bool)0, /*hidden argument*/NULL);
+		goto IL_0155;
+	}
+
+IL_00f8:
+	{
+		// if(s_dropdown.isActiveAndEnabled == true)
+		GetAPIData_t3030356850 * L_28 = __this->get_U24this_0();
+		NullCheck(L_28);
+		Dropdown_t2274391225 * L_29 = L_28->get_s_dropdown_15();
+		// if(s_dropdown.isActiveAndEnabled == true)
+		NullCheck(L_29);
+		bool L_30 = Behaviour_get_isActiveAndEnabled_m3143666263(L_29, /*hidden argument*/NULL);
+		if (!L_30)
 		{
-			goto IL_0121;
+			goto IL_0132;
 		}
 	}
 	{
 		// request.SetActive(true);
-		GetAPIData_t3030356850 * L_29 = __this->get_U24this_0();
-		NullCheck(L_29);
-		GameObject_t1113636619 * L_30 = L_29->get_request_21();
-		// request.SetActive(true);
-		NullCheck(L_30);
-		GameObject_SetActive_m796801857(L_30, (bool)1, /*hidden argument*/NULL);
-		// hideTime.SetActive(true);
 		GetAPIData_t3030356850 * L_31 = __this->get_U24this_0();
 		NullCheck(L_31);
-		GameObject_t1113636619 * L_32 = L_31->get_hideTime_22();
-		// hideTime.SetActive(true);
+		GameObject_t1113636619 * L_32 = L_31->get_request_22();
+		// request.SetActive(true);
 		NullCheck(L_32);
 		GameObject_SetActive_m796801857(L_32, (bool)1, /*hidden argument*/NULL);
-	}
-
-IL_0121:
-	{
-		// warning.SetActive(false);
+		// hideTime.SetActive(true);
 		GetAPIData_t3030356850 * L_33 = __this->get_U24this_0();
 		NullCheck(L_33);
-		GameObject_t1113636619 * L_34 = L_33->get_warning_17();
-		// warning.SetActive(false);
+		GameObject_t1113636619 * L_34 = L_33->get_hideTime_23();
+		// hideTime.SetActive(true);
 		NullCheck(L_34);
-		GameObject_SetActive_m796801857(L_34, (bool)0, /*hidden argument*/NULL);
+		GameObject_SetActive_m796801857(L_34, (bool)1, /*hidden argument*/NULL);
 	}
 
-IL_0133:
+IL_0132:
+	{
+		// warning.SetActive(false);
+		GetAPIData_t3030356850 * L_35 = __this->get_U24this_0();
+		NullCheck(L_35);
+		GameObject_t1113636619 * L_36 = L_35->get_warning_17();
+		// warning.SetActive(false);
+		NullCheck(L_36);
+		GameObject_SetActive_m796801857(L_36, (bool)0, /*hidden argument*/NULL);
+		// warning_arrows.SetActive(false);
+		GetAPIData_t3030356850 * L_37 = __this->get_U24this_0();
+		NullCheck(L_37);
+		GameObject_t1113636619 * L_38 = L_37->get_warning_arrows_18();
+		// warning_arrows.SetActive(false);
+		NullCheck(L_38);
+		GameObject_SetActive_m796801857(L_38, (bool)0, /*hidden argument*/NULL);
+	}
+
+IL_0155:
 	{
 		// yield return null;
 		__this->set_U24current_1(NULL);
-		bool L_35 = __this->get_U24disposing_2();
-		if (L_35)
+		bool L_39 = __this->get_U24disposing_2();
+		if (L_39)
 		{
-			goto IL_0149;
+			goto IL_016b;
 		}
 	}
 	{
 		__this->set_U24PC_3(1);
 	}
 
-IL_0149:
+IL_016b:
 	{
-		goto IL_0157;
+		goto IL_0179;
 	}
 
-IL_014e:
+IL_0170:
 	{
 		// }
 		__this->set_U24PC_3((-1));
 	}
 
-IL_0155:
+IL_0177:
 	{
 		return (bool)0;
 	}
 
-IL_0157:
+IL_0179:
 	{
 		return (bool)1;
 	}
@@ -30568,14 +30593,14 @@ IL_0139:
 		// loading.SetActive(false);
 		GetAPIData_t3030356850 * L_41 = __this->get_U24this_4();
 		NullCheck(L_41);
-		GameObject_t1113636619 * L_42 = L_41->get_loading_18();
+		GameObject_t1113636619 * L_42 = L_41->get_loading_19();
 		// loading.SetActive(false);
 		NullCheck(L_42);
 		GameObject_SetActive_m796801857(L_42, (bool)0, /*hidden argument*/NULL);
 		// loadingBox.SetActive(false);
 		GetAPIData_t3030356850 * L_43 = __this->get_U24this_4();
 		NullCheck(L_43);
-		GameObject_t1113636619 * L_44 = L_43->get_loadingBox_19();
+		GameObject_t1113636619 * L_44 = L_43->get_loadingBox_20();
 		// loadingBox.SetActive(false);
 		NullCheck(L_44);
 		GameObject_SetActive_m796801857(L_44, (bool)0, /*hidden argument*/NULL);
@@ -30631,7 +30656,7 @@ IL_01eb:
 		int32_t L_62 = L_61->get_threshold_13();
 		GetAPIData_t3030356850 * L_63 = __this->get_U24this_4();
 		NullCheck(L_63);
-		GameObject_t1113636619 * L_64 = L_63->get_parent_28();
+		GameObject_t1113636619 * L_64 = L_63->get_parent_29();
 		GetAPIData_t3030356850 * L_65 = __this->get_U24this_4();
 		NullCheck(L_65);
 		int32_t L_66 = L_65->get_tempType_2();

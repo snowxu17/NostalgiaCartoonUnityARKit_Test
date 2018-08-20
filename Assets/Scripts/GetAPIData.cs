@@ -43,6 +43,7 @@ public class GetAPIData : MonoBehaviour {
     public Dropdown e_dropdown;
 
     public GameObject warning;
+    public GameObject warning_arrows;
     public GameObject loading;
     public GameObject loadingBox;
     public GameObject specialEffect;
@@ -301,6 +302,7 @@ public class GetAPIData : MonoBehaviour {
             //e_dropdown.value = 0;
 
             warning.SetActive(true);
+            warning_arrows.SetActive(true);
             loading.SetActive(false);
             loadingBox.SetActive(false);
             request.SetActive(false);
@@ -317,7 +319,8 @@ public class GetAPIData : MonoBehaviour {
                 hideTime.SetActive(true);
             }
                 
-            warning.SetActive(false);                       
+            warning.SetActive(false);
+            warning_arrows.SetActive(false);
         }
 
         yield return null;
