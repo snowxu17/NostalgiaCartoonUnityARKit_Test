@@ -85,16 +85,6 @@ public class UIManager : MonoBehaviour {
     }
 
 
-    //public static void HideTimeUI(GameObject showDropdown, GameObject restartButton, GameObject switchButton, GameObject s_Dropdown, GameObject e_Dropdown)
-    //{
-    //    //// Editor
-    //    showDropdown.gameObject.SetActive(true);
-    //    restartButton.gameObject.SetActive(true);
-    //    switchButton.gameObject.SetActive(true);
-    //    s_Dropdown.gameObject.SetActive(false);
-    //    e_Dropdown.gameObject.SetActive(false);
-    //}
-
     //public void OnClickShowDetectButton()
     //{
     //    detectButton.gameObject.SetActive(true);
