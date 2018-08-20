@@ -450,12 +450,12 @@ RegisterBuiltinTypes();
 	RegisterClass<AnimationClip>("Animation");
 	//79. AnimatorController
 	RegisterClass<AnimatorController>("Animation");
-	//80. BoxCollider
-	RegisterClass<BoxCollider>("Physics");
-	//81. FlareLayer
+	//80. FlareLayer
 	RegisterClass<FlareLayer>("Core");
-	//82. Avatar
+	//81. Avatar
 	RegisterClass<Avatar>("Animation");
+	//82. BoxCollider
+	RegisterClass<BoxCollider>("Physics");
 	//83. PhysicMaterial
 	RegisterClass<PhysicMaterial>("Physics");
 	//84. VideoClip
