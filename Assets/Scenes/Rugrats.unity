@@ -262,13 +262,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 16}
-  m_LocalRotation: {x: 0.19218312, y: 0.24661635, z: -0.16055736, w: 0.93619835}
+  m_LocalRotation: {x: 0.2190387, y: 0.06543784, z: -0.1213882, w: 0.96592176}
   m_LocalPosition: {x: -1.28, y: 4.22, z: -3.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 26.042002, y: 26.44, z: -13.244}
+  m_LocalEulerAnglesHint: {x: 26.042002, y: 4.676, z: -13.244}
 --- !u!108 &29
 Light:
   m_ObjectHideFlags: 0
@@ -11907,8 +11907,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1703029, y: 3.0977929, z: 1.0639173}
-  m_Center: {x: 0.081805706, y: 1.1993647, z: -0.03195856}
+  m_Size: {x: 2.3677528, y: 3.0977929, z: 1.8768518}
+  m_Center: {x: -0.016920345, y: 1.1993647, z: -0.10929005}
 --- !u!1 &555720247
 GameObject:
   m_ObjectHideFlags: 0
@@ -13595,8 +13595,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 2.9836771, z: 1}
-  m_Center: {x: 0, y: 1.202402, z: 0}
+  m_Size: {x: 1.1345633, y: 2.9836771, z: 1.1860796}
+  m_Center: {x: -0.0672815, y: 1.202402, z: -0.093039125}
 --- !u!1 &1028343159 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100002, guid: 35164d97ccf4d68499e754f90d16716a, type: 3}
@@ -23980,7 +23980,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.06700003
+      value: 0.085
       objectReference: {fileID: 0}
     - target: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b, type: 2}
       propertyPath: m_LocalPosition.z
@@ -31127,8 +31127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3839673, y: 2.3597434, z: 1}
-  m_Center: {x: -0.016455725, y: 1.1710005, z: 0}
+  m_Size: {x: 1.725548, y: 2.3597434, z: 1.2739885}
+  m_Center: {x: 0.094454885, y: 1.1710005, z: 0.13699397}
 --- !u!4 &1748746822 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4628768448131378, guid: e928ad5026d993b46a693e47b351894b,
@@ -31579,8 +31579,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.5255214, y: 2.0526161, z: 0.95038116}
-  m_Center: {x: -0.34243706, y: 1.0342194, z: -0.3038155}
+  m_Size: {x: 2.0430713, y: 2.8594604, z: 0.950381}
+  m_Center: {x: -0.8241448, y: 1.4376415, z: -0.30381602}
 --- !u!1 &1859287367
 GameObject:
   m_ObjectHideFlags: 0
@@ -32693,7 +32693,7 @@ MonoBehaviour:
     m_Bits: 1024
   scanButton: {fileID: 1263163886}
   placeButton: {fileID: 471008441}
-  s_dropdown: {fileID: 0}
+  s_dropdown: {fileID: 1316422801}
   floor: {fileID: 1066625290}
   wall1: {fileID: 2048704066}
   wall2: {fileID: 107494616}
@@ -32970,7 +32970,6 @@ MonoBehaviour:
   pinchGuide: {fileID: 1233349774}
   tapGuide: {fileID: 746477873}
   tmGuide: {fileID: 129552029}
-  tmPrompt: {fileID: 0}
   timeLeft: 12
   plnCt: 0
 --- !u!4 &2133521674
