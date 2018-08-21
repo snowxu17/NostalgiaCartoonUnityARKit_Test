@@ -384,7 +384,7 @@ public class GetAPIData : MonoBehaviour {
         if (totalScore > maxScr)
         {
             t += Time.deltaTime;
-            Debug.Log("t :" + t);
+            //Debug.Log("t :" + t);
 
             if (t < 30.0f)
             {
