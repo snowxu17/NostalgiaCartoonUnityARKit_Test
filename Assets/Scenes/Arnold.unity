@@ -11799,8 +11799,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.096324265, y: 0.45548075, z: 0.086924925}
-  m_Center: {x: -0.002514212, y: 0.2044352, z: -0.00034112352}
+  m_Size: {x: 0.60990536, y: 4.554808, z: 0.45361203}
+  m_Center: {x: 0.01411378, y: 2.0443518, z: 0.0000012053274}
 --- !u!114 &699694665 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114962576543923060, guid: d91c2072955c64a5ab7efb7307ebcd62,
@@ -11844,7 +11844,7 @@ MonoBehaviour:
   sortBy: total_interactions
   count: 10
   totalScore: 0
-  threshold: 10000
+  threshold: 6500
   responseText: {fileID: 0}
   s_dropdown: {fileID: 645984320}
   e_dropdown: {fileID: 2089130329}

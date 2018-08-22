@@ -55,6 +55,7 @@ namespace Lean.Touch
             IgnoreIsOverGui = true;
             IgnoreStartedOverGui = true;
             ScaleClamp = true;
+            ScaleMin = new Vector3(0.1f, 0.1f, 0.1f);
             ScaleMax = new Vector3(10f, 10f, 10f);
         }
 

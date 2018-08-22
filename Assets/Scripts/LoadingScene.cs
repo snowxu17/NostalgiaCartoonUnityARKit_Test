@@ -25,8 +25,8 @@ public class LoadingScene : MonoBehaviour {
             yield return null;
         }
 
-        float t = Mathf.PingPong(Time.time, duration) / duration;
-        Camera.main.backgroundColor = Color.Lerp(color1, color2, t);
+        //float t = Mathf.PingPong(Time.time, duration) / duration;
+        //Camera.main.backgroundColor = Color.Lerp(color1, color2, t);
 
         asyncLoad.allowSceneActivation = true;
 

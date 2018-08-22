@@ -605,6 +605,30 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 220
       objectReference: {fileID: 0}
+    - target: {fileID: 114265673335717942, guid: 7acc23a0b503147a68d954f6ef987c72,
+        type: 2}
+      propertyPath: m_Text
+      value: 'WElCOME TO THE RUGRATS & HEY ARNOLD WORLDS!
+
+
+        LET''S TIME TRAVEL TO COLLECT FACEBOOK FAN POWER & REVIVE OUR FAVORITE CHARACTERS
+        !'
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265673335717942, guid: 7acc23a0b503147a68d954f6ef987c72,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 114265673335717942, guid: 7acc23a0b503147a68d954f6ef987c72,
+        type: 2}
+      propertyPath: m_FontData.m_MaxSize
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 224028823799653652, guid: 7acc23a0b503147a68d954f6ef987c72,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 580
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7acc23a0b503147a68d954f6ef987c72, type: 2}
   m_IsPrefabParent: 0
