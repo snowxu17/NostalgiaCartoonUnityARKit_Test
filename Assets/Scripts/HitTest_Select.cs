@@ -30,6 +30,8 @@ namespace UnityEngine.XR.iOS
         public GameObject wall1;
         public GameObject wall2;
 
+        Quaternion newQuat; 
+
         public bool isDetecting = false;
 
         bool HitTestWithResultType(ARPoint point, ARHitTestResultType resultTypes)
@@ -54,7 +56,9 @@ namespace UnityEngine.XR.iOS
         {
             placeButton.onClick.AddListener(PlaceWhenHitButton);            
 
-            isDetecting = true;   
+            isDetecting = true;
+            newQuat.Set(0, 50, 0, 1);
+
         }
 
         public void PlaceWhenHitButton()
@@ -123,7 +127,7 @@ namespace UnityEngine.XR.iOS
 
 
         public void ARPlaceObjectsOnPlane()
-        {           
+        {            
             if (Input.GetMouseButtonDown(0) && isDetecting == true && ManagerScript.arKitPlaneRenderers.Count > 0)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -143,6 +147,7 @@ namespace UnityEngine.XR.iOS
 
                     //and the rotation from the transform of the plane collider
                     m_HitTransform.rotation = hit.transform.rotation;
+                    //m_HitTransform.rotation = newQuat;
                     Debug.LogWarning("ARPlaceObjectsOnPlane about to call deactivate all planes");
                     ManagerScript.instance.debugString += " ARPlaceObjOnPlane ";
                     ManagerScript.instance.DeActivateAllPlanes();

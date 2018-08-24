@@ -120,7 +120,7 @@ public class UIManager : MonoBehaviour {
         if (scanButton.isActiveAndEnabled == true)
         {
             placeObjectButton.gameObject.SetActive(false);
-            restartButton.gameObject.SetActive(false);
+            //restartButton.gameObject.SetActive(false);
             switchButton.gameObject.SetActive(false);
             showDropdown.gameObject.SetActive(false);
             //detectButton.gameObject.SetActive(false);
